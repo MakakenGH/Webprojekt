@@ -6,4 +6,4 @@
  * Time: 13:10
  */
 
-echo ("test"); /*test6*/
+echo ("test7"); /*test7*/
