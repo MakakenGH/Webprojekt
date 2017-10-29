@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" serverName="mars.iuk.hdm-stuttgart.de" uploadOnCheckin="09b1886d-856c-4ef6-8095-80c0cce6bf67">
+  <component name="PublishConfigData" autoUpload="Always" serverName="mars.iuk.hdm-stuttgart.de" uploadOnCheckin="09b1886d-856c-4ef6-8095-80c0cce6bf67">
     <serverData>
       <paths name="mars.iuk.hdm-stuttgart.de">
         <serverdata>
@@ -11,5 +11,6 @@
       </paths>
     </serverData>
     <option name="myUploadOnCheckinName" value="mars.iuk.hdm-stuttgart.de" />
+    <option name="myAutoUpload" value="ALWAYS" />
   </component>
 </project>
