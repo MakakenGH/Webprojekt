@@ -12,7 +12,7 @@ session_start();
 <ul>
     <li><a href="?store">Store</a></li>
     <li><a href="?news">News</a></li>
-    <li><a href="index.html?page=users&action=login">Login</a></li>
+    <li><a href="index.php?page=users&action=login">Login</a></li>
     <li><a href="?warenkorb">Warenkorb</a></li>
 </ul>
 </div>
