@@ -8,34 +8,37 @@
 <?php
 session_start();
 ?>
-<div> <!-- Header -->
+<div><!-- Header -->
 <ul>
     <li><a href="?store">Store</a></li>
     <li><a href="?news">News</a></li>
-    <li><a href="?login">Login</a></li>
+    <li><a href="index.html?page=users&action=login">Login</a></li>
     <li><a href="?warenkorb">Warenkorb</a></li>
 </ul>
 </div>
 <div> <!-- Include Bereich (Content) -->
 <?php
-switch ($a=[$_GET]) {
-        case $a="store":
-            include "store.php";
-            break;
-        case $a="news":
-            include "news.php";
-            break;
-        case $a="login":
-            include "login.php";
-            break;
-        case $a="warenkorb":
-            include "warenkorb.php";
-            break;
-        default:
-            echo "Seite nicht gefunden";
-            die();
-            break;
-        }
+include_once("functions/db.php"); /*Datenbankverbindung herstellen*/
+if(isset($_GET["page"])) {
+    switch ($_GET["page"]) {
+            case "store":
+                include "store.php";
+                break;
+            case "news":
+                include "news.php";
+                break;
+            case "users":
+                include "functions/users/index.php";
+                break;
+            case "warenkorb":
+                include "warenkorb.php";
+                break;
+            default:
+                echo "Seite nicht gefunden";
+                die();
+                break;
+            }
+    }
 ?>
 </div>
 
