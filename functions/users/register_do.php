@@ -48,7 +48,7 @@ if(isset($_GET['register'])) {
 
         $statement = $db->prepare("INSERT INTO users (username, password, email, name) VALUES (:username, :password, :email, :name)");
         $result = $statement->execute(array('username' => $username, 'password' => $password_hash, 'email' => $email, 'name' => $name));
-
+        $db = null;
         if($result) {
             echo 'Registrierung erfolgreich! <a href="../../index.php">zurück</a>';
             $showFormular = false;

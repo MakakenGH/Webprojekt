@@ -12,6 +12,7 @@ session_start();
 <ul>
     <li><a href="?store">Store</a></li>
     <li><a href="?news">News</a></li>
+    <li><a href="index.php?page=products&action=create">News</a></li>
     <li><a href="index.php?page=users&action=login">Login</a></li>
     <li><a href="index.php?page=users&action=register">Registrieren</a></li>
     <li><a href="./functions/users/logout_do.php">Logout</a></li>
@@ -28,6 +29,9 @@ if(isset($_GET["page"])) {
                 break;
             case "news":
                 include "news.php";
+                break;
+            case "products":
+                include "./functions/products/index.php";
                 break;
             case "users":
                 include "./functions/users/index.php";
