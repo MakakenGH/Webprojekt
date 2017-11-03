@@ -4,11 +4,11 @@ include_once("../db.php");
 $db = new PDO($dsn, $dbuser, $dbpass);
 
 if(isset($_GET['login'])) {
-    $login = $_POST['login'];
+    $username = $_POST['username'];
     $password = $_POST['password'];
 
-    $statement = $db->prepare("SELECT * FROM cms_users WHERE login = :login");
-    $result = $statement->execute(array('login' => $login));
+    $statement = $db->prepare("SELECT * FROM users WHERE username = :username");
+    $result = $statement->execute(array('username' => $username));
     $user = $statement->fetch();
 
     if ($user !== false && password_verify($password, $user['password'])) {

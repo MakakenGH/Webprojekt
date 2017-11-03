@@ -4,10 +4,10 @@ if (isset($_GET["action"]))
 
     switch ($_GET["action"]) {
         case "register":
-            include "register_form.php";
+            include "./functions/users/register_form.php";
             break;
         case "login":
-            include "login_form.php";
+            include "./functions/users/login_form.php";
             break;
         case "logout":
             include "logout_do.php";

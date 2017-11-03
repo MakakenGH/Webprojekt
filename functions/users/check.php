@@ -1,7 +1,7 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Niklas
- * Date: 30.10.2017
- * Time: 12:23
- */
+    if(!isset($_SESSION['userid'])) {
+        echo "<span class='check'>";
+        die('Bitte zuerst einloggen');
+        echo "</span>";
+    }
+?>
