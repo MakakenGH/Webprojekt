@@ -1,4 +1,5 @@
 <?php
+include_once ("./functions/users/admincheck.php")
 ?>
 
 <form action="./functions/users/admincreate_do.php" method="post">
