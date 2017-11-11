@@ -12,6 +12,9 @@ if (isset($_GET["action"]))
         case "logout":
             include "logout_do.php";
             break;
+        case "admincreate":
+            include "./functions/users/admincreate_form.php";
+            break;
         default:
             echo "Seite nicht gefunden";
             die();

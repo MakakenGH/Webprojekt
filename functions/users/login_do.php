@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 include_once("../db.php");
 $db = new PDO($dsn, $dbuser, $dbpass);
 
@@ -12,7 +13,7 @@ if(isset($_GET['login'])) {
     $user = $statement->fetch();
 
     if ($user !== false && password_verify($password, $user['password'])) {
-        $_SESSION['userid'] = $user['id'];
+        $_SESSION['userid'] = $user['username'];
         header('Location: ../../index.php');
     } else {
         $errorMessage = "Login oder Passwort war ungültig<br>";
