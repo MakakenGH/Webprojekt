@@ -9,6 +9,7 @@ $query = $db->prepare("SELECT username FROM admins WHERE username = '".$sessioni
 $query->execute();
 $zeile = $query->fetchObject();
 
+//Überprüft ob der eingeloggte User Admin ist
 if((!isset($zeile->username)) or ($_SESSION['userid'] != $zeile->username)) {
     die('Keine Berechtigung die Aktion auszuführen! Bitte wende dich an einen Admin.');}
 

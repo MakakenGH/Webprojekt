@@ -22,7 +22,7 @@ if(isset($_GET['register'])) {
     $password = $_POST['password'];
     $password2 = $_POST['password2'];
 
-
+    //Überprüft ob beide eingebenen Passwörter übereinstimmen
     if(strlen($password) == 0) {
         echo 'Passwort eingeben<br>';
         $error = true;
@@ -32,6 +32,7 @@ if(isset($_GET['register'])) {
         $error = true;
     }
 
+    //Überprüft ob Username schon vergeben ist
     if(!$error) {
         $statement = $db->prepare("SELECT * FROM users WHERE username = :username");
         $result = $statement->execute(array('username' => $username));
@@ -43,8 +44,9 @@ if(isset($_GET['register'])) {
         }
     }
 
+    //neuer Nutzer wird in Datenbank gespeichert
     if(!$error) {
-        $password_hash = password_hash($password, PASSWORD_DEFAULT);
+        $password_hash = password_hash($password, PASSWORD_DEFAULT); //passwort wird verschlüsselt
 
         $statement = $db->prepare("INSERT INTO users (username, password, email, name) VALUES (:username, :password, :email, :name)");
         $result = $statement->execute(array('username' => $username, 'password' => $password_hash, 'email' => $email, 'name' => $name));

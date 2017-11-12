@@ -1,5 +1,5 @@
 <?php
-include_once ("./functions/users/admincheck.php")
+include_once ("./functions/users/admincheck.php") //Da nur Admins neue Admins hinzufügen dürfen
 ?>
 
 <form action="./functions/users/admincreate_do.php" method="post">

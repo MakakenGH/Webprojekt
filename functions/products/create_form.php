@@ -1,5 +1,5 @@
 <?php
-include_once ("./functions/users/admincheck.php")
+include_once ("./functions/users/admincheck.php") //Da nur Admins Produkte hinzufügen sollen
 ?>
 
 
@@ -8,6 +8,7 @@ include_once ("./functions/users/admincheck.php")
         <input type="text" name="name" placeholder="Artikelname" /><br>
         <input type="text" name="preis" placeholder="Preis" /><br>
         <textarea name="beschreibung" placeholder="Artikelbeschreibung" rows="10"></textarea><br>
+        <input type="number" name="rating" placeholder="Bewertung" /><br>
         <input type="file" name="bild" /><br>
         <input type="submit" value="Submit"/>
 
