@@ -10,7 +10,7 @@ session_start();
 ?>
 <div><!-- Header -->
 <ul>
-    <li><a href="?store">Store</a></li>
+    <li><a href="index.php?page=store&action=store">Store</a></li>
     <li><a href="?news">News</a></li>
     <li><a href="index.php?page=products&action=create">Produkt hinzufügen</a></li>
     <li><a href="index.php?page=users&action=login">Login</a></li>
@@ -26,7 +26,7 @@ include_once("functions/db.php"); /*Datenbankverbindung herstellen*/
 if(isset($_GET["page"])) {
     switch ($_GET["page"]) {
             case "store":
-                include "store.php";
+                include "./functions/store/index.php";
                 break;
             case "news":
                 include "news.php";
