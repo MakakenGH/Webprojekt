@@ -1,18 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DAMPF!</title>
+</head>
+<body>
 <?php
-/**
- * Created by PhpStorm.
- * User: Niklas
- * Date: 23.10.2017
- * Time: 13:10
- */
+session_start();
+?>
+<div><!-- Header -->
+<ul>
+    <li><a href="?store">Store</a></li>
+    <li><a href="?news">News</a></li>
+    <li><a href="index.php?page=products&action=create">Produkt hinzufügen</a></li>
+    <li><a href="index.php?page=users&action=login">Login</a></li>
+    <li><a href="index.php?page=users&action=register">Registrieren</a></li>
+    <li><a href="index.php?page=users&action=logout">Logout</a></li>
+    <li><a href="index.php?page=users&action=admincreate">Admin hinzufügen</a></li>
+    <li><a href="?warenkorb">Warenkorb</a></li>
+</ul>
+</div>
+<div> <!-- Include Bereich (Content) -->
+<?php
+include_once("functions/db.php"); /*Datenbankverbindung herstellen*/
+if(isset($_GET["page"])) {
+    switch ($_GET["page"]) {
+            case "store":
+                include "store.php";
+                break;
+            case "news":
+                include "news.php";
+                break;
+            case "products":
+                include "./functions/products/index.php";
+                break;
+            case "users":
+                include "./functions/users/index.php";
+                break;
+            case "warenkorb":
+                include "warenkorb.php";
+                break;
+            default:
+                echo "Seite nicht gefunden";
+                die();
+                break;
+            }
+    }
+?>
+</div>
 
-echo ("test"); /*test*/
-echo ("Tombold"); //test Tommy
-echo ("fuck you git"); //test Tommy 2
-echo ("test2000"); //test
-echo ("Tolga hat es jetzt auch geschafft!")
-echo ("was geht ab alter")
-//test
-//newtest
-$i=1;
-//test
+<div> <!-- Footer -->
+    <div style="float: left; margin: 10px;">
+    <b>Rechtliches</b>
+    <ul>
+        <li>Impressum</li>
+        <li>Datenschutz</li>
+        <li>AGB</li>
+        <li>FAQ</li>
+        <li>Wiederrufsrecht</li>
+        <li>Versand- und Zahlungsarten</li>
+    </ul>
+    </div>
+    <div style="float: left; margin: 10px;">
+        <b>Informationen</b>
+        <ul>
+            <li>Über uns</li>
+            <li>Kontakt</li>
+            <li>Karriere</li>
+        </ul>
+    </div >
+    <div style="float: left; margin: 10px;">
+        <b>Social Media</b>
+        <ul>
+            <li>Facebook</li>
+            <li>Instagram</li>
+            <li>Twitter</li>
+        </ul>
+    </div>
+</div>
+
+
+</body>
+</html>
