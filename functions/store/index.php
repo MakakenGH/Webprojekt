@@ -4,7 +4,7 @@ if (isset($_GET["action"]))
 
     switch ($_GET["action"]) {
         case "store":
-            include "./functions/store/store2.php";
+            include "./functions/store/store.php";
             break;
         default:
             echo "Seite nicht gefunden";
