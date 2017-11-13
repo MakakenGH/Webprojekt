@@ -10,13 +10,13 @@ session_start();
 ?>
 <div><!-- Header -->
 <ul>
-    <li><a href="index.php?page=store&action=store">Store</a></li>
+    <li><a href="?page=store&action=store">Store</a></li>
     <li><a href="?news">News</a></li>
-    <li><a href="index.php?page=products&action=create">Produkt hinzufügen</a></li>
-    <li><a href="index.php?page=users&action=login">Login</a></li>
-    <li><a href="index.php?page=users&action=register">Registrieren</a></li>
-    <li><a href="index.php?page=users&action=logout">Logout</a></li>
-    <li><a href="index.php?page=users&action=admincreate">Admin hinzufügen</a></li>
+    <li><a href="?page=products&action=create">Produkt hinzufügen</a></li>
+    <li><a href="?page=users&action=login">Login</a></li>
+    <li><a href="?page=users&action=register">Registrieren</a></li>
+    <li><a href="?page=users&action=logout">Logout</a></li>
+    <li><a href="?page=users&action=admincreate">Admin hinzufügen</a></li>
     <li><a href="?warenkorb">Warenkorb</a></li>
 </ul>
 </div>
