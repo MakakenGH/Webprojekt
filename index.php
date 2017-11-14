@@ -7,9 +7,11 @@
 <body>
 <?php
 session_start();
+include_once ("./functions/db.php");
 ?>
 <div><!-- Header -->
 <ul>
+    <li><a href="index.php">Home</a></li> <!-- Mit Logo zu ersetzen -->
     <li><a href="?page=store&action=store">Store</a></li>
     <li><a href="?news">News</a></li>
     <li><a href="?page=products&action=create">Produkt hinzufügen</a></li>

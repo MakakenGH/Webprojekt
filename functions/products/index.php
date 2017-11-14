@@ -1,10 +1,11 @@
 <?php
+
 if (isset($_GET["action"]))
 {
 
     switch ($_GET["action"]) {
         case "view":
-            include "show.php";
+            include "product.php";
             break;
         case "edit":
             include "update_form.php";

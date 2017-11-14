@@ -13,6 +13,7 @@ while ($zeile = $query->fetchObject()) {
     echo "<span>$zeile->beschreibung</span>&nbsp;";
     echo "<span>$zeile->rating</span>&nbsp;";
     echo "<span>$zeile->preis</span>&nbsp;";
+    echo "<span><a href='./functions/products/product.php?ean=$zeile->ean'>Zur Produktseite</a></span>"; //nacher ersetzen mit div
     echo "<form action= \"./functions/cart/cartupdate_do.php\"></form><input type=\"submit\" value=\"In den Warenkorb legen\"></form>";
     echo "</div><br><br>";
 }
