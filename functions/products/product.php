@@ -8,6 +8,7 @@ $query = $db->prepare($sql);
 $query->execute();
 if ($zeile = $query->fetchObject()) {
     echo "<h1>$zeile->name</h1> <br/><br/> \n";
+    echo "$zeile->genre<br>";
 
     $bildlg = strlen($zeile->bild);
     if ($bildlg >= 1) {
@@ -20,7 +21,8 @@ if ($zeile = $query->fetchObject()) {
     echo "$zeile->beschreibung <br/><br/> \n";
 
 
-    echo "PREIS: $zeile->preis / NUTZERWERTUNG: $zeile->rating";
+    echo "PREIS: $zeile->preis / NUTZERWERTUNG: $zeile->rating <br><br>";
+    echo "$zeile->ean";
 } else {
     print "Datensatz mit id=$id nicht gefunden!";
 }
