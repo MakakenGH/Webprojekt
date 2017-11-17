@@ -2,6 +2,9 @@
 
 include_once "db.php";
 
-$name = $_POST['name'];
+$sql = "SELECT * FROM sortiment";
 
-echo "<b>Du hast nach dem Spiel: \"<u>$name</u>\" gesucht. Dadurch wurden folgende Einträge gefunden:</b><br /><br />";
+<input type="text" size="40" maxlength="250" name="username" placeholder="Login"><br>
+
+
+?>
