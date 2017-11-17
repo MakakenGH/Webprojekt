@@ -1,7 +1,11 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Niklas
- * Date: 30.10.2017
- * Time: 12:32
- */
+include_once("../db.php");
+
+$ean= (int)$_GET("ean");
+
+$db = new PDO($dsn, $dbuser, $dbpass);
+$sql = "INSERT INTO cart (ean, name, beschreibung, genre, preis, rating, bild) SELECT ean, name, beschreibung, genre, preis, rating, bild  
+FROM sortiment  WHERE ean=$ean";
+$query = $db->prepare($sql);
+$query->execute();
+
