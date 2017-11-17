@@ -6,7 +6,7 @@ $search=$_POST["search"];
 
 $db = new PDO($dsn, $dbuser, $dbpass);
 
-$sql = "SELECT * FROM sortiment WHERE name=$search";
+$sql = "SELECT * FROM sortiment WHERE name = '".$search."'";
 
 $query = $db->prepare($sql);
 $query->execute();
@@ -17,7 +17,7 @@ if ($zeile = $query->fetchObject()) {
 
     $bildlg = strlen($zeile->bild);
     if ($bildlg >= 1) {
-        echo "<img src='../../files/uploads/$zeile->bild'/><br><br> \n";
+        echo "<img src='../files/uploads/$zeile->bild'/><br><br> \n";
     }
     else {
         echo "";
@@ -32,4 +32,5 @@ if ($zeile = $query->fetchObject()) {
 else
 
     echo "Produkt nicht gefunden";
+
 ?>

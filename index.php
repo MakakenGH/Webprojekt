@@ -8,13 +8,13 @@
 <?php
 session_start();
 include_once ("./functions/db.php");
+include_once ("./functions/search.php");
 ?>
 <div><!-- Header -->
 <ul>
     <li><a href="index.php">Home</a></li> <!-- Mit Logo zu ersetzen -->
-    <li><a href="?page=store&action=store">Storeeeeeeeeeeeeeeeee</a></li>
+    <li><a href="?page=store&action=store">Store</a></li>
     <li><a href="?news">News</a></li>
-    <li><a href="?page=products&action=create">Produkt suchen</a></li>
     <li><a href="?page=products&action=create">Produkt hinzufügen</a></li>
     <li><a href="?page=users&action=login">Login</a></li>
     <li><a href="?page=users&action=register">Registrieren</a></li>
