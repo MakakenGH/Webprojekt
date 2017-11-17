@@ -5,12 +5,3 @@
 
 </form>
 
-
-<?php
-
-include_once "db.php";
-
-$sql = "SELECT * FROM sortiment";
-
-?>
-

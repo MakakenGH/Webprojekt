@@ -1,7 +1,12 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Tolga
- * Date: 17.11.2017
- * Time: 14:10
- */
+
+include_once "db.php";
+
+$search=$_POST["search"];
+
+$db = new PDO($dsn, $dbuser, $dbpass);
+
+$sql = "SELECT * FROM sortiment WHERE name=$search";
+
+
+?>
