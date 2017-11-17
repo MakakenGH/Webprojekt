@@ -1,7 +1,21 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Niklas
- * Date: 30.10.2017
- * Time: 12:37
- */
+if (isset($_GET["action"]))
+{
+
+    switch ($_GET["action"]) {
+        case "store":
+            include "./functions/store/store.php";
+            break;
+        default:
+            echo "Seite nicht gefunden";
+            die();
+            break;
+
+
+    }
+
+}
+else
+{
+    echo "Seite nicht gefunden";
+}

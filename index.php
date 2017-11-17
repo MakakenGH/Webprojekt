@@ -7,16 +7,18 @@
 <body>
 <?php
 session_start();
+include_once ("./functions/db.php");
 ?>
 <div><!-- Header -->
 <ul>
-    <li><a href="?store">Store</a></li>
+    <li><a href="index.php">Home</a></li> <!-- Mit Logo zu ersetzen -->
+    <li><a href="?page=store&action=store">Store</a></li>
     <li><a href="?news">News</a></li>
-    <li><a href="index.php?page=products&action=create">Produkt hinzufügen</a></li>
-    <li><a href="index.php?page=users&action=login">Login</a></li>
-    <li><a href="index.php?page=users&action=register">Registrieren</a></li>
-    <li><a href="index.php?page=users&action=logout">Logout</a></li>
-    <li><a href="index.php?page=users&action=admincreate">Admin hinzufügen</a></li>
+    <li><a href="?page=products&action=create">Produkt hinzufügen</a></li>
+    <li><a href="?page=users&action=login">Login</a></li>
+    <li><a href="?page=users&action=register">Registrieren</a></li>
+    <li><a href="?page=users&action=logout">Logout</a></li>
+    <li><a href="?page=users&action=admincreate">Admin hinzufügen</a></li>
     <li><a href="?warenkorb">Warenkorb</a></li>
 </ul>
 </div>
@@ -26,7 +28,7 @@ include_once("functions/db.php"); /*Datenbankverbindung herstellen*/
 if(isset($_GET["page"])) {
     switch ($_GET["page"]) {
             case "store":
-                include "store.php";
+                include "./functions/store/index.php";
                 break;
             case "news":
                 include "news.php";
