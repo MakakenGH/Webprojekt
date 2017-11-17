@@ -8,6 +8,7 @@
 <?php
 session_start();
 include_once ("./functions/db.php");
+include_once ("./functions/search.php");
 ?>
 <div><!-- Header -->
 <ul>
