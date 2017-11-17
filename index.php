@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>DAMPppppppF!</title>
+    <title>DAMPF!</title>
 </head>
 <body>
 <?php
@@ -12,7 +12,7 @@ include_once ("./functions/db.php");
 <div><!-- Header -->
 <ul>
     <li><a href="index.php">Home</a></li> <!-- Mit Logo zu ersetzen -->
-    <li><a href="?page=store&action=store">Storeeeeee</a></li>
+    <li><a href="?page=store&action=store">Storeeeeeeeeeeeeeeeee</a></li>
     <li><a href="?news">News</a></li>
     <li><a href="?page=products&action=create">Produkt suchen</a></li>
     <li><a href="?page=products&action=create">Produkt hinzufügen</a></li>
