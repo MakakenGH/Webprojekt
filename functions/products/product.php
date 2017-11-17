@@ -33,7 +33,7 @@ $db = null;
 
     <form action="rate_do.php" method="post">
         <input type="text" size="40" maxlength="250" name="rate" placeholder="Bewertung"><br>
-        <input type="hidden" size="40" name="ean" value="<?php echo htmlspecialchars($ean); ?>"><br>
+        <input type="hidden" size="40" name="ean" value="<?php echo $ean; ?>"><br>
         <input type="submit" value="Abschicken">
     </form>
 <?php
