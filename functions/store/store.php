@@ -16,5 +16,6 @@ while ($zeile = $query->fetchObject()) {
     echo "<span><a href='./functions/products/product.php?ean=$zeile->ean'>Zur Produktseite</a></span><br>"; //nacher ersetzen mit div
     echo "<span><a href='./functions/cart/cartupdate_do.php?ean=$zeile->ean'>In den Warenkorb legen</a></span>";
     echo "</div><br><br>";
+
 }
 ?>
