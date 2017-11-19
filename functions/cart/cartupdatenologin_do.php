@@ -1,7 +1,8 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: tommy
- * Date: 17.11.2017
- * Time: 16:02
- */
+session_start();
+include_once("../db.php");
+
+$ean = $_POST("ean");
+
+$_SESSION("cart) = $ean;
+
