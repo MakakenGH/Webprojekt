@@ -65,8 +65,8 @@ if(isset($username)) {
     echo ('
     <form action = "rate_do.php" method = "post" >
         <input type = "hidden" name = "username" value = "'); echo ($username);echo('" ><br >
-        <input type = "text" name = "comment" placeholder = "Kommentar" ><br >
-        <input type = "number" name = "rate" min="0" max="100" placeholder = "Bewertung" ><br >
+        Dein Kommentar: <input type = "text" name = "comment" placeholder = "Kommentar" ><br >
+        Deine Bewertung*: <input type = "number" name = "rate" min="0" max="100" placeholder = "0-100" ><br >
         <input type = "hidden" name = "ean" value = "');echo ($ean);echo ('"><br >
         <input type = "submit" value = "Abschicken" >
     </form >
