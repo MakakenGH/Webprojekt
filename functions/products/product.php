@@ -8,8 +8,8 @@ $sql = "SELECT * FROM sortiment WHERE ean=$ean";
 $query = $db->prepare($sql);
 $query->execute();
 if ($zeile = $query->fetchObject()) {
-    echo "<h1>$zeile->name</h1> <br/> \n";
-    echo "$zeile->genre<br>";
+    echo "<h1>$zeile->name</h1> \n";
+    echo "$zeile->genre<br><br>";
 
     $bildlg = strlen($zeile->bild);
     if ($bildlg >= 1) {
@@ -22,7 +22,7 @@ if ($zeile = $query->fetchObject()) {
     echo "$zeile->beschreibung <br/><br/> \n";
 
 
-    echo "PREIS: $zeile->preis / Betacritic: $zeile->rating <br><br>";
+    echo "Preis: $zeile->preis € / Betacritic: $zeile->rating <br><br>";
     echo "$zeile->ean <br><br>";
 
 
@@ -49,15 +49,18 @@ while ($zeile2 = $query2->fetchObject()) {
     $allratings += $zeile2->rating;
 
 };
-$userrating = $allratings / $amount;
 
-echo "GESAMT: ";
-echo $userrating;
+if($amount != 0) {
+    $userrating = $allratings / $amount;
 
+    echo "GESAMT: <br>";
+    echo "$userrating<br><br>";
 
+}else echo "Keine Nutzerbewertungen gefunden.<br><br>";
 
 $username = $_SESSION["userid"];
 
+echo "Produkt bewerten:<br>";
 if(isset($username)) {
     echo ('
     <form action = "rate_do.php" method = "post" >
