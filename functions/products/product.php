@@ -54,7 +54,7 @@ if($amount != 0) {
     $userrating = $allratings / $amount;
 
     echo "GESAMT: <br>";
-    echo "$userrating<br><br>";
+    echo round($userrating)."<br><br>";
 
 }else echo "Keine Nutzerbewertungen gefunden.<br><br>";
 
