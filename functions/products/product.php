@@ -1,4 +1,5 @@
 <?php
+session_start();
 include_once ("../db.php");
 include_once ("../../widgets/navigation.php");
 $ean = $_GET["ean"];
@@ -7,7 +8,7 @@ $sql = "SELECT * FROM sortiment WHERE ean=$ean";
 $query = $db->prepare($sql);
 $query->execute();
 if ($zeile = $query->fetchObject()) {
-    echo "<h1>$zeile->name</h1> <br/><br/> \n";
+    echo "<h1>$zeile->name</h1> <br/> \n";
     echo "$zeile->genre<br>";
 
     $bildlg = strlen($zeile->bild);
@@ -21,21 +22,53 @@ if ($zeile = $query->fetchObject()) {
     echo "$zeile->beschreibung <br/><br/> \n";
 
 
-    echo "PREIS: $zeile->preis / NUTZERWERTUNG: $zeile->rating <br><br>";
-    echo "$zeile->ean";
+    echo "PREIS: $zeile->preis / Betacritic: $zeile->rating <br><br>";
+    echo "$zeile->ean <br><br>";
 
 
 } else {
-    print "Datensatz mit id=$id nicht gefunden!";
+    print "Produkt mit EAN $ean nicht gefunden!";
 }
 $db = null;
-?>
 
-    <form action="rate_do.php" method="post">
-        <input type="text" size="40" maxlength="250" name="rate" placeholder="Bewertung"><br>
-        <input type="hidden" size="40" name="ean" value="<?php echo $ean; ?>"><br>
-        <input type="submit" value="Abschicken">
-    </form>
-<?php
+    echo "NUTZERBEWERTUNGEN<br>";
+
+
+$db2 = new PDO($dsn, $dbuser, $dbpass);
+$sql2 = "SELECT * FROM userrating WHERE ean=$ean";
+$query2 = $db2->prepare($sql2);
+$query2->execute();
+$allratings = 0;
+$amount = 0;
+
+while ($zeile2 = $query2->fetchObject()) {
+    echo "<b>$zeile2->username</b><br>";
+    echo "$zeile2->comment<br>";
+    echo "Bewertung: $zeile2->rating<br><br>";
+    $amount += count($zeile2->rating);
+    $allratings += $zeile2->rating;
+
+};
+$userrating = $allratings / $amount;
+
+echo "GESAMT: ";
+echo $userrating;
+
+
+
+$username = $_SESSION["userid"];
+
+if(isset($username)) {
+    echo ('
+    <form action = "rate_do.php" method = "post" >
+        <input type = "hidden" name = "username" value = "'); echo ($username);echo('" ><br >
+        <input type = "text" name = "comment" placeholder = "Kommentar" ><br >
+        <input type = "number" name = "rate" placeholder = "Bewertung" ><br >
+        <input type = "hidden" name = "ean" value = "');echo ($ean);echo ('"><br >
+        <input type = "submit" value = "Abschicken" >
+    </form >
+');
+}
+else echo ('Um Produkt zu bewerten bitte logge dich zuerst ein!');
 include_once ("../../widgets/footer.php");
 ?>
