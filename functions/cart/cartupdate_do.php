@@ -9,3 +9,5 @@ FROM sortiment  WHERE ean=$ean";
 $query = $db->prepare($sql);
 $query->execute();
 
+header("Location: ../../index.php");
+

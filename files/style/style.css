@@ -35,3 +35,7 @@
 .img_store {
     max-width: 450px;
 }
+
+#logo {
+    height: inherit;
+}
