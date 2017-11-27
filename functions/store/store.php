@@ -20,7 +20,7 @@ while ($zeile = $query->fetchObject()) {
     if (isset($_SESSION['userid'])) {
         echo "<span><a href='./functions/cart/cartupdate_do.php?ean=$zeile->ean'>In den Warenkorb legen</a></span>";}
         else {
-        echo "<form action='../cart/cartupdatenologin_do.php' method='post'><input type='hidden' value='<?php echo ($zeile->ean); ?>'><input type='submit' value='In den Warenkorb legen'></form>";
+        echo "<span><a href='./functions/cart/cartupdatenologin_do.php?ean=$zeile->ean'>In den Warenenkorb legen</a></span>";
     }
     echo "</div><br><br>";}
 echo "</div>";

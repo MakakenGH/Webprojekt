@@ -1,7 +1,7 @@
 <?php
 include_once("../db.php");
 
-$ean= (int)$_GET("ean");
+$ean= (int)$_GET["ean"];
 
 $db = new PDO($dsn, $dbuser, $dbpass);
 $sql = "INSERT INTO cart (ean, name, beschreibung, genre, preis, rating, bild) SELECT ean, name, beschreibung, genre, preis, rating, bild  

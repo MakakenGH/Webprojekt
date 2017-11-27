@@ -26,7 +26,7 @@ include_once ("./functions/db.php");
     <li class="li_nav"><a href="?page=users&action=logout">Logout</a></li>
     <li class="li_nav"><a href="?page=users&action=admincreate">Admin hinzufügen</a></li>
     <li class="li_nav"><div id="searchbar"><?php include_once ("./functions/search.php");?></div></li>
-    <li class="li_nav"><a href="?warenkorb">Warenkorb</a></li>
+    <li class="li_nav"><a href="./functions/cart/cart_show.php" target='_blank'>Warenkorb</a></li>
 </ul>
 </div>
 <div class="container-fluid"> <!-- Include Bereich (Content) -->

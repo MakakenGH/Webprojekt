@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-include_once("./functions/db.php");
+include_once("../db.php");
 
 if (isset($_SESSION['userid'])) {
 
@@ -36,4 +36,4 @@ while ($zeile = $query->fetchObject()) {
         echo "<span>$zeile->rating</span>&nbsp;";
         echo "<span>$zeile->preis</span>&nbsp;";
         echo "</div><br><br>";}
-}
+    }
