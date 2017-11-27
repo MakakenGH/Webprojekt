@@ -72,5 +72,4 @@ if(isset($username)) {
 ');
 }
 else echo ('Um Produkt zu bewerten bitte logge dich zuerst ein!');
-include_once ("../../widgets/footer.php");
 ?>
