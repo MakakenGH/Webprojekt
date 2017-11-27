@@ -31,8 +31,7 @@ include_once ("./functions/db.php");
 </div>
 <div class="container-fluid"> <!-- Include Bereich (Content) -->
 <?php
-include_once("functions/db.php"); /*Datenbankverbindung herstellen*/
-if(isset($_GET["page"])) {
+include_once("functions/db.php"); /*Datenbankverbindung herstellen*/lkl
     switch ($_GET["page"]) {
             case "store":
                 include "./functions/store/index.php";
