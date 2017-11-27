@@ -15,7 +15,7 @@ if(isset($_GET['login'])) {
 
     //Überprüft ob das eingebene Passwort zum Username passt
     if ($user !== false && password_verify($password, $user['password'])) {
-        $_SESSION['userid'] = $user['username']; //Setzt die userid = username
+        $_SESSION['userid'] = $user['username']; //Setzt die userid = username (Datenbank: User)
         header('Location: ../../index.php');
     } else {
         $errorMessage = "Login oder Passwort war ungültig<br>";

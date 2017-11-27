@@ -3,28 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <title>DAMPF!</title>
+    <link rel="stylesheet" href="files/style/style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
+    </style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
 </head>
-<body>
+<body id="body">
 <?php
 session_start();
 include_once ("./functions/db.php");
-include_once ("./functions/search.php");
-include_once ("./functions/search_do.php");
+
 ?>
-<div><!-- Header -->
-<ul>
-    <li><a href="index.php">Home</a></li> <!-- Mit Logo zu ersetzen -->
-    <li><a href="?page=store&action=store">Store</a></li>
-    <li><a href="?news">News</a></li>
-    <li><a href="?page=products&action=create">Produkt hinzufügen</a></li>
-    <li><a href="?page=users&action=login">Login</a></li>
-    <li><a href="?page=users&action=register">Registrieren</a></li>
-    <li><a href="?page=users&action=logout">Logout</a></li>
-    <li><a href="?page=users&action=admincreate">Admin hinzufügen</a></li>
-    <li><a href="?warenkorb">Warenkorb</a></li>
+<div class="container-fluid"><!-- Header -->
+<ul class="ul_nav">
+    <li style="background-color: darkorange;" class="li_nav"><a href="index.php">Home</a></li> <!-- Mit Logo zu ersetzen -->
+    <li class="li_nav"><a href="?page=store&action=store">Store</a></li>
+    <li class="li_nav"><a href="?news">News</a></li>
+    <li class="li_nav"><a href="?page=products&action=create">Produkt hinzufügen</a></li>
+    <li class="li_nav"><a href="?page=users&action=login">Login</a></li>
+    <li class="li_nav"><a href="?page=users&action=register">Registrieren</a></li>
+    <li class="li_nav"><a href="?page=users&action=logout">Logout</a></li>
+    <li class="li_nav"><a href="?page=users&action=admincreate">Admin hinzufügen</a></li>
+    <li class="li_nav"><div id="searchbar"><?php include_once ("./functions/search.php");?></div></li>
+    <li class="li_nav"><a href="?warenkorb">Warenkorb</a></li>
 </ul>
 </div>
-<div> <!-- Include Bereich (Content) -->
+<div class="container-fluid"> <!-- Include Bereich (Content) -->
 <?php
 include_once("functions/db.php"); /*Datenbankverbindung herstellen*/
 if(isset($_GET["page"])) {
@@ -53,9 +58,9 @@ if(isset($_GET["page"])) {
 ?>
 </div>
 
-<div> <!-- Footer -->
-    <div style="float: left; margin: 10px;">
-    <b>Rechtliches</b>
+<div class="container-fluid"> <!-- Footer -->
+    <div class="row">
+        <div class="col"><b>Rechtliches</b>
     <ul>
         <li>Impressum</li>
         <li>Datenschutz</li>
@@ -65,7 +70,7 @@ if(isset($_GET["page"])) {
         <li>Versand- und Zahlungsarten</li>
     </ul>
     </div>
-    <div style="float: left; margin: 10px;">
+    <div class="col">
         <b>Informationen</b>
         <ul>
             <li>Über uns</li>
@@ -73,7 +78,7 @@ if(isset($_GET["page"])) {
             <li>Karriere</li>
         </ul>
     </div >
-    <div style="float: left; margin: 10px;">
+    <div class="col">
         <b>Social Media</b>
         <ul>
             <li>Facebook</li>
