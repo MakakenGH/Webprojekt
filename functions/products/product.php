@@ -1,7 +1,6 @@
 <?php
 session_start();
 include_once ("../db.php");
-include_once ("../../widgets/navigation.php");
 $ean = $_GET["ean"];
 $db = new PDO($dsn, $dbuser, $dbpass);
 $sql = "SELECT * FROM sortiment WHERE ean=$ean";
