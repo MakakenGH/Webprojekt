@@ -1,13 +1,16 @@
 <?php
+session_start();
 include_once("../db.php");
 
-$ean= (int)$_GET["ean"];
+
+$_SESSION["ean"] = $_GET["ean"];
+$ean = $_SESSION["ean"];
+$username = $_SESSION["userid"];
 
 $db = new PDO($dsn, $dbuser, $dbpass);
-$sql = "INSERT INTO cart (ean, name, beschreibung, genre, preis, rating, bild) SELECT ean, name, beschreibung, genre, preis, rating, bild  
-FROM sortiment  WHERE ean=$ean";
+$sql = "INSERT INTO cart (ean, username) VALUES (:ean, :username)";
 $query = $db->prepare($sql);
-$query->execute();
+$query->execute(array('ean'=> $ean, "username" => $username));
 
-header("Location: ../../index.php");
+header("Location: ../../index.php?page=store&action=store");
 
