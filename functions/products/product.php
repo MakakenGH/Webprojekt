@@ -1,7 +1,5 @@
 <?php
 session_start();
-include_once ("../db.php");
-$ean = $_GET["ean"];
 $db = new PDO($dsn, $dbuser, $dbpass);
 $sql = "SELECT * FROM sortiment WHERE ean=$ean";
 $query = $db->prepare($sql);
@@ -12,7 +10,7 @@ if ($zeile = $query->fetchObject()) {
 
     $bildlg = strlen($zeile->bild);
     if ($bildlg >= 1) {
-        echo "<img src='../../files/uploads/$zeile->bild'/><br><br> \n";
+        echo "<img src='./files/uploads/$zeile->bild'/><br><br> \n";
     }
     else {
         echo "";

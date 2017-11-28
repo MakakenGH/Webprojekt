@@ -16,7 +16,7 @@ while ($zeile = $query->fetchObject()) {
     echo "<span>$zeile->beschreibung</span><br>";
     echo "<span>$zeile->rating</span><br>";
     echo "<span>$zeile->preis</span><br>";
-    echo "<span><a href='./functions/products/product.php?ean=$zeile->ean'>Zur Produktseite</a></span><br>"; //nacher ersetzen mit div
+    echo "<span><a href='index.php?ean=$zeile->ean'>Zur Produktseite</a></span><br>";
     if (isset($_SESSION['userid'])) {
         echo "<span><a href='./functions/cart/cartupdate_do.php?ean=$zeile->ean'>In den Warenkorb legen</a></span>";}
         else {
