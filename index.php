@@ -31,29 +31,28 @@ include_once ("./functions/db.php");
 </div>
 <div class="container-fluid"> <!-- Include Bereich (Content) -->
 <?php
+$ean = $_GET["ean"];
 include_once("functions/db.php"); /*Datenbankverbindung herstellen*/
+if (isset($ean)) {
+    include ("./functions/products/product.php");
+};
     switch ($_GET["page"]) {
-            case "store":
-                include "./functions/store/index.php";
-                break;
-            case "news":
-                include "news.php";
-                break;
-            case "products":
-                include "./functions/products/index.php";
-                break;
-            case "users":
-                include "./functions/users/index.php";
-                break;
-            case "warenkorb":
-                include "warenkorb.php";
-                break;
-            default:
-                echo "Seite nicht gefunden";
-                die();
-                break;
-            }
-
+        case "store":
+            include "./functions/store/index.php";
+            break;
+        case "news":
+            include "news.php";
+            break;
+        case "products":
+            include "./functions/products/index.php";
+            break;
+        case "users":
+            include "./functions/users/index.php";
+            break;
+        case "warenkorb":
+            include "warenkorb.php";
+            break;
+    }
 ?>
 </div>
 

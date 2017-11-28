@@ -1,5 +1,5 @@
 <?php
-include_once ("./functions/users/admincheck.php") //Da nur Admins Produkte hinzufügen sollen
+include_once ("./functions/users/admincheck.php?ean") //Da nur Admins Produkte hinzufügen sollen
 ?>
 
 
