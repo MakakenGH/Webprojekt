@@ -32,7 +32,6 @@ include_once ("./functions/db.php");
 <div class="container-fluid"> <!-- Include Bereich (Content) -->
 <?php
 include_once("functions/db.php"); /*Datenbankverbindung herstellen*/
-if(isset($_GET["page"])) {
     switch ($_GET["page"]) {
             case "store":
                 include "./functions/store/index.php";
@@ -54,7 +53,7 @@ if(isset($_GET["page"])) {
                 die();
                 break;
             }
-    }
+
 ?>
 </div>
 
