@@ -1,8 +1,5 @@
 <?php
 session_start();
-include_once ("../db.php");
-include_once ("../../widgets/navigation.php");
-$ean = $_GET["ean"];
 $db = new PDO($dsn, $dbuser, $dbpass);
 $sql = "SELECT * FROM sortiment WHERE ean=$ean";
 $query = $db->prepare($sql);
@@ -13,7 +10,7 @@ if ($zeile = $query->fetchObject()) {
 
     $bildlg = strlen($zeile->bild);
     if ($bildlg >= 1) {
-        echo "<img src='../../files/uploads/$zeile->bild'/><br><br> \n";
+        echo "<img src='./files/uploads/$zeile->bild'/><br><br> \n";
     }
     else {
         echo "";
@@ -73,5 +70,4 @@ if(isset($username)) {
 ');
 }
 else echo ('Um Produkt zu bewerten bitte logge dich zuerst ein!');
-include_once ("../../widgets/footer.php");
 ?>
