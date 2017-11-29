@@ -1,8 +1,8 @@
 <?php
 session_start();
 
-$ean = $_POST("ean");
+$ean = $_GET["ean"];
 
 $_SESSION["cart"] = $ean;
 
-header("Location: ../../index.php");
+header("Location: ../../index.php?page=store&action=store");
