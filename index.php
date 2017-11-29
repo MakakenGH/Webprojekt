@@ -12,7 +12,7 @@
 <body id="body">
 <?php
 session_start();
-include_once ("./functions/db.php");
+include ("./functions/db.php");
 
 ?>
 <div class="container-fluid"><!-- Header -->
@@ -32,7 +32,6 @@ include_once ("./functions/db.php");
 <div class="container-fluid"> <!-- Include Bereich (Content) -->
 <?php
 $ean = $_GET["ean"];
-include_once("functions/db.php"); /*Datenbankverbindung herstellen*/
 if (isset($ean)) {
     include ("./functions/products/product.php");
 };
