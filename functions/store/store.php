@@ -10,7 +10,7 @@ $query->execute();
 echo "<div class='row'>";
 while ($zeile = $query->fetchObject()) {
 
-    echo "<div class='col-sm-4'>";
+    echo "<div class='col-sm-4 dashboard-panel-4'>";
     echo "<img class='img_store' src='./files/uploads/$zeile->bild'/><br>";
     echo "<span><b>$zeile->name</b></span><br>";
     echo "<span>$zeile->beschreibung</span><br>";
