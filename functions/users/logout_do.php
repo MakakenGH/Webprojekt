@@ -2,8 +2,8 @@
     <?php
     session_start();
     session_destroy();
-
-    echo "Logout erfolgreich";
+    $prev_url2 = $_SERVER['HTTP_REFERER'];
+    header ("Location: $prev_url2");
     ?>
 
 </div>

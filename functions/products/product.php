@@ -40,11 +40,11 @@ $amount = 0;
 $username = $_SESSION["userid"];
 
 while ($zeile2 = $query2->fetchObject()) {
-        echo "<b>$zeile2->username</b><br>";
-        echo "$zeile2->comment<br>";
-        echo "Bewertung: $zeile2->rating<br><br>";
-        $amount += count($zeile2->rating);
-        $allratings += $zeile2->rating;
+    echo "<b>$zeile2->username</b><br>";
+    echo "$zeile2->comment<br>";
+    echo "Bewertung: $zeile2->rating<br><br>";
+    $amount += count($zeile2->rating);
+    $allratings += $zeile2->rating;
 };
 
 if($amount != 0) {

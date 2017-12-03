@@ -9,8 +9,8 @@ try {
         echo "<form action='./functions/products/rateupdate_do.php' method='post'>";
         echo "<input type='hidden' name='ean' value='$zeile4->ean'/>";
         echo "<input type='hidden' name='username' value='$zeile4->username'/>";
-        echo "Kommentar: <textarea name='comment' rows='10' cols='50'>$zeile4->comment</textarea><br><br>";
-        echo "Bewertung: <input type='number' name='rating' value='$zeile4->rating' /><br>";
+        echo "Kommentar: <br><textarea name='comment' rows='10' cols='50'>$zeile4->comment</textarea><br><br>";
+        echo "Bewertung: <br><input type='number' name='rating' min=\"0\" max=\"100\" value='$zeile4->rating' /><br>";
         echo "<input type='submit' value='bearbeiten' />";
         echo "</form>";
 
