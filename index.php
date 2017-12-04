@@ -14,7 +14,7 @@
 <?php
 session_start();
 include ("./functions/db.php");
-
+$_SESSION['prevurl'] = $_SERVER['HTTP_REFERER'];
 ?>
 <div class="container-fluid"><!-- Header -->
 <ul class="ul_nav">

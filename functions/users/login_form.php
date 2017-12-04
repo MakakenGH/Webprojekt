@@ -1,3 +1,7 @@
+<?php
+$_SESSION['prevprevurl'] =  $_SERVER['HTTP_REFERER'];
+?>
+
 <div class="login_form">
     <h1>LOGIN</h1>
     <form action="./functions/users/login_do.php?login=1" method="post">
