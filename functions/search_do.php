@@ -8,7 +8,6 @@ $db = new PDO($dsn, $dbuser, $dbpass);
 
 $sql = "SELECT * FROM sortiment WHERE genre  LIKE  '%".$search."%' OR name LIKE '%".$search."%'";
 
-
 $query = $db->prepare($sql);
 $query->execute();
 
