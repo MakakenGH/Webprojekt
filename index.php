@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>DAMPF!</title>
-    <link rel="stylesheet" href="files/style/style.css">
     <style>
         @import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
     </style>
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="files/style/style.css">
 </head>
 <body id="body">
 <?php

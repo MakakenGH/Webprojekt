@@ -10,7 +10,7 @@ $query->execute();
 echo "<div class='row'>";
 while ($zeile = $query->fetchObject()) {
 
-    echo "<div class='col-sm-4 dashboard-panel-4'>";
+    echo "<div class='col-sm-4' id='store_defined'>";
     echo "<img class='img_store' src='./files/uploads/$zeile->bild'/><br>";
     echo "<span><b>$zeile->name</b></span><br>";
     echo "<span>$zeile->beschreibung</span><br>";
@@ -18,10 +18,9 @@ while ($zeile = $query->fetchObject()) {
     echo "<span>$zeile->preis</span><br>";
     echo "<span><a href='index.php?ean=$zeile->ean'>Zur Produktseite</a></span><br>";
     if (isset($_SESSION['userid'])) {
-        echo "<span><a href='./functions/cart/cartupdate_do.php?ean=$zeile->ean'>In den Warenkorb legen</a></span>";}
+        echo "<span><a class='button_orange' href='./functions/cart/cartupdate_do.php?ean=$zeile->ean'>In den Warenkorb legen</a></span>";}
         else {
-        echo "<span><a href='./functions/cart/cartupdatenologin_do.php?ean=$zeile->ean'>In den Warenenkorb legen</a></span>";
+        echo "<span><a class='button_orange' href='./functions/cart/cartupdatenologin_do.php?ean=$zeile->ean'>In den Warenenkorb legen</a></span>";
     }
     echo "</div><br><br>";}
 echo "</div>";
-?>
