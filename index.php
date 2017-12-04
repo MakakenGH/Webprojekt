@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>DAMPF!</title>
@@ -8,14 +9,17 @@
     </style>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="files/style/style.css">
 </head>
 <body id="body">
+
 <?php
 session_start();
 include ("./functions/db.php");
 $_SESSION['prevurl'] = $_SERVER['HTTP_REFERER'];
 ?>
+
 <div class="container-fluid"><!-- Header -->
 <ul class="ul_nav">
     <li style="background-color: darkorange;" class="li_nav"><a href="index.php">Home</a></li> <!-- Mit Logo zu ersetzen -->
@@ -55,7 +59,9 @@ if (isset($ean)) {
     }
 ?>
 </div>
-
+<div id='stars'></div>
+<div id='stars2'></div>
+<div id='stars3'></div>
 <div class="container-fluid"> <!-- Footer -->
     <div class="row">
         <div class="col"><b>Rechtliches</b>
