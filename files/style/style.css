@@ -4,12 +4,20 @@
     background-image: url(https://wallpapertag.com/wallpaper/full/7/9/b/342689-universe-background-1920x1080-ipad.jpg);
 }
 
+#include_area {
+    margin-top: 50px;
+}
+
 .ul_nav {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
     background-color: #333;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100000;
 }
 
 .li_nav {
@@ -53,4 +61,6 @@
     width:90px; /* Breite des Buttons */
     height:22px; /* Höhe des Buttons */
     background:darkorange; /* Hintergrundfarbe */
+    text-decoration: none;
+    margin: 2px;
 }

@@ -30,7 +30,7 @@ $_SESSION['prevurl'] = $_SERVER['HTTP_REFERER'];
     <li class="li_nav"><a href="./functions/cart/cart_show.php" target='_blank'>Warenkorb</a></li>
 </ul>
 </div>
-<div class="container-fluid"> <!-- Include Bereich (Content) -->
+<div class="container-fluid" id="include_area"> <!-- Include Bereich (Content) -->
 <?php
 $ean = $_GET["ean"];
 if (isset($ean)) {
