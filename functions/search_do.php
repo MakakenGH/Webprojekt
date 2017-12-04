@@ -11,6 +11,7 @@ $sql = "SELECT * FROM sortiment WHERE genre  LIKE  '%".$search."%' OR name LIKE 
 $query = $db->prepare($sql);
 $query->execute();
 
+
 while ($zeile = $query->fetchObject()) {
     echo "<h1>$zeile->name</h1> <br/><br/> \n";
     echo "$zeile->genre<br>";
