@@ -3,17 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <title>DAMPF!</title>
-    <link rel="stylesheet" href="files/style/style.css">
     <style>
         @import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
     </style>
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="files/style/style.css">
 </head>
 <body id="body">
 <?php
 session_start();
-include_once ("./functions/db.php");
-
+include ("./functions/db.php");
+$_SESSION['prevurl'] = $_SERVER['HTTP_REFERER'];
 ?>
 <div class="container-fluid"><!-- Header -->
 <ul class="ul_nav">
@@ -32,7 +33,6 @@ include_once ("./functions/db.php");
 <div class="container-fluid"> <!-- Include Bereich (Content) -->
 <?php
 $ean = $_GET["ean"];
-include_once("functions/db.php"); /*Datenbankverbindung herstellen*/
 if (isset($ean)) {
     include ("./functions/products/product.php");
 };

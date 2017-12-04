@@ -15,7 +15,7 @@ if(!empty($rating)) {
     $db = null;
     if($result) {
         echo 'Danke für deine Bewertung!';
-        header('Location: https://mars.iuk.hdm-stuttgart.de/~nf025/functions/products/product.php?ean='.$ean);
+        header('Location: ../../index.php?ean='.$ean);
         $showFormular = false;
     } else {
         echo 'Beim Abspeichern ist ein Fehler aufgetreten<br>';
