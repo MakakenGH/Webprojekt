@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>DAMPF!</title>
@@ -8,17 +9,21 @@
     </style>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="files/style/style.css">
 </head>
 <body id="body">
+
 <?php
 session_start();
 include ("./functions/db.php");
 $_SESSION['prevurl'] = $_SERVER['HTTP_REFERER'];
 ?>
+
 <div class="container-fluid"><!-- Header -->
-<ul class="ul_nav">
-    <li style="background-color: darkorange;" class="li_nav"><a href="index.php">Home</a></li> <!-- Mit Logo zu ersetzen -->
+<div class="navbar">
+    <div id="logo"><a href="index.php"><img style="height: 50px; width: auto;" src="files/uploads/logo_small.png" alt="HOME"></a></div>
+    <ul class="ul_nav">
     <li class="li_nav"><a href="?page=store&action=store">Store</a></li>
     <li class="li_nav"><a href="?news">News</a></li>
     <li class="li_nav"><a href="?page=products&action=create">Produkt hinzufügen</a></li>
@@ -30,7 +35,9 @@ $_SESSION['prevurl'] = $_SERVER['HTTP_REFERER'];
     <li class="li_nav"><a href="./functions/cart/cart_show.php" target='_blank'>Warenkorb</a></li>
 </ul>
 </div>
-<div class="container-fluid"> <!-- Include Bereich (Content) -->
+
+</div>
+<div class="container-fluid" id="include_area"> <!-- Include Bereich (Content) -->
 <?php
 $ean = $_GET["ean"];
 if (isset($ean)) {
@@ -55,10 +62,12 @@ if (isset($ean)) {
     }
 ?>
 </div>
-
+<div id='stars'></div>
+<div id='stars2'></div>
+<div id='stars3'></div>
 <div class="container-fluid"> <!-- Footer -->
-    <div class="row">
-        <div class="col"><b>Rechtliches</b>
+    <div class="row" id="footer_defined">
+        <div class="col-sm-4"><b>Rechtliches</b>
     <ul>
         <li>Impressum</li>
         <li>Datenschutz</li>
@@ -68,7 +77,7 @@ if (isset($ean)) {
         <li>Versand- und Zahlungsarten</li>
     </ul>
     </div>
-    <div class="col">
+    <div class="col-sm-4">
         <b>Informationen</b>
         <ul>
             <li>Über uns</li>
@@ -76,7 +85,7 @@ if (isset($ean)) {
             <li>Karriere</li>
         </ul>
     </div >
-    <div class="col">
+    <div class="col-sm-4">
         <b>Social Media</b>
         <ul>
             <li>Facebook</li>
