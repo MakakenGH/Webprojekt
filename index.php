@@ -21,8 +21,9 @@ $_SESSION['prevurl'] = $_SERVER['HTTP_REFERER'];
 ?>
 
 <div class="container-fluid"><!-- Header -->
-<ul class="ul_nav">
-    <li style="background-color: darkorange;" class="li_nav"><a href="index.php">Home</a></li> <!-- Mit Logo zu ersetzen -->
+<div class="navbar">
+    <div id="logo"><a href="index.php"><img style="height: 50px; width: auto;" src="files/uploads/logo_small.png" alt="HOME"></a></div>
+    <ul class="ul_nav">
     <li class="li_nav"><a href="?page=store&action=store">Store</a></li>
     <li class="li_nav"><a href="?news">News</a></li>
     <li class="li_nav"><a href="?page=products&action=create">Produkt hinzufügen</a></li>
@@ -33,6 +34,8 @@ $_SESSION['prevurl'] = $_SERVER['HTTP_REFERER'];
     <li class="li_nav"><div id="searchbar"><?php include_once ("./functions/search.php");?></div></li>
     <li class="li_nav"><a href="./functions/cart/cart_show.php" target='_blank'>Warenkorb</a></li>
 </ul>
+</div>
+
 </div>
 <div class="container-fluid" id="include_area"> <!-- Include Bereich (Content) -->
 <?php
