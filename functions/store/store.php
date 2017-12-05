@@ -1,4 +1,8 @@
 <?php
+include_once ("./widgets/slide.php");
+?>
+
+<?php
 session_start();
 include_once("./functions/db.php");
 
