@@ -63,8 +63,8 @@ if (isset($ean)) {
 <div id='stars2'></div>
 <div id='stars3'></div>
 <div class="container-fluid"> <!-- Footer -->
-    <div class="row">
-        <div class="col"><b>Rechtliches</b>
+    <div class="row" id="footer_defined">
+        <div class="col-sm-4"><b>Rechtliches</b>
     <ul>
         <li>Impressum</li>
         <li>Datenschutz</li>
@@ -74,7 +74,7 @@ if (isset($ean)) {
         <li>Versand- und Zahlungsarten</li>
     </ul>
     </div>
-    <div class="col">
+    <div class="col-sm-4">
         <b>Informationen</b>
         <ul>
             <li>Über uns</li>
@@ -82,7 +82,7 @@ if (isset($ean)) {
             <li>Karriere</li>
         </ul>
     </div >
-    <div class="col">
+    <div class="col-sm-4">
         <b>Social Media</b>
         <ul>
             <li>Facebook</li>

@@ -4,23 +4,17 @@ $db = new PDO($dsn, $dbuser, $dbpass);
 $sql = "SELECT * FROM sortiment WHERE ean=$ean";
 $query = $db->prepare($sql);
 $query->execute();
+echo "<div class='row'>";
+echo "<div class='col-sm-6'>";
 if ($zeile = $query->fetchObject()) {
+
+
     echo "<h1>$zeile->name</h1> \n";
     echo "$zeile->genre<br><br>";
-
-    $bildlg = strlen($zeile->bild);
-    if ($bildlg >= 1) {
-        echo "<img src='./files/uploads/$zeile->bild'/><br><br> \n";
-    }
-    else {
-        echo "";
-    }
-
     echo "$zeile->beschreibung <br/><br/> \n";
-
-
     echo "Preis: $zeile->preis € / Betacritic: $zeile->rating <br><br>";
     echo "$zeile->ean <br><br>";
+
 
 
 } else {
@@ -87,4 +81,14 @@ if ($check_ifuserexist == false) {
             ');
     } else echo('Um Produkt zu bewerten bitte logge dich zuerst ein!');
 } else include_once('./functions/products/rateupdate_form.php');
+echo "</div><div class='col-sm-6'>";
+
+$bildlg = strlen($zeile->bild);
+if ($bildlg >= 1) {
+    echo "<img class='img_store' src='./files/uploads/$zeile->bild'/><br><br> \n";
+}
+else {
+    echo "";
+}
+echo "</div></div>";
 ?>
