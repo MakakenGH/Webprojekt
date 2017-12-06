@@ -4,14 +4,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <body>
-
 <h2 class="w3-center">Neuveröffentlichungen</h2>
 
 <div class="w3-content w3-display-container">
-    <img class="mySlides" src="./files/uploads/gso.png" style="width:100%">
-    <img class="mySlides" src="./files/uploads/fafi18.png" style="width:100%">
-    <img class="mySlides" src="./files/uploads/hitmann3.png" style="width:100%">
-    <img class="mySlides" src="./files/uploads/titris3.png" style="width:100%">
+<?php
+$db = new PDO($dsn, $dbuser, $dbpass);
+$sql = "SELECT * FROM sortiment ORDER BY rating DESC";
+$query = $db->prepare($sql);
+$query->execute();
+$counter = 1;
+while (($zeile = $query->fetchObject()) and ($counter < 4)) {
+    echo "<img class='mySlides' src='./files/uploads/$zeile->bild' style='width:100%'>";
+    $counter += 1;
+}
+?>
 
     <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
     <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
