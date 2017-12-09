@@ -21,7 +21,7 @@ require_once ("./functions/backend/admincheck.php");
 $_SESSION['prevurl'] = $_SERVER['REQUEST_URI'];
 ?>
 
-<div class="container-fluid"><!-- Header - -->
+<div class="container-fluid"><!-- Header --->
     <ul>
     <li><a href="index.php">Frontend Ansicht</a></li>
     <li><a href="?page=dashboard">Dashboard</a></li>
