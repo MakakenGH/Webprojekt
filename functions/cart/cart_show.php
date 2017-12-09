@@ -6,16 +6,18 @@ include_once("../db.php");
 if (isset($_SESSION['userid'])) {
 
     $username = $_SESSION['userid'];
-    echo $username;
+
 $db = new PDO($dsn, $dbuser, $dbpass);
 $sql = $db->query("SELECT ean FROM cart WHERE username='" . $username."'");
 $results = $sql->fetchAll();
 
-echo $results;
+echo $results[0][0];
+var_dump(get_defined_vars());
 
-/*$query = $db->prepare($sql);
-$query->execute();*/
-
+    $db = new PDO($dsn, $dbuser, $dbpass);
+    $sql = "SELECT * FROM sortiment WHERE ean=$results";
+    $query = $db->prepare($sql);
+    $query->execute();
 
 
     while ($zeile = $query->fetchObject()) {
