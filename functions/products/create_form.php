@@ -1,4 +1,5 @@
 <?php
+$_SESSION['prevprevurl'] =  $_SERVER['HTTP_REFERER'];
 include_once ("./functions/users/admincheck.php") //Da nur Admins Produkte hinzufügen sollen
 ?>
 

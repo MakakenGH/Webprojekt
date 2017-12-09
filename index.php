@@ -60,6 +60,10 @@ if (isset($ean)) {
             include "warenkorb.php";
             break;
     }
+
+
+
+
 ?>
 </div>
 <div id='stars'></div>
