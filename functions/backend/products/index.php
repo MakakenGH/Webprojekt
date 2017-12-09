@@ -4,8 +4,8 @@ if (isset($_GET["action"]))
 {
 
     switch ($_GET["action"]) {
-        case "view":
-            include "product.php";
+        case "overview":
+            include "./functions/backend/products/overview.php";
             break;
         case "edit":
             include "update_form.php";
@@ -16,16 +16,26 @@ if (isset($_GET["action"]))
         case "create":
             include "./functions/backend/products/create_form.php";
             break;
-        default:
-            echo "Seite nicht gefunden";
-            die();
+    }
+
+}
+else
+{
+
+if (isset($_GET["editmode"]))
+{
+
+    switch ($_GET["editmode"]) {
+        case "true":
+            include "./functions/backend/products/overview_edit.php";
             break;
-
-
+        case "false":
+            include "./functions/backend/products/overview.php";
+            break;
     }
 
 }
 else
 {
     echo "Seite nicht gefunden";
-}
+}};

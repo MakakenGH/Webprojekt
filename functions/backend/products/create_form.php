@@ -3,7 +3,7 @@ $_SESSION['prevprevurl'] =  $_SERVER['HTTP_REFERER'];
 ?>
 
 
-    <form action="./functions/backend/products/create_do.php" method="post" enctype="multipart/form-data" class="form_1">
+    <form action="./functions/backend/products/create_do.php" method="post" enctype="multipart/form-data">
 
         <input type="text" name="name" placeholder="Artikelname" /><br>
         <input type="text" name="preis" placeholder="Preis" /><br>

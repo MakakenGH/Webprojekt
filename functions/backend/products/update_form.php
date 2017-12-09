@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <head>
-    <meta charset="utf-8">
 </head>
 <body>
 <?php
-include_once ("./system/users/check.php")
+include_once ("./functions/backend/admincheck.php")
 ?>
 <?php
+	
 try {
-    include_once("userdata.php");
+    include_once("./functions/db.php");
     $id = (int)$_GET["id"];
     $db = new PDO($dsn, $dbuser, $dbpass);
     $sql = "SELECT * FROM cms_posts WHERE id=$id";
@@ -16,7 +16,6 @@ try {
     $query->execute();
     if ($zeile = $query->fetchObject()) {
 
-        echo "<div class='div_2'>";
         echo "<h1 id='h1_div2'>Eintrag $zeile->id</h1>";
         echo "<form action='./system/post/update_do.php' method='post' class='form_1'>";
         echo "<input type='hidden' name='id' value='$zeile->id' />";
@@ -33,7 +32,6 @@ try {
         }
         echo "<input type='submit' value='bearbeiten' />";
         echo "</form>";
-        echo "</div>";
 
     } else {
         echo "Error";

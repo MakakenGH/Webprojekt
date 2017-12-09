@@ -25,9 +25,10 @@ $_SESSION['prevurl'] = $_SERVER['REQUEST_URI'];
     <ul>
     <li><a href="index.php">Frontend Ansicht</a></li>
     <li><a href="?page=dashboard">Dashboard</a></li>
+    <li><a href="?page=products&action=overview">Produktübersicht</a></li>
     <li><a href="?page=products&action=create">Produkt hinzufügen</a></li>
     <li><a href="?page=users&action=admincreate">Admin hinzufügen</a></li>
-        <li class="li_nav"><div id="searchbar"><?php include_once ("./functions/backend/products/adminsearch_do.php");?></div></li><br><br>
+        <li class="li_nav"><div id="searchbar"><?php include_once ("./functions/backend/products/adminsearch_form.php");?></div></li><br><br>
     <li><a href="?page=users&action=logout">Logout</a></li>
 </ul>
 </div>
@@ -40,13 +41,8 @@ if (isset($ean)) {
     include ("./functions/products/product.php");
 };
 
+
     switch ($_GET["page"]) {
-        case "store":
-            include "./functions/store/index.php";
-            break;
-        case "news":
-            include "news.php";
-            break;
         case "products":
             include "./functions/backend/products/index.php";
             break;
