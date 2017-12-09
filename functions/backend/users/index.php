@@ -1,11 +1,13 @@
 <?php
-
 if (isset($_GET["action"]))
 {
 
     switch ($_GET["action"]) {
-        case "view":
-            include "product.php";
+        case "logout":
+            include "logout_do.php";
+            break;
+        case "admincreate":
+            include "./functions/backend/users/admincreate_form.php";
             break;
         default:
             echo "Seite nicht gefunden";
