@@ -39,7 +39,11 @@ $_SESSION['prevurl'] = $_SERVER['REQUEST_URI'];
 $ean = $_GET["ean"];
 if (isset($ean)) {
     include ("./functions/products/product.php");
-};	
+};
+$search=$_POST["search"];
+if(isset($search)) {
+	include ("./functions/backend/products/adminsearch_do.php");
+}
     switch ($_GET["page"]) {
         case "products":
             include "./functions/backend/products/index.php";
@@ -54,8 +58,7 @@ if (isset($ean)) {
             include "./functions/backend/dashboard.php";
             break;
     }
-
-
+	
 ?>
 </div>
 <div id='stars'></div>

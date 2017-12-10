@@ -31,4 +31,4 @@ while ($zeile = $query->fetchObject()) {
         echo "</form>";
 
 }
-
+echo $search;

@@ -26,11 +26,14 @@ if (isset($_GET["editmode"]))
 {
 
     switch ($_GET["editmode"]) {
-        case "true":
+        case "overview":
             include "./functions/backend/products/overview_edit.php";
             break;
         case "false":
             include "./functions/backend/products/overview.php";
+            break;
+		 case "search":
+            include "./functions/backend/products/adminsearch_edit.php";
             break;
     }
 

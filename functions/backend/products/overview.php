@@ -2,7 +2,7 @@
 session_start();
 include_once("./functions/db.php");
 
-echo "<span><a href='?page=products&editmode=true'>Bearbeitungsmodus aktivieren</a></span><br>";
+echo "<span><a href='?page=products&editmode=overview'>Bearbeitungsmodus aktivieren</a></span><br>";
 
 $db = new PDO($dsn, $dbuser, $dbpass);
 $sql = "SELECT * FROM sortiment ORDER BY ean ASC";
