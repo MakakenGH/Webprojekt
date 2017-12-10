@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 if (isset($_GET["action"]))
 {
 
@@ -32,8 +32,11 @@ if (isset($_GET["editmode"]))
         case "false":
             include "./functions/backend/products/overview.php";
             break;
-		 case "search":
+		case "search":
             include "./functions/backend/products/adminsearch_edit.php";
+            break;
+		case "false2":
+            include "./functions/backend/products/adminsearch_afteredit.php";
             break;
     }
 

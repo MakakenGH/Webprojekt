@@ -1,11 +1,11 @@
 <?php
 session_start();
 include_once "./functions/db.php";
-$_SESSION["search_save"] = $search;
+$search2 = $_SESSION["search_save"];
 
 $db = new PDO($dsn, $dbuser, $dbpass);
 
-$sql = "SELECT * FROM sortiment WHERE genre  LIKE  '%".$search."%' OR name LIKE '%".$search."%'";
+$sql = "SELECT * FROM sortiment WHERE genre  LIKE  '%".$search2."%' OR name LIKE '%".$search2."%'";
 
 
 $query = $db->prepare($sql);
