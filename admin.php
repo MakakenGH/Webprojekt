@@ -39,9 +39,7 @@ $_SESSION['prevurl'] = $_SERVER['REQUEST_URI'];
 $ean = $_GET["ean"];
 if (isset($ean)) {
     include ("./functions/products/product.php");
-};
-
-
+};	
     switch ($_GET["page"]) {
         case "products":
             include "./functions/backend/products/index.php";
@@ -56,8 +54,6 @@ if (isset($ean)) {
             include "./functions/backend/dashboard.php";
             break;
     }
-
-
 
 
 ?>
