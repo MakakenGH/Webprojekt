@@ -8,7 +8,7 @@ if (isset($_SESSION['userid'])) {
     $username = $_SESSION['userid'];
 
 $db = new PDO($dsn, $dbuser, $dbpass);
-$sql = $db->query("SELECT ean FROM cart WHERE username='" . $username."'");
+$sql = $db->query("SELECT ean AND anzahl FROM cart WHERE username='" . $username."'");
 $results = $sql->fetchAll();
 
 //echo $results[0][0];
