@@ -54,6 +54,9 @@ if (isset($ean)) {
         case "users":
             include "./functions/users/index.php";
             break;
+        case "safedata":
+            include "./files/Footer/Datenschutz.html";
+            break;
         case "warenkorb":
             include "warenkorb.php";
             break;
@@ -72,7 +75,7 @@ if (isset($ean)) {
         <div class="col-sm-4"><b>Rechtliches</b>
     <ul>
         <li>Impressum</li>
-        <li>Datenschutz</li>
+        <li><a href="?page=safedata">Datenschutz</a></li>
         <li>AGB</li>
         <li>FAQ</li>
         <li>Wiederrufsrecht</li>
