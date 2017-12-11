@@ -26,11 +26,9 @@ $_SESSION['prevurl'] = $_SERVER['HTTP_REFERER'];
     <ul class="ul_nav">
     <li class="li_nav"><a href="?page=store&action=store">Store</a></li>
     <li class="li_nav"><a href="?news">News</a></li>
-    <li class="li_nav"><a href="?page=products&action=create">Produkt hinzufügen</a></li>
     <li class="li_nav"><a href="?page=users&action=login">Login</a></li>
     <li class="li_nav"><a href="?page=users&action=register">Registrieren</a></li>
     <li class="li_nav"><a href="?page=users&action=logout">Logout</a></li>
-    <li class="li_nav"><a href="?page=users&action=admincreate">Admin hinzufügen</a></li>
     <li class="li_nav"><div id="searchbar"><?php include_once ("./functions/search.php");?></div></li>
     <li class="li_nav"><a href="./functions/cart/cart_show.php" target='_blank'>Warenkorb</a></li>
 </ul>
