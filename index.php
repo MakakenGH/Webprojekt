@@ -71,7 +71,8 @@ if (isset($ean)) {
     <div class="row" id="footer_defined">
         <div class="col-sm-4"><b>Rechtliches</b>
     <ul>
-        <li>Impressum</li>
+        <li> <a href="?page=rechtliches&action=impressum">Impressum</a></li>
+
         <li>Datenschutz</li>
         <li>AGB</li>
         <li>FAQ</li>
@@ -95,7 +96,16 @@ if (isset($ean)) {
             <li>Twitter</li>
         </ul>
     </div>
-</div>
+        <?php
+        switch ($_GET["page"]) {
+            case "rechtliches":
+                include "functions/rechtliches/impressum.php";
+
+        }?>
+
+
+
+
 
 
 </body>
