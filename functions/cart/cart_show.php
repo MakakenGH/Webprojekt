@@ -8,18 +8,20 @@ if (isset($_SESSION['userid'])) {
     $username = $_SESSION['userid'];
 
 $db = new PDO($dsn, $dbuser, $dbpass);
-$sql = $db->query("SELECT ean AND anzahl FROM cart WHERE username='" . $username."'");
+$sql = $db->query("SELECT ean,anzahl FROM cart WHERE username='" . $username."'");
 $results = $sql->fetchAll();
 
 //echo $results[0][0];
-var_dump(get_defined_vars());
-
+//var_dump(get_defined_vars());
+echo "<br>";
 foreach ($results as $eansingle) {
-    $ean = $eansingle["ean"];
-
+    $ean = $eansingle['ean'];
+    print_r($eansingle);
+    echo $ean;
+    echo $eansingle['anzahl'];
     $db = new PDO($dsn, $dbuser, $dbpass);
-    $sql = $db->query("SELECT * FROM sortiment WHERE ean='" . $ean."'");
-    $query = $sql->fetchAll();
+    $sql = $db->query("SELECT * FROM sortiment WHERE ean='".$ean."'");
+    $query = $sql->fetch();
 
     $artikelname = $query['name'];
     echo $artikelname;
