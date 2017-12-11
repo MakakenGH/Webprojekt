@@ -9,7 +9,7 @@
 <div class="w3-content w3-display-container">
 <?php
 $db = new PDO($dsn, $dbuser, $dbpass);
-$sql = "SELECT * FROM sortiment ORDER BY rating DESC";
+$sql = "SELECT * FROM sortiment ORDER BY ean DESC";
 $query = $db->prepare($sql);
 $query->execute();
 $counter = 1;
