@@ -22,10 +22,6 @@ while ($zeile = $query->fetchObject()) {
     echo "<span>$zeile->rating</span><br>";
     echo "<span>$zeile->preis</span><br>";
     echo "<span><a href='?ean=$zeile->ean'>Zur Produktseite</a></span><br>";
-    if (isset($_SESSION['userid'])) {
-        echo "<form action='./functions/cart/cartupdate_do.php' method='get'><input type='hidden' value='$zeile->ean' name='ean'><input type='number' value='1' name='anzahl'><input type='submit' value='In den Warenkorb legen'></form>";}
-        else {
-        echo "<span><a class='button_orange' href='./functions/cart/cartupdatenologin_do.php?ean=$zeile->ean'>In den Warenenkorb legen</a></span>";
-    }
+    echo "<form action='./functions/cart/cartupdate_do.php' method='get'><input type='hidden' value='$zeile->ean' name='ean'><input type='number' value='1' name='anzahl'><input type='submit' value='In den Warenkorb legen'></form>";
     echo "</div></div><br><br>";}
 echo "</div>";
