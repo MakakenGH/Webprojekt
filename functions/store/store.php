@@ -1,8 +1,6 @@
 <?php
 include_once ("./widgets/slide.php");
-?>
 
-<?php
 session_start();
 include_once("./functions/db.php");
 
@@ -56,7 +54,8 @@ while ($zeile = $query->fetchObject()) {
     echo "<img class='img_store' src='./files/uploads/$zeile->bild'/><br>";
     echo "<div class='store_text'>";
     echo "<span><b>$zeile->name</b></span><br>";
-    echo "<span>$zeile->beschreibung</span><br>";
+    echo "<button id='beschreibung_button_store' class='button_orange'>Beschreibung einblenden</button>";
+    echo "<span id='beschreibung_store'>$zeile->beschreibung</span><br>";
     echo "<span>$zeile->rating</span><br>";
     echo "<span>$zeile->preis</span><br>";
     echo "<span><a href='?ean=$zeile->ean'>Zur Produktseite</a></span><br>";
