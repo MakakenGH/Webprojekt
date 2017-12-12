@@ -30,7 +30,7 @@ $_SESSION['prevurl'] = $_SERVER['HTTP_REFERER'];
     <li class="li_nav"><a href="?page=users&action=register">Registrieren</a></li>
     <li class="li_nav"><a href="?page=users&action=logout">Logout</a></li>
     <li class="li_nav"><div id="searchbar"><?php include_once ("./functions/search.php");?></div></li>
-    <li class="li_nav"><a href="./functions/cart/cart_show.php" target='_blank'>Warenkorb</a></li>
+    <li class="li_nav"><a href="?page=warenkorb">Warenkorb</a></li>
 </ul>
 </div>
 
@@ -58,7 +58,7 @@ if (isset($ean)) {
             include "./files/Footer/Datenschutz.html";
             break;
         case "warenkorb":
-            include "warenkorb.php";
+            include "./functions/cart/cart_show.php";
             break;
     }
 
