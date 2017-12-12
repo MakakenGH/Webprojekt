@@ -95,12 +95,10 @@ body {
 }
 
 .button_orange {
-    padding:10px; /* Innenabstand der Schrift */
-    width:90px; /* Breite des Buttons */
-    height:22px; /* Höhe des Buttons */
-    background:darkorange; /* Hintergrundfarbe */
+    background:darkorange;
     text-decoration: none;
-    margin: 2px;
+    border-color: darkorange;
+    color: white;
 }
 
 

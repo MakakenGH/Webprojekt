@@ -27,19 +27,25 @@ foreach ($results as $eansingle) {
     echo "<span><b>$artikelname</b></span>";
     echo "<br>";
     echo "<span><b>$artikelpreis</b></span>";
+    echo "<form action='functions/cart/cart_delete.php' method='post'><input type='hidden' value='$ean' name='ean'><input type='submit' class='button_orange' value='Löschen'></form>";
     echo "<br><br>";
-    echo "<span>SUMME: </span>"
 }
+
+    $sum = 0;
+
+    foreach($results as $num => $values) {
+        $sum += $values['preis'];
+        echo $sum;
+    }
 
 } else {
 
-    $cart = $_SESSION['cart'];
-    echo $cart[0][1];
+   /* $cart = $_SESSION['cart'];
 
-
-    /*foreach ($results as $eansingle) {
-        $ean = $eansingle['ean'];
-        $anzahl = $eansingle['anzahl'];
+    foreach ($cart as $products) {
+        foreach ($products as $eansingle2) {
+            echo $eansingle2;
+        }
 
     }*/
 }
