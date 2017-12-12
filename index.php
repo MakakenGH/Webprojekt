@@ -61,10 +61,6 @@ if (isset($ean)) {
             include "./functions/cart/cart_show.php";
             break;
     }
-
-
-
-
 ?>
 </div>
 <div id='stars'></div>
