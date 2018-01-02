@@ -101,6 +101,13 @@ body {
     color: white;
 }
 
+#beschreibung_store {
+}
+
+.carttable {
+    cellpadding: 20px;
+}
+
 
 #stars {
     content:"e";
