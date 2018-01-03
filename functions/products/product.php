@@ -14,6 +14,7 @@ if ($zeile = $query->fetchObject()) {
     echo "$zeile->beschreibung <br/><br/> \n";
     echo "Preis: $zeile->preis € / Betacritic: $zeile->rating <br><br>";
     echo "$zeile->ean <br><br>";
+    $genre = $zeile->genre;
 
 
 
@@ -91,4 +92,23 @@ else {
     echo "";
 }
 echo "</div></div>";
+
+echo "<br><br>Ähnliche Spiele:<br>";
+
+$db4 = new PDO($dsn, $dbuser, $dbpass);
+$sql4 = "SELECT * FROM sortiment WHERE genre='".$genre."' AND ean != '".$ean."'";
+$query4 = $db4->prepare($sql4);
+$query4->execute();
+
+while ($zeile4 = $query4->fetchObject()) {
+    echo "<a href='?ean=$zeile4->ean'>";
+    echo "<img class='img_store' src='./files/uploads/$zeile4->bild'/><br> \n";
+    echo "</a>";
+    echo "$zeile4->name<br>";
+    echo "<span><a href='?ean=$zeile4->ean'>Zur Produktseite</a></span><br><br>";
+}
+
+
+
+
 ?>

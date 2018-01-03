@@ -51,7 +51,9 @@ echo "<div class='row'>";
 while ($zeile = $query->fetchObject()) {
 
     echo "<div class='col-sm-4' id='store_defined'>";
+    echo "<a href='?ean=$zeile->ean'>";
     echo "<img class='img_store' src='./files/uploads/$zeile->bild'/><br>";
+    echo "</a>";
     echo "<div class='store_text'>";
     echo "<span><b>$zeile->name</b></span><br>";
     echo "<button id='beschreibung_button_store' class='button_orange'>Beschreibung einblenden</button>";
