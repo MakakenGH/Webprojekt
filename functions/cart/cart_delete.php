@@ -1,12 +1,15 @@
 <?php
+session_start();
+
 include_once("../db.php");
 
 $ean = $_POST['ean'];
 $anzahl = $_POST['anzahl'];
+$username = $_SESSION['userid'];
 
 $db = new PDO($dsn, $dbuser, $dbpass);
 
-$sql = "UPDATE cart SET anzahl = anzahl -'".$anzahl."'WHERE ean = '".$ean."'";
+$sql = "UPDATE cart SET anzahl = anzahl -'".$anzahl."'WHERE ean = '".$ean."' AND username = '".$username."'";
 $query = $db->prepare($sql);
 $query->execute();
 
