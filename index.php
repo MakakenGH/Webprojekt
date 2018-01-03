@@ -53,6 +53,9 @@ if (isset($ean)) {
         case "products":
             include "./functions/products/index.php";
             break;
+        case "":
+            include "./widgets/slide.php";
+            break;
         case "users":
             include "./functions/users/index.php";
             break;
