@@ -1,8 +1,6 @@
 <?php
 session_start();
 
-include_once("../db.php");
-
 if (isset($_SESSION['userid'])) {
 
     $username = $_SESSION['userid'];
@@ -11,61 +9,47 @@ $db = new PDO($dsn, $dbuser, $dbpass);
 $sql = $db->query("SELECT ean,anzahl FROM cart WHERE username='" . $username."'");
 $results = $sql->fetchAll();
 
-//echo $results[0][0];
-//var_dump(get_defined_vars());
-echo "<br>";
+    echo "<div class='table-responsive'>";
+    echo "<table class='table'>";
+    echo "<thead><tr><th>Bild</th><th>Name</th><th>Anzahl</th><th>Einzelpreis</th><th>Gesamtpreis</th><th>Löschen</th></tr></thead>";
+
 foreach ($results as $eansingle) {
     $ean = $eansingle['ean'];
-    print_r($eansingle);
-    echo $ean;
-    echo $eansingle['anzahl'];
+    $anzahl = $eansingle['anzahl'];
+
     $db = new PDO($dsn, $dbuser, $dbpass);
-    $sql = $db->query("SELECT * FROM sortiment WHERE ean='".$ean."'");
-    $query = $sql->fetch();
+
+    $sqltable = "SELECT s.name, s.bild, s.preis, s.preis * c.anzahl as total FROM sortiment s, cart c WHERE ean='".$ean."'";
+    $preparedtable = $db->prepare($sqltable);
+    $preparedtable->execute();
+    $query = $preparedtable->fetchAll(PDO::FETCH_ASSOC);
 
     $artikelname = $query['name'];
-    echo $artikelname;
+    $artikelbild = $query['bild'];
+    $artikelpreis = $query['preis'];
+    $gesamtpreis= $query2['total'];
 
-   /* echo "<div>";
-    echo "<img src='./files/uploads/$query->bild'/>&nbsp;";
-    echo "<span><b>$query->name</b></span>&nbsp;";
-    echo "<span>$query->beschreibung</span>&nbsp;";
-    echo "<span>$query->rating</span>&nbsp;";
-    echo "<span>$query->preis</span>&nbsp;";
-    echo "</div><br><br>";*/
+    echo "<tbody>";
+    echo "<tr>";
+    echo "<td><img style='width: 200px; height: auto;' src='files/uploads/$artikelbild'></td>";
+    echo "<td><b>$artikelname</b></td>";
+    echo "<td>$anzahl</td>";
+    echo "<td><b>$artikelpreis</b></td>";
+    echo "<td><b>$gesamtpreis</b></td>";
+    echo "<td><form action='functions/cart/cart_delete.php' method='post'><input type='hidden' value='$ean' name='ean'><input type='submit' class='button_orange' value='Löschen'></form></td>";
+    echo "</tr>";
+    echo "</tbody>";
+
 }
+    echo "</table>";
+    echo "</div>";
 
-
-   /* $db = new PDO($dsn, $dbuser, $dbpass);
-    $sql = "SELECT * FROM sortiment WHERE ean=$results";
-    $query = $db->prepare($sql);
-    $query->execute();
-
-
-    while ($zeile = $query->fetchObject()) {
-    echo "<div>";
-    echo "<img src='./files/uploads/$zeile->bild'/>&nbsp;";
-    echo "<span><b>$zeile->name</b></span>&nbsp;";
-    echo "<span>$zeile->beschreibung</span>&nbsp;";
-    echo "<span>$zeile->rating</span>&nbsp;";
-    echo "<span>$zeile->preis</span>&nbsp;";
-    echo "</div><br><br>";}*/
+    $sqltotal = $db->query('SELECT SUM(s.price * c.anzahl) as totalSum FROM sortiment s, cart c WHERE c.ean = s.ean AND c.username = "'.$username.'"');
+    $totalsum = $sqltotal->fetchAll(PDO::FETCH_ASSOC);
+    echo money_format('%.2n', $totalsum[0]["totalSum"]);
 
 } else {
 
-    $ean = $_SESSION["cart"];
+    echo "<div>Um diese Funktion nutzen zu können loggen Sie sich bitte ein.<br> <a href='?page=users&action=login'><button class='button_orange'>zum Login</button></a></div>";
 
-    $db = new PDO($dsn, $dbuser, $dbpass);
-    $sql = "SELECT * FROM sortiment WHERE ean=$ean";
-    $query = $db->prepare($sql);
-    $query->execute();
-
-    while ($zeile = $query->fetchObject()) {
-        echo "<div>";
-        echo "<img src='./files/uploads/$zeile->bild'/>&nbsp;";
-        echo "<span><b>$zeile->name</b></span>&nbsp;";
-        echo "<span>$zeile->beschreibung</span>&nbsp;";
-        echo "<span>$zeile->rating</span>&nbsp;";
-        echo "<span>$zeile->preis</span>&nbsp;";
-        echo "</div><br><br>";}
     }
