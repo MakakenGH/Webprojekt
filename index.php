@@ -65,6 +65,9 @@ if (isset($ean)) {
         case "warenkorb":
             include "./functions/cart/cart_show.php";
             break;
+        case "checkout":
+            include "./functions/checkout/checkout_form.php";
+            break;
     }
 ?>
 </div>

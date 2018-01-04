@@ -1,6 +1,5 @@
 <?php
 session_start();
-include_once("../db.php");
 $db = new PDO($dsn, $dbuser, $dbpass);
 $username = $_SESSION['userid'];
 
@@ -15,7 +14,7 @@ if(isset($_SESSION['userid'])) {
 }
 ?>
 
-<form action="mail_do.php" method="post">
+<form action="./functions/checkout/checkout_do.php" method="post">
 
     <?php
     if(isset($_SESSION['userid'])) {
@@ -26,6 +25,6 @@ if(isset($_SESSION['userid'])) {
 
     }
     ?>
-    <input type="submit" value="Submit"/>
+    <input type="submit" value="Zahlen und Bestellen"/>
 
 </form>

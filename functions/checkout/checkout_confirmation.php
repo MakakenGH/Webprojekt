@@ -1,16 +1,20 @@
 <?php
 session_start();
- $new_email = $_POST["new_email"];
- $user_email = $_POST["user_email"];
+include_once ('../db.php');
+/*email bestätigung*/
+$username = $_SESSION['userid'];
+$db = new PDO($dsn, $dbuser, $dbpass);
 
- echo $user_email;
- if(isset($user_email)) {
-     $recipient = $user_email;
- }
- else {
-     $recipient = $new_email;
- }
- echo $recipient;
+$statement = $db->prepare("SELECT * FROM orders WHERE username = '".$username."' ORDER BY datetime DESC");
+$statement->execute();
+
+if ($zeile = $statement->fetchObject()) {
+    $order_number = $zeile->order_number;
+    $email = $zeile->email;
+}
+
+
+$recipient = $email;
 
 $min = 1000;
 $max = 9999;
@@ -20,7 +24,6 @@ $key_part3 = rand ($min ,$max);
 
 $key = $key_part1.'-'.$key_part2.'-'.$key_part3;
 
-$billnumber = rand ($min ,$max);
 $time = date("d-m-Y H:i:s");
 echo $time;
 
@@ -32,7 +35,7 @@ Vielen Dank für deinen Kauf bei Dampf!
 Hier ist dein Key: $key
 
 Auftragsdatum: $time
-Rechnungsnummer: $billnumber
+Bestellnummer: $order_number
 
 
 Diese E-Mail dient als Deine Einkaufsbestätigung.
@@ -48,4 +51,3 @@ Wirtschafts-ID: 987654321
 ");
 
 mail($recipient, $subject, $text, $from);
-?>
