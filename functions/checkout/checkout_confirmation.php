@@ -13,6 +13,15 @@ if ($zeile = $statement->fetchObject()) {
     $email = $zeile->email;
 }
 
+$statement2 = $db->prepare("SELECT s.name, o.sum_total, o.anzahl FROM orders o, sortiment s WHERE o.ean = s.ean AND o.order_number = '".$order_number."'");
+$statement2->execute();
+
+while ($zeile2 = $statement2->fetchObject()) {
+    $products = $zeile2->name;
+    echo "$products";
+    $sum_total = $zeile2->sum_total;
+    $anzahl = $zeile2->anzahl;
+}
 
 $recipient = $email;
 
@@ -27,12 +36,14 @@ $key = $key_part1.'-'.$key_part2.'-'.$key_part3;
 $time = date("d-m-Y H:i:s");
 echo $time;
 
-$subject = "Dein Kauf bei Dampf!";
+$subject = "Dein Einkauf bei Dampf!";
 $from = "From: Dampf! <dampf@hdm-stuttgart.de>";
 $text = ("
-Vielen Dank für deinen Kauf bei Dampf!
+Vielen Dank für deinen Einkauf bei Dampf!
 
-Hier ist dein Key: $key
+-------------------------------------
+$anzahl x $products zu einem Preis von insg. $sum_total € ($key)
+-------------------------------------
 
 Auftragsdatum: $time
 Bestellnummer: $order_number
