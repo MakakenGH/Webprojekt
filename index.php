@@ -71,9 +71,7 @@ if (isset($ean)) {
     }
 ?>
 </div>
-<div id='stars'></div>
-<div id='stars2'></div>
-<div id='stars3'></div>
+
 <div class="container-fluid"> <!-- Footer -->
     <div class="row" id="footer_defined">
         <div class="col-sm-4"><b>Rechtliches</b>
