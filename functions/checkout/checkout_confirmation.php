@@ -18,7 +18,12 @@ $statement2->execute();
 
 $recipient = $email;
 
+$statement3 = $db->prepare("SELECT name FROM users WHERE username = '".$username."'");
+$statement3->execute();
 
+if ($zeile3 = $statement3->fetchObject()) {
+    $name = $zeile3->name;
+}
 
 $time = date("d-m-Y H:i:s");
 echo $time;
@@ -29,7 +34,7 @@ $amount = 0;
 $mailtext = "<html><body>";
 $mailtext .= "<img src='https://raw.githubusercontent.com/MakakenGH/Webprojekt/master/files/uploads/logo_small.png'/>";
 $mailtext .= "<h2>Vielen Dank für deinen Einkauf bei Dampf!</h2>";
-$mailtext .= "<p>Hallo ".$username.",</p>";
+$mailtext .= "<p>Hallo ".$name.",</p>";
 $mailtext .= "<p>du hast kürzlich bei Dampf! folgendes bestellt: </p>";
 $mailtext .= "<table>";
 $mailtext .= "<thead><tr><th>Anzahl</th><th>Artikelname</th><th>Einzelpreis</th></th><th>Gesamtsumme</th><th>Deine Keys</th></tr></thead>";
@@ -78,11 +83,11 @@ $mailtext .= "<td><b>$totalprice €</b></td>";
 $mailtext .= "</tr>";
 $mailtext .= "</tfoot>";
 $mailtext .= "</table><br>";
+$mailtext .= "<p>Im Rechnungsbetrag sind 19 % MwSt enthalten.<br><br></p>";
 $mailtext .= "<p><b>Bestellnummer: </b>".$order_number."</p>";
 $mailtext .= "<p><b>Auftragsdatum: </b>".$time."</p>";
 $mailtext .= "<br><h3>Bis zum nächsten Mal! -Team Dampf</h3>";
 $mailtext .= "<br><p>
-
 Diese E-Mail dient als Deine Einkaufsbestätigung.<br><br>
 
 Dampf!<br> 
@@ -101,6 +106,8 @@ $from .= "Content-Type: text/html\n";
 
 
 mail($recipient, $subject, $mailtext, $from);
+
+header("Location: ../../index.php");
 
 
 
