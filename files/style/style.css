@@ -101,6 +101,22 @@ body {
     color: white;
 }
 
+.schrift_orange {
+    color: darkorange;
+}
+
+.col-centered{
+    float: none;
+    margin: 0 auto;
+}
+
+.log_window {
+    border: solid #333;
+    border-radius: 15px;
+    padding: 10px;
+    background-color: #333;
+}
+
 #beschreibung_store {
 }
 

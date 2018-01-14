@@ -16,24 +16,12 @@ if(isset($_GET['login'])) {
     //Überprüft ob das eingebene Passwort zum Username passt
     if ($user !== false && password_verify($password, $user['password'])) {
         $_SESSION['userid'] = $user['username']; //Setzt die userid = username (Datenbank: User)
+        $_SESSION['failed'] = 1;
         header("Location: $prevprev_url");
     } else {
-        $errorMessage = "Login oder Passwort war ungültig<br>";
+        $_SESSION['failed'] = 2;
+        header("Location: ../../index.php?page=users&action=login");
     }
 }
 ?>
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Login</title>
-</head>
-<body>
 
-<?php
-if(isset($errorMessage)) {
-    echo $errorMessage;
-}
-?>
-
-</body>
-</html>
