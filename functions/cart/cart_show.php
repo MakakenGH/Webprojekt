@@ -35,7 +35,7 @@ foreach ($table as $tablerow) {
     echo "<td>".money_format('%.2n', (float)$artikelpreis)." €"."</td>";
     echo "<td>".money_format('%.2n', (float)$gesamtpreis)." €"."</td>";
     echo "<td><form action='functions/cart/cart_delete.php' method='post'><input type='hidden' value='$ean' name='ean'>
-                <input style='max-width: 50px' type='number' value='1' name='anzahl'><input type='submit' class='button_orange' value='Löschen'></form></td>";
+                <input style='max-width: 50px' type='number' value='1' min='0' name='anzahl'><input type='submit' class='button_orange' value='Löschen'></form></td>";
     echo "</tr>";
     echo "</tbody>";
 

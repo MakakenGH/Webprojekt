@@ -61,6 +61,6 @@ while ($zeile = $query->fetchObject()) {
     echo "<span>$zeile->rating</span><br>";
     echo "<span>$zeile->preis</span><br>";
     echo "<span><a href='?ean=$zeile->ean'>Zur Produktseite</a></span><br>";
-    echo "<form action='./functions/cart/cartupdate_do.php' method='get'><input type='hidden' value='$zeile->ean' name='ean'><input type='number' value='1' name='anzahl'>&nbsp;<input type='submit' class='button_orange' value='In den Warenkorb legen'></form>";
+    echo "<form action='./functions/cart/cartupdate_do.php' method='get'><input type='hidden' value='$zeile->ean' name='ean'><input type='number' value='1' min='0' name='anzahl'>&nbsp;<input type='submit' class='button_orange' value='In den Warenkorb legen'></form>";
     echo "</div></div><br><br>";}
 echo "</div>";
