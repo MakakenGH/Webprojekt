@@ -1,8 +1,4 @@
 <?php
-include_once ("./widgets/slide.php");
-
-session_start();
-include_once("./functions/db.php");
 
 $genre = "";
 
