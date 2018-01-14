@@ -1,22 +1,12 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/html">
+<link rel="stylesheet" href="ism/css/my-slider.css"/>
+<script src="ism/js/ism-2.2.min.js"></script>
+<style> @import "/files/style/style.css";</style>
 
-<div class="slide2">
-<head>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script>
-        $(document).ready(function(){
-            $("#flip").click(function(){
-                $("#panel").slideToggle("slow");
-            });
-        });
-    </script>
+<div class="ism-slider" id="my-slider">
+    <ol>
+        <li>
+            <img src="/files/uploads/fafi17.png">
+            <div class="ism-caption ism-caption-0">My slide caption text</div>
+        </li>
+        <li>
 
-</head>
-<body>
-
-<div id="flip">Click to slide the panel down or up</div>
-<div id="panel">Hello world!</div>
-
-</body>
-</html>

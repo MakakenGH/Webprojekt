@@ -1,7 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Tolga
- * Date: 12.12.2017
- * Time: 21:10
- */
+include_once "news.php";
+include_once "news2.php";
+?>

@@ -12,22 +12,29 @@
 
     <style>
         #panel, #flip {
-            padding: 10px;
+            padding: 5px;
             text-align: center;
             background-color: transparent;
             border: solid 1px #c3c3c3;
         }
 
         #panel {
-            padding: 400px;
+            padding: 50px;
             display: none;
         }
     </style>
 </head>
 <body>
 
-<div id="flip">Click to slide the panel down or up</div>
-<div id="panel">Hello world!</div>
+<div id="flip">News</div>
+<div id="panel">
+
+    <a class="twitter-timeline" href="https://twitter.com/Craxee89?ref_src=twsrc%5Etfw">Tweets by Craxee89</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+
+
+</div>
 
 </body>
 </html>
