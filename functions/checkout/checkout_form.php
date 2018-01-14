@@ -1,6 +1,8 @@
 <?php
 session_start();
 
+echo "Bitte Überpüfe deine Bestellung:<br><br>";
+
 if (isset($_SESSION['userid'])) {
 
     $username = $_SESSION['userid'];
@@ -8,7 +10,7 @@ if (isset($_SESSION['userid'])) {
 
     echo "<div class='table-responsive'>";
     echo "<table class='table'>";
-    echo "<thead><tr><th>Bild</th><th>Name</th><th>EAN</th></th><th>Anzahl</th><th>Einzelpreis</th><th>Gesamtpreis</th><th>Löschen</th></tr></thead>";
+    echo "<thead><tr><th>Bild</th><th>Name</th><th>EAN</th></th><th>Anzahl</th><th>Einzelpreis</th><th>Gesamtpreis</th></tr></thead>";
 
     $db = new PDO($dsn, $dbuser, $dbpass);
 
@@ -17,29 +19,27 @@ if (isset($_SESSION['userid'])) {
     $preparedtable->execute();
     $table = $preparedtable->fetchAll(PDO::FETCH_ASSOC);
 
-foreach ($table as $tablerow) {
+    foreach ($table as $tablerow) {
 
-    $artikelname = $tablerow['name'];
-    $artikelbild = $tablerow['bild'];
-    $artikelpreis = $tablerow['preis'];
-    $gesamtpreis= $tablerow['total'];
-    $anzahl = $tablerow['anzahl'];
-    $ean = $tablerow['ean'];
+        $artikelname = $tablerow['name'];
+        $artikelbild = $tablerow['bild'];
+        $artikelpreis = $tablerow['preis'];
+        $gesamtpreis= $tablerow['total'];
+        $anzahl = $tablerow['anzahl'];
+        $ean = $tablerow['ean'];
 
-    echo "<tbody>";
-    echo "<tr>";
-    echo "<td><img style='width: 200px; height: auto;' src='files/uploads/$artikelbild'></td>";
-    echo "<td><b>$artikelname</b></td>";
-    echo "<td>$ean</td>";
-    echo "<td>$anzahl</td>";
-    echo "<td>".money_format('%.2n', (float)$artikelpreis)." €"."</td>";
-    echo "<td>".money_format('%.2n', (float)$gesamtpreis)." €"."</td>";
-    echo "<td><form action='functions/cart/cart_delete.php' method='post'><input type='hidden' value='$ean' name='ean'>
-                <input style='max-width: 50px' type='number' value='1' name='anzahl'><input type='submit' class='button_orange' value='Löschen'></form></td>";
-    echo "</tr>";
-    echo "</tbody>";
+        echo "<tbody>";
+        echo "<tr>";
+        echo "<td><img style='width: 200px; height: auto;' src='files/uploads/$artikelbild'></td>";
+        echo "<td><b>$artikelname</b></td>";
+        echo "<td>$ean</td>";
+        echo "<td>$anzahl</td>";
+        echo "<td>".money_format('%.2n', (float)$artikelpreis)." €"."</td>";
+        echo "<td>".money_format('%.2n', (float)$gesamtpreis)." €"."</td>";
+        echo "</tr>";
+        echo "</tbody>";
 
-}
+    }
     $sqltotal = "SELECT SUM(s.preis * c.anzahl) as totalSum FROM sortiment s, cart c WHERE c.ean = s.ean AND c.username = '".$username."'";
     $preparedsum = $db->prepare($sqltotal);
     $preparedsum->execute();
@@ -53,10 +53,13 @@ foreach ($table as $tablerow) {
     echo "</tr>";
     echo "</tfoot>";
     echo "</table>";
-    echo "<a href='?page=checkout'>Zur Kasse</a>";
-    echo "</div>";
+    echo "</div><br>";
+    echo "Alle Preise enthalten die gesetzliche Mehrwertsteuer.<br><br>";
+    echo "<b>Zahlungsmethode:</b> PaijPal<br><br>";
+    echo "<b>Deine E-Mail Adresse (deine Keys werden dir per E-Mail zugeschickt)</b><br>";
+    require_once ('./functions/checkout/mail_form.php');
 } else {
 
     echo "<div>Um diese Funktion nutzen zu können loggen Sie sich bitte ein.<br> <a href='?page=users&action=login'><button class='button_orange'>zum Login</button></a></div>";
 
-    }
+}
