@@ -6,7 +6,8 @@ if (!isset ($_SESSION['failed'])) {
 }
 
 ?>
-<div class="row">
+
+    <div class="row" style="margin-top: 5%;">
     <div class="col-md-3 col-centered log_window">
 
         <h4>LOGIN</h4>
@@ -21,7 +22,7 @@ if (!isset ($_SESSION['failed'])) {
         session_start();
 
         if ($_SESSION['failed'] == 2) {
-            echo "<br><span style='color: red;'><b>Login oder Passwort ist ungültig!</b></span>";
+            echo "<br><span class='col-centered' style='color: red;'><b>Login oder Passwort ist ungültig!</b></span>";
         } else { echo "";}
         ?>
     </div>

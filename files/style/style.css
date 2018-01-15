@@ -10,6 +10,7 @@ body {
 #include_area {
     margin-top: 50px;
     padding: 10px;
+    min-height: 500px;
 }
 
 .navbar {
@@ -123,5 +124,7 @@ body {
 .carttable {
     cellpadding: 20px;
 }
+
+
 
 
