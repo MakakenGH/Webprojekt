@@ -24,12 +24,14 @@ if(isset($_GET['register'])) {
 
     //Überprüft ob beide eingebenen Passwörter übereinstimmen
     if(strlen($password) == 0) {
-        echo 'Passwort eingeben<br>';
         $error = true;
+        $_SESSION['regfailed'] = 1;
+        header("Location: ../../index.php?page=users&action=register");
     }
     if($password != $password2) {
-        echo 'Die Passwörter stimmen nicht überein!<br>';
         $error = true;
+        $_SESSION['regfailed'] = 2;
+        header("Location: ../../index.php?page=users&action=register");
     }
 
     //Überprüft ob Username schon vergeben ist
@@ -39,8 +41,9 @@ if(isset($_GET['register'])) {
         $user = $statement->fetch();
 
         if($user !== false) {
-            echo 'Dieser Login ist schon vergeben<br>';
             $error = true;
+            $_SESSION['regfailed'] = 3;
+            header("Location: ../../index.php?page=users&action=register");
         }
     }
 
@@ -52,10 +55,13 @@ if(isset($_GET['register'])) {
         $result = $statement->execute(array('username' => $username, 'password' => $password_hash, 'email' => $email, 'name' => $name));
         $db = null;
         if($result) {
-            echo 'Registrierung erfolgreich! <a href="../../index.php">zurück</a>';
             $showFormular = false;
+            $_SESSION['regfailed'] = 5;
+            header("Location: ../../index.php?page=users&action=register");
         } else {
             echo 'Beim Abspeichern ist ein Fehler aufgetreten<br>';
+            $_SESSION['regfailed'] = 4;
+            header("Location: ../../index.php?page=users&action=register");
         }
     }
 }
