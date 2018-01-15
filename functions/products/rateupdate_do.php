@@ -2,8 +2,8 @@
 
 $ean = $_POST["ean"];
 $username = $_POST["username"];
-$comment = $_POST["comment"];
-$rating = $_POST["rating"];
+$comment = htmlspecialchars($_POST["comment"]);
+$rating = htmlspecialchars($_POST["rating"]);
 
 if (!empty($ean) && !empty($username) && !empty($rating)) {
     try {

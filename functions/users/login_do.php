@@ -5,8 +5,8 @@ include_once("../db.php");
 $db = new PDO($dsn, $dbuser, $dbpass);
 
 if(isset($_GET['login'])) {
-    $username = $_POST['username'];
-    $password = $_POST['password'];
+    $username = htmlspecialchars($_POST['username']);
+    $password = htmlspecialchars($_POST['password']);
 
     //Sucht nach dem Username in der Datenbank
     $statement = $db->prepare("SELECT * FROM users WHERE username = :username");

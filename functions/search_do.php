@@ -2,7 +2,7 @@
 
 include_once "db.php";
 
-$search=$_POST["search"];
+$search=htmlspecialchars($_POST["search"]);
 
 $db = new PDO($dsn, $dbuser, $dbpass);
 

@@ -16,11 +16,11 @@ $showFormular = true;
 
 if(isset($_GET['register'])) {
     $error = false;
-    $username = $_POST['username'];
-    $name = $_POST['name'];
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-    $password2 = $_POST['password2'];
+    $username = htmlspecialchars($_POST['username']);
+    $name = htmlspecialchars($_POST['name']);
+    $email = htmlspecialchars($_POST['email']);
+    $password = htmlspecialchars($_POST['password']);
+    $password2 = htmlspecialchars($_POST['password2']);
 
     //Überprüft ob beide eingebenen Passwörter übereinstimmen
     if(strlen($password) == 0) {
