@@ -29,6 +29,7 @@ $_SESSION['prevurl'] = $_SERVER['REQUEST_URI'];
                 <li class="nav-item"><a class="nav-link" href="index.php"><i class="fa fa-laptop"></i>   Frontend Ansicht</a></li>
                 <li class="nav-item"><a class="nav-link" href="?page=dashboard">Dashboard</a></li>
                 <li class="nav-item"><a class="nav-link" href="?page=products&action=overview">Produktübersicht</a></li>
+                <li class="nav-item"><a class="nav-link" href="?page=orders&action=orders">Bestellungen</a></li>
                 <li class="nav-item"><a class="nav-link" href="?page=products&action=create">Produkt hinzufügen</a></li>
                 <li class="nav-item"><a class="nav-link" href="?page=users&action=admincreate">Admin hinzufügen</a></li>
                 <li class="nav-item"><?php include_once ("./functions/backend/products/adminsearch_form.php");?><li>
@@ -62,6 +63,9 @@ $_SESSION['prevurl'] = $_SERVER['REQUEST_URI'];
                 break;
             default:
                 include "./functions/backend/dashboard.php";
+                break;
+            case "orders":
+                include "./functions/backend/orders/orders.php";
                 break;
         }
 

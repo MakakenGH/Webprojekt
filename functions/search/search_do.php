@@ -1,6 +1,6 @@
 <?php
 
-include_once "../db.php";
+include_once "./functions/db.php";
 
 $search=htmlspecialchars($_POST["search"]);
 
@@ -11,14 +11,16 @@ $sql = "SELECT * FROM sortiment WHERE genre  LIKE  '%".$search."%' OR name LIKE 
 $query = $db->prepare($sql);
 $query->execute();
 
-
+echo "<div class='row'>";
 while ($zeile = $query->fetchObject()) {
+
+    echo "<div class='col-sm-4' id='store_defined'>";
     echo "<h1>$zeile->name</h1> <br/><br/> \n";
     echo "$zeile->genre<br>";
 
     $bildlg = strlen($zeile->bild);
     if ($bildlg >= 1) {
-        echo "<img src='../../files/uploads/$zeile->bild'/><br><br> \n";
+        echo "<img class='img_store' src='./files/uploads/$zeile->bild'/><br><br> \n";
     }
     else {
         echo "";
@@ -29,6 +31,7 @@ while ($zeile = $query->fetchObject()) {
 
     echo "PREIS: $zeile->preis / NUTZERWERTUNG: $zeile->rating <br><br>";
     echo "$zeile->ean";
-}
-
+    echo "</div>";
+    }
+echo "</div>";
 ?>
