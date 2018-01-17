@@ -31,6 +31,10 @@ while ($zeile = $query->fetchObject()) {
 	    echo "<br><input type='text' name='genre' value='$zeile->genre' /><br>";
         echo "<input type='submit' value='bearbeiten' /><br><br>";
         echo "</form>";
+        echo "<form action='./functions/backend/products/delete2.php' method='post'>";
+        echo "<input type='hidden' name='oldbild' value='$zeile->bild' />";
+        echo "<input type='hidden' name='ean' value='$zeile->ean' />";
+        echo "<input type='submit' value='Produkt löschen' /><br><br>";
         echo "</main>";
 }
 echo $search;
