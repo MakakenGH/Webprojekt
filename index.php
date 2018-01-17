@@ -32,7 +32,7 @@ $_SESSION['prevurl'] = $_SERVER['HTTP_REFERER'];
             <li class="li_nav"><a href="?page=users&action=login">Login</a></li>
             <li class="li_nav"><a href="?page=users&action=register">Registrieren</a></li>
             <li class="li_nav"><a href="?page=users&action=logout">Logout</a></li>
-            <li class="li_nav"><div id="searchbar"><?php include_once ("./functions/search.php");?></div></li>
+            <li class="li_nav"><div id="searchbar"><?php include_once("./functions/search/search.php");?></div></li>
             <li class="li_nav"><a href="?page=warenkorb">Warenkorb</a></li>
         </ul>
     </div>
