@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>DAMPF!</title>
     <style>
         @import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
@@ -12,7 +13,8 @@
     <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="files/style/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdn.rawgit.com/vast-engineering/jquery-popup-overlay/1.7.13/jquery.popupoverlay.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
     <?php echo "<script type='text/javascript'>"; include_once ("./files/style/JS.js"); echo "</script>"; ?>
 </head>
 <body id="body">
@@ -24,20 +26,29 @@ $_SESSION['prevurl'] = $_SERVER['HTTP_REFERER'];
 ?>
 
 <div class="container-fluid"><!-- Header -->
-    <div class="navbar">
-        <div id="logo"><a href="index.php"><img style="height: 50px; width: auto;" src="files/uploads/logo_small.png" alt="HOME"></a></div>
-        <ul class="ul_nav">
-            <li class="li_nav"><a href="?page=store&action=store">Store</a></li>
-            <li class="li_nav"><a href="?page=news&action=news">News</a></li>
-            <li class="li_nav"><a href="?page=users&action=login">Login</a></li>
-            <li class="li_nav"><a href="?page=users&action=register">Registrieren</a></li>
-            <li class="li_nav"><a href="?page=users&action=logout">Logout</a></li>
-            <li class="li_nav"><div id="searchbar"><?php include_once("./functions/search/search.php");?></div></li>
-            <li class="li_nav"><a href="?page=warenkorb">Warenkorb</a></li>
+    <nav class="navbar navbar-expand-sm navbar-dark sticky-top">
+        <ul class="navbar-nav">
+            <li class="nav-item"><a class="navbar-brand" href="index.php"><img style="height: 50px; width: auto;" src="files/uploads/logo_small.png" alt="HOME"></a></li>
+            <li class="nav-item"><a class="nav-link" href="?page=store&action=store">Store</a></li>
+            <li class="nav-item"><a class="nav-link" href="?page=news&action=news">News</a></li>
+            <li class="nav-item"><div id="searchbar"><?php include_once("./functions/search/search.php");?></div></li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                    Nutzerverwaltung
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="?page=users&action=login">Login</a>
+                    <a class="dropdown-item" href="?page=users&action=register">Registrieren</a>
+                    <a class="dropdown-item" href="?page=users&action=logout">Logout</a>
+                    <a class="dropdown-item" href="admin.php">Admin</a>
+                </div>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="?page=warenkorb">Warenkorb</a></li>
         </ul>
-    </div>
-
+    </nav>
 </div>
+
+
 <div class="container-fluid" id="include_area"> <!-- Include Bereich (Content) -->
     <?php
     $ean = $_GET["ean"];
@@ -53,9 +64,6 @@ $_SESSION['prevurl'] = $_SERVER['HTTP_REFERER'];
             break;
         case "products":
             include "./functions/products/index.php";
-            break;
-        case "":
-            include "./widgets/slide.php";
             break;
         case "users":
             include "./functions/users/index.php";
