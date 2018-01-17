@@ -84,10 +84,18 @@ $_SESSION['prevurl'] = $_SERVER['HTTP_REFERER'];
         case "zahlungsarten":
             include "./files/Footer/zahlungsarten.html";
             break;
-
-
+        case "searchdo":
+            include "./functions/search/search_do.php";
+            break;
     }
     ?>
+<?php
+$search=$_POST["search"];
+
+if(isset($search)) {
+    include("./functions/search/search_do.php");
+}
+?>
 </div>
 
 <div class="container-fluid"> <!-- Footer -->
@@ -105,17 +113,17 @@ $_SESSION['prevurl'] = $_SERVER['HTTP_REFERER'];
         <div class="col-sm-4">
             <b>Informationen</b>
             <ul>
-                <li><a href="http://www.omm.hdm-stuttgart.de"style="text-decoration: none"> Über Uns </a></li>
-                <li><a href="http://www.omm.hdm-stuttgart.de/kontakt"style="text-decoration: none">Kontakt</a></li>
-                <li><a href="http://www.omm.hdm-stuttgart.de/bewerbung"style="text-decoration: none">Karriere</a></li>
+                <li><a target="_blank" href="http://www.omm.hdm-stuttgart.de"style="text-decoration: none"> Über Uns </a></li>
+                <li><a target="_blank" href="http://www.omm.hdm-stuttgart.de/kontakt"style="text-decoration: none">Kontakt</a></li>
+                <li><a target="_blank" href="http://www.omm.hdm-stuttgart.de/bewerbung"style="text-decoration: none">Karriere</a></li>
             </ul>
         </div >
         <div class="col-sm-4">
             <b>Social Media</b>
             <ul>
-                <li> <a href="https://www.facebook.com/omm.hdm"style="text-decoration: none">Facebook</a></li>
-                <li> <a href="https://www.instagram.com/omm.hdm"style="text-decoration: none">Instagram</a></li>
-                <li> <a href="https://twitter.com/DAMPFofficial"style="text-decoration: none">Twitter</a></li>
+                <li> <a target="_blank" href="https://www.facebook.com/omm.hdm"style="text-decoration: none">Facebook</a></li>
+                <li> <a target="_blank" href="https://www.instagram.com/omm.hdm"style="text-decoration: none">Instagram</a></li>
+                <li> <a target="_blank" href="https://twitter.com/DAMPFofficial"style="text-decoration: none">Twitter</a></li>
             </ul>
         </div>
     </div>
