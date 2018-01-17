@@ -10,6 +10,7 @@ body {
 #include_area {
     margin-top: 50px;
     padding: 10px;
+    min-height: 500px;
 }
 
 .navbar {
@@ -101,6 +102,22 @@ body {
     color: white;
 }
 
+.schrift_orange {
+    color: darkorange;
+}
+
+.col-centered{
+    float: none;
+    margin: 0 auto;
+}
+
+.log_window {
+    border: solid #333;
+    border-radius: 15px;
+    padding: 10px;
+    background-color: #333;
+}
+
 #beschreibung_store {
 }
 
@@ -108,4 +125,58 @@ body {
     cellpadding: 20px;
 }
 
+.sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    padding: 20px;
+    overflow-x: hidden;
+    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+    border-right: 1px solid #eee;
+    background-color: white;
+}
 
+/* Sidebar navigation */
+.sidebar {
+    padding-left: 0;
+    padding-right: 0;
+    background-color: #333;
+}
+
+.sidebar .nav {
+    margin-bottom: 20px;
+}
+
+.sidebar .nav-item {
+    width: 100%;
+}
+
+.sidebar .nav-item + .nav-item {
+    margin-left: 0;
+}
+
+.sidebar .nav-link {
+    border-radius: 0;
+    color: white;
+}
+a.nav-link:hover {
+    background-color: darkorange;
+    text-decoration: none;
+    color: white;
+}
+
+a.nav-link:focus{
+    background-color: #161616;
+    text-decoration: none;
+    color: white;
+}
+
+.b_bg {
+    background-image: radial-gradient(ellipse at bottom, #f4f2f3 0%, #f4f2f3 0%) !important;
+}
+
+h3 {
+    color: #333;
+}
