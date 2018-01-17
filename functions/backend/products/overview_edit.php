@@ -11,30 +11,33 @@ $query = $db->prepare($sql);
 $query->execute();
 
 while ($zeile = $query->fetchObject()) {
-    echo "<main class=\"col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3\">";
+    echo "<div class='product_backend'>";
+    echo "<main class=\"col-sm-9 offset-sm-3 col-md-10 offset-md-2\" id='store_defined_backend'>";
 
     echo "<form action='./functions/backend/products/update_do.php' method='post' enctype='multipart/form-data'>";
 	    $bildlg = strlen($zeile->bild);
         if ($bildlg >= 1) {
-            echo "<img src='./files/uploads/$zeile->bild'/><br>";
+            echo "<img class='img_store' src='./files/uploads/$zeile->bild'/>";
         }
         else {
             echo "";
         }
-	    echo "<input type='file' name='bild'/><br>";
+        echo "<div class='desc_backend'>";
+        echo "<input type='file' name='bild'/>";
 	    echo "<input type='hidden' name='ean' value='$zeile->ean' />";
-		echo "<input type='hidden' name='oldbild' value='$zeile->bild' />";
-        echo "<br><input type='text' name='name' value='$zeile->name' /><br>";
-	    echo "<textarea name='beschreibung' rows='10' cols='100'>$zeile->beschreibung</textarea><br>";
-	    echo "<br><input type='number' min='0' max='100' name='rating' value='$zeile->rating' /><br>";
-	    echo "<br><input type='text' name='preis' value='$zeile->preis' /><br>";
-	    echo "<br><input type='text' name='genre' value='$zeile->genre' /><br>";
-        echo "<input type='submit' value='bearbeiten' /><br><br>";
+        echo "<input type='hidden' name='oldbild' value='$zeile->bild' />";
+        echo "<input class=\"form-control\" type='text' name='name' value='$zeile->name' />";
+	    echo "<textarea class=\"form-control\" name='beschreibung' rows='10' cols='100'>$zeile->beschreibung</textarea>";
+	    echo "<input class=\"form-control\" type='number' min='0' max='100' name='rating' value='$zeile->rating' />";
+	    echo "<input class=\"form-control\" type='text' name='preis' value='$zeile->preis' />";
+	    echo "<input class=\"form-control\" type='text' name='genre' value='$zeile->genre' />";
+        echo "<input class=\"form-control button_orange\" type='submit' value='bearbeiten' /><br>";
         echo "</form>";
         echo "<form action='./functions/backend/products/delete2.php' method='post'>";
         echo "<input type='hidden' name='oldbild' value='$zeile->bild' />";
         echo "<input type='hidden' name='ean' value='$zeile->ean' />";
-        echo "<input type='submit' value='Produkt löschen' /><br><br>";
+        echo "<input class=\"form-control button_red\" type='submit' value='Produkt löschen' />";
+        echo "</div></div>";
         echo "</main>";
 }
 echo $search;

@@ -180,3 +180,26 @@ a.nav-link:focus{
 h3 {
     color: #333;
 }
+
+#store_defined_backend {
+    background-color: #f4f2f3;
+    color: black;
+    padding: 0px;
+    border-radius: 15px;
+    border: 2px solid #333;
+}
+
+.desc_backend {
+    padding: 0px 10px 10px 10px;
+}
+
+.product_backend {
+    margin-bottom: 1em;
+}
+
+.button_red {
+    background: darkred;
+    text-decoration: none;
+    border-color: darkorange;
+    color: white;
+}
