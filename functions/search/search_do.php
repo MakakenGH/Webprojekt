@@ -1,6 +1,6 @@
 <?php
 
-include_once "db.php";
+include_once "../db.php";
 
 $search=htmlspecialchars($_POST["search"]);
 
@@ -18,7 +18,7 @@ while ($zeile = $query->fetchObject()) {
 
     $bildlg = strlen($zeile->bild);
     if ($bildlg >= 1) {
-        echo "<img src='../files/uploads/$zeile->bild'/><br><br> \n";
+        echo "<img src='../../files/uploads/$zeile->bild'/><br><br> \n";
     }
     else {
         echo "";
