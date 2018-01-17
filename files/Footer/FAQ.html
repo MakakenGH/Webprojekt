@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        <!--
+        .frage {color: white; text-decoration: none;}
+        .frage:hover {font-size:10pt; color:#0070C0; text-decoration:none;}
+        .antwort {display:none; font-size:10pt;  padding:5px;}
+        -->
+    </style>
+    <script type="text/javascript">
+        function zeige(id){
+            var anzahl = 4;
+            for(var i =1; i <= anzahl; i++) {
+                if(i==id)
+                    document.getElementById(i).style.display="block";
+                else document.getElementById(i).style.display="none";
+            }
+        }
+    </script>
+
+</head>
+<body>
+
+<div style="width:400px; background-color: transparent;">
+    <a href="javascript:zeige('1')" class="frage">Kann man die Produkte wirklich kaufen?</a><br>
+    <span id="1" class="antwort">Nein!</span>
+    <a href="javascript:zeige('2')" class="frage">Die Produkte gibt es nicht wirklich, oder?</a><br>
+    <span id="2" class="antwort">Nein, alles frei erfunden!</span>
+    <a href="javascript:zeige('3')" class="frage">Habt ihr die Note 1 verdient?</a><br>
+    <span id="3" class="antwort">Aber zu 100% </span>
+    <a href="javascript:zeige('4')" class="frage">Freut ihr euch auf die Semesterferien?</a><br>
+    <span id="4" class="antwort">Klar!</span>
+</div>
+
+</body>
+</html>
