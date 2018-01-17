@@ -1,8 +1,10 @@
 <?php
 session_start();
 include_once("./functions/db.php");
+echo "<main class=\"col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3\">";
 
 echo "<span><a href='?page=products&editmode=false2'>Bearbeitungsmodus deaktivieren</a></span><br>";
+echo "</main>";
 $search = $_SESSION["search_save"];
 
 $db = new PDO($dsn, $dbuser, $dbpass);
@@ -11,8 +13,9 @@ $query = $db->prepare($sql2);
 $query->execute();
 
 while ($zeile = $query->fetchObject()) {
+    echo "<main class=\"col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3\">";
 
-        echo "<form action='./functions/backend/products/update_do.php' method='post' enctype='multipart/form-data'>";
+    echo "<form action='./functions/backend/products/update_do.php' method='post' enctype='multipart/form-data'>";
 	    $bildlg = strlen($zeile->bild);
         if ($bildlg >= 1) {
             echo "<img src='./files/uploads/$zeile->bild'/><br>";
@@ -30,5 +33,5 @@ while ($zeile = $query->fetchObject()) {
 	    echo "<br><input type='text' name='genre' value='$zeile->genre' /><br>";
         echo "<input type='submit' value='bearbeiten' /><br><br>";
         echo "</form>";
-
+        echo "</main>";
 }

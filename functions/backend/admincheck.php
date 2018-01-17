@@ -14,6 +14,9 @@ $zeile = $query->fetchObject();
 if((!isset($zeile->username)) or ($_SESSION['userid'] != $zeile->username)) {
 
 	include_once ("./functions/backend/users/login_form.php");
+	?>
+<div class="col-md-3 col-centered text-center">
+    <?php
 	if (isset($login_error)){
 	echo "$login_error<br>";
 	die("");
@@ -22,5 +25,5 @@ if((!isset($zeile->username)) or ($_SESSION['userid'] != $zeile->username)) {
     die("Bitte zuerst einloggen!");
 	}
 }
-
 ?>
+</div>

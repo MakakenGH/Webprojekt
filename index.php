@@ -12,6 +12,7 @@
     <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="files/style/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.rawgit.com/vast-engineering/jquery-popup-overlay/1.7.13/jquery.popupoverlay.js"></script>
     <?php echo "<script type='text/javascript'>"; include_once ("./files/style/JS.js"); echo "</script>"; ?>
 </head>
 <body id="body">

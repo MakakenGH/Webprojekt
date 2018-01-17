@@ -1,8 +1,9 @@
 <?php
-$rating = $_POST["rate"];
+$rating = htmlspecialchars($_POST["rate"]);
 $ean=$_POST["ean"];
 $username=$_POST["username"];
-$comment=$_POST["comment"];
+$comment= htmlspecialchars($_POST["comment"]);
+
 
 include_once ("../db.php");
 

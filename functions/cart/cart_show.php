@@ -35,7 +35,7 @@ foreach ($table as $tablerow) {
     echo "<td>".money_format('%.2n', (float)$artikelpreis)." €"."</td>";
     echo "<td>".money_format('%.2n', (float)$gesamtpreis)." €"."</td>";
     echo "<td><form action='functions/cart/cart_delete.php' method='post'><input type='hidden' value='$ean' name='ean'>
-                <input style='max-width: 50px' type='number' value='1' name='anzahl' min='0'><input type='submit' class='button_orange' value='Löschen'></form></td>";
+                <input style='max-width: 50px;' type='number' value='1' name='anzahl' min='0'><input type='submit' class='button_orange' value='Löschen'></form></td>";
     echo "</tr>";
     echo "</tbody>";
 
@@ -50,13 +50,13 @@ foreach ($table as $tablerow) {
     echo "<tr>";
     echo "<td><b>BESTELLSUMME</b></td><td> </td><td> </td><td> </td><td> </td>";
     echo "<td><b>".money_format('%.2n',$totalsumnumber)." €"."</b></td>";
+    echo "<td><a href='?page=checkout'><button class='button_orange'>Zur Kasse</button></a></td>";
     echo "</tr>";
     echo "</tfoot>";
     echo "</table>";
-    echo "<a href='?page=checkout'>Zur Kasse</a>";
     echo "</div>";
 } else {
 
-    echo "<div>Um diese Funktion nutzen zu können loggen Sie sich bitte ein.<br> <a href='?page=users&action=login'><button class='button_orange'>zum Login</button></a></div>";
+    echo "<div class='col-md-3 col-centered log_window'>Um diese Funktion nutzen zu können loggen Sie sich bitte ein.<br> <a href='?page=users&action=login'><button class='button_orange'>zum Login</button></a></div>";
 
     }
