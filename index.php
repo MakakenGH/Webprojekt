@@ -12,9 +12,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
     <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="files/style/style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <?php echo "<script type='text/javascript'>"; include_once ("./files/style/JS.js"); echo "</script>"; ?>
 </head>
 <body id="body">
@@ -26,28 +24,26 @@ $_SESSION['prevurl'] = $_SERVER['HTTP_REFERER'];
 ?>
 
 <div class="container-fluid"><!-- Header -->
-    <nav class="navbar navbar-expand-sm navbar-dark sticky-top">
-        <ul class="navbar-nav">
-            <li class="nav-item"><a class="navbar-brand" href="index.php"><img style="height: 50px; width: auto;" src="files/uploads/logo_small.png" alt="HOME"></a></li>
-            <li class="nav-item"><a class="nav-link" href="?page=store&action=store">Store</a></li>
-            <li class="nav-item"><a class="nav-link" href="?page=news&action=news">News</a></li>
-            <li class="nav-item"><div id="searchbar"><?php include_once("./functions/search/search.php");?></div></li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-                    Nutzerverwaltung
-                </a>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="?page=users&action=login">Login</a>
-                    <a class="dropdown-item" href="?page=users&action=register">Registrieren</a>
-                    <a class="dropdown-item" href="?page=users&action=logout">Logout</a>
-                    <a class="dropdown-item" href="admin.php">Admin</a>
-                </div>
-            </li>
-            <li class="nav-item"><a class="nav-link" href="?page=warenkorb">Warenkorb</a></li>
-        </ul>
-    </nav>
+    <div class="navbarcss">
+        <div><a href="index.php"><img style="float: left; height: 50px; width: auto;" src="files/uploads/logo_small.png" alt="HOME"></a>
+            <ul class="ul_nav">
+                <li class="li_nav" style="border-right: 1px solid darkorange;"><a href="?page=store&action=store"><i class="fa fa-gamepad" aria-hidden="true"></i>&nbsp;&nbsp;Store</a></li>
+                <li class="li_nav" style="border-right: 1px solid darkorange;"><a href="?page=news&action=news"><i class="fa fa-twitter" aria-hidden="true"></i>&nbsp;&nbsp;News</a></li>
+                <li class="li_nav" style="float: right;"><a href="?page=warenkorb"><i class="fa fa-shopping-basket" aria-hidden="true"></i>&nbsp;&nbsp;Warenkorb</a></li>
+                <li class="drop_nav" style="float: right;">
+                    <a href="javascript:void(0)" class="drop_nav_button"><i class="fa fa-user-o" aria-hidden="true"></i>&nbsp;&nbsp;Nutzer</a>
+                    <div class="drop_nav_cont">
+                        <a href="?page=users&action=login">Login</a>
+                        <a href="?page=users&action=logout">Logout</a>
+                        <a href="?page=users&action=register">Registrieren</a>
+                        <a href="admin.php">Admin</a>
+                    </div>
+                </li>
+                <li class="li_nav" style="float: right;"><div id="searchbar"><?php include_once("./functions/search/search.php");?></div></li>
+            </ul>
 </div>
-
+</div>
+</div>
 
 <div class="container-fluid" id="include_area"> <!-- Include Bereich (Content) -->
     <?php
@@ -56,6 +52,9 @@ $_SESSION['prevurl'] = $_SERVER['HTTP_REFERER'];
         include ("./functions/products/product.php");
     };
     switch ($_GET["page"]) {
+        case "":
+            include "./widgets/frontpage.php";
+            break;
         case "store":
             include "./functions/store/index.php";
             break;
@@ -136,6 +135,8 @@ if(isset($search)) {
         </div>
     </div>
 
-
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 </html>

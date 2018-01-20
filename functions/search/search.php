@@ -1,9 +1,8 @@
-<script src="https://code.jquery.com/jquery-latest.js"></script>
 
+<form class="form-inline action="?page=search&action=index.php" method="post" >
 
-<form action="?page=search&action=index.php"method="post" >
-    <input type="text" style="max-width: 160px;" size="40" maxlength="250" name="search" list="games" placeholder="suche">
-    <input class="button_orange" type="submit" value="Abschicken">
+    <input type="text" class="form-control mr-sm-2" style="max-width: 160px; max-height: 30px;" size="40" maxlength="250" name="search" list="games" placeholder="suche">
+    <input class="button_orange" style="max-height: 30px; text-align-all: center;" type="submit" value="Abschicken">
 
 
 </form>
