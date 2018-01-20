@@ -1,16 +1,17 @@
 <?php
 session_start();
 
-echo "Bitte Überpüfe deine Bestellung:<br><br>";
+echo "<br><span style='font-size: x-large;'><b>Bitte überpüfe deine Bestellung:</b></span><br><br>";
 
-if (isset($_SESSION['userid'])) {
+echo "<div class='row'>";
+echo "<div class='col' id='checkout'>";
 
-    $username = $_SESSION['userid'];
-    setlocale(LC_MONETARY, 'de_DE');
+$username = $_SESSION['userid'];
+setlocale(LC_MONETARY, 'de_DE');
 
     echo "<div class='table-responsive'>";
     echo "<table class='table'>";
-    echo "<thead><tr><th>Bild</th><th>Name</th><th>EAN</th></th><th>Anzahl</th><th>Einzelpreis</th><th>Gesamtpreis</th></tr></thead>";
+    echo "<thead><tr><th>Bild</th><th>Name</th></th><th>Anzahl</th><th>Einzelpreis</th><th>Gesamtpreis</th></tr></thead>";
 
     $db = new PDO($dsn, $dbuser, $dbpass);
 
@@ -26,13 +27,11 @@ if (isset($_SESSION['userid'])) {
         $artikelpreis = $tablerow['preis'];
         $gesamtpreis= $tablerow['total'];
         $anzahl = $tablerow['anzahl'];
-        $ean = $tablerow['ean'];
 
         echo "<tbody>";
         echo "<tr>";
         echo "<td><img style='width: 200px; height: auto;' src='files/uploads/$artikelbild'></td>";
         echo "<td><b>$artikelname</b></td>";
-        echo "<td>$ean</td>";
         echo "<td>$anzahl</td>";
         echo "<td>".money_format('%.2n', (float)$artikelpreis)." €"."</td>";
         echo "<td>".money_format('%.2n', (float)$gesamtpreis)." €"."</td>";
@@ -48,18 +47,19 @@ if (isset($_SESSION['userid'])) {
 
     echo "<tfoot>";
     echo "<tr>";
-    echo "<td><b>BESTELLSUMME</b></td><td> </td><td> </td><td> </td><td> </td>";
+    echo "<td><b>BESTELLSUMME</b></td><td> </td><td> </td><td> </td>";
     echo "<td><b>".money_format('%.2n',$totalsumnumber)." €"."</b></td>";
     echo "</tr>";
     echo "</tfoot>";
     echo "</table>";
-    echo "</div><br>";
+    echo "</div>";
     echo "Alle Preise enthalten die gesetzliche Mehrwertsteuer.<br><br>";
+    echo "</div>";
+    echo "<div class='col' id='checkout'>";
+
     echo "<b>Zahlungsmethode:</b> PaijPal<br><br>";
-    echo "<b>Deine E-Mail Adresse (deine Keys werden dir per E-Mail zugeschickt)</b><br>";
+    echo "<b>Deine E-Mail Adresse (deine Keys werden dir per E-Mail zugeschickt)</b><br><br>";
     require_once ('./functions/checkout/mail_form.php');
-} else {
 
-    echo "<div>Um diese Funktion nutzen zu können loggen Sie sich bitte ein.<br> <a href='?page=users&action=login'><button class='button_orange'>zum Login</button></a></div>";
-
-}
+    echo "</div>";
+    echo "</div>";

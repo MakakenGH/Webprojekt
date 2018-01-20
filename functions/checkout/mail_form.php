@@ -18,13 +18,13 @@ if(isset($_SESSION['userid'])) {
 
     <?php
     if(isset($_SESSION['userid'])) {
-        echo "<input type='text' name='user_email' value='$email'/><br>";
+        echo "<input class='form-control' type='text' name='user_email' value='$email'/>";
     }
     else {
-        echo "<input type='text' name='new_email' placeholder='Deine E-Mail'/><br>";
+        echo "<input class='form-control' type='text' name='new_email' placeholder='Deine E-Mail'/>";
 
     }
     ?>
-    <input type="submit" value="Zahlen und Bestellen"/>
+    <input class='form-control button_orange' type="submit" value="Zahlen und Bestellen"/>
 
 </form>

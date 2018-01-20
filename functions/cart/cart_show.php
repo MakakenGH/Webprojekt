@@ -50,7 +50,7 @@ foreach ($table as $tablerow) {
     echo "<tr>";
     echo "<td><b>BESTELLSUMME</b></td><td> </td><td> </td><td> </td><td> </td>";
     echo "<td><b>".money_format('%.2n',$totalsumnumber)." €"."</b></td>";
-    echo "<td><a href='?page=checkout'><button class='button_orange'>Zur Kasse</button></a></td>";
+    echo "<td><a href='?page=checkout'><button class='button_orange'><i class=\"fa fa-shopping-cart\" aria-hidden=\"true\"></i>&nbsp;&nbsp;Zur Kasse</button></a></td>";
     echo "</tr>";
     echo "</tfoot>";
     echo "</table>";
