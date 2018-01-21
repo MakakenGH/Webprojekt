@@ -27,7 +27,6 @@ $_SESSION['prevurl'] = $_SERVER['REQUEST_URI'];
             <ul class="nav nav-pills flex-column">
 
                 <li class="nav-item"><a class="nav-link" href="index.php"><i class="fa fa-laptop"></i>   Frontend Ansicht</a></li>
-                <li class="nav-item"><a class="nav-link" href="?page=dashboard">Dashboard</a></li>
                 <li class="nav-item"><a class="nav-link" href="?page=products&action=overview">Produktübersicht</a></li>
                 <li class="nav-item"><a class="nav-link" href="?page=orders&action=orders">Bestellungen</a></li>
                 <li class="nav-item"><a class="nav-link" href="?page=products&action=create">Produkt hinzufügen</a></li>
@@ -62,7 +61,7 @@ $_SESSION['prevurl'] = $_SERVER['REQUEST_URI'];
                 include "./functions/backend/dashboard.php";
                 break;
             default:
-                include "./functions/backend/dashboard.php";
+                include "./functions/backend/products/overview.php";
                 break;
             case "orders":
                 include "./functions/backend/orders/orders.php";

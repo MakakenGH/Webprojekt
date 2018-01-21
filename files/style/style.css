@@ -124,6 +124,18 @@ li.drop_nav {
     padding-bottom: 1em;
 }
 
+.img_product {
+    width: 100%;
+    height: auto;
+    padding-bottom: 1em;
+}
+
+.trenn {
+    border-bottom: 1px solid #333;
+    margin-bottom: 1em;
+    padding-bottom: 1em;
+}
+
 #store_defined {
     background-color: #333;
     padding: 0px;
@@ -234,6 +246,7 @@ a.nav-link:focus{
 
 .b_bg {
     background-image: radial-gradient(ellipse at bottom, #f4f2f3 0%, #f4f2f3 0%) !important;
+    padding-top: 0px !important;
 }
 
 h3 {
@@ -271,4 +284,23 @@ h3 {
     margin: 5px;
     flex: 30%;
     border-radius: 15px;
+}
+
+p {
+    text-align: justify;
+}
+
+.kategorie {
+    color: #b9bdb6;
+    font-size: 12px;
+}
+
+.rating {
+    border: 1px solid white;
+    padding: 5px;
+}
+
+.rating_user {
+    border: 1px solid white;
+    padding: 5px;
 }

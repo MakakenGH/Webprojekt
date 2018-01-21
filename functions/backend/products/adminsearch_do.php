@@ -12,7 +12,7 @@ $query = $db->prepare($sql);
 $query->execute();
 echo "<main class=\"col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3\">";
 
-echo "<span><a href='?page=products&editmode=search'>Bearbeitungsmodus aktivieren</a></span><br>";
+echo "<button type='button' class=\"form-control button_orange\" ><a href='?page=products&editmode=search'><i class='fa fa-wrench'></i>  Bearbeitungsmodus aktivieren</a></button><br>";
 echo "</main>";
 while ($zeile = $query->fetchObject()) {
     echo "<div class='product_backend'>";

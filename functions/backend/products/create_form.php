@@ -11,7 +11,7 @@ $_SESSION['prevprevurl'] =  $_SERVER['HTTP_REFERER'];
         <textarea class="form-control" name="beschreibung" placeholder="Artikelbeschreibung" rows="10"></textarea>
         <input class="form-control" type="text" name="genre" placeholder="Genre" />
         <input class="form-control" type="number" name="rating" placeholder="Bewertung" />
-        <input class="form-control" type="file" name="bild" />
+        <input class="form-control" type="file" name="bild" /><br>
         <input class="form-control button_orange" type="submit" value="Submit"/>
 
     </form>
