@@ -38,18 +38,11 @@ $_SESSION['prevurl'] = $_SERVER['REQUEST_URI'];
         </nav>
 
         <?php
-        $ean = $_GET["ean"];
-        if (isset($ean)) {
-            include ("./functions/products/product.php");
-        };
         $search=$_POST["search"];
 
         if(isset($search)) {
             include ("./functions/backend/products/adminsearch_do.php");
-        }
-        ?>
-
-        <?php
+        }else {
         switch ($_GET["page"]) {
             case "products":
                 include "./functions/backend/products/index.php";
@@ -61,12 +54,12 @@ $_SESSION['prevurl'] = $_SERVER['REQUEST_URI'];
                 include "./functions/backend/dashboard.php";
                 break;
             default:
-                include "./functions/backend/products/overview.php";
+                include "./functions/backend/dashboard.php";
                 break;
             case "orders":
                 include "./functions/backend/orders/orders.php";
                 break;
-        }
+        }}
 
         ?>
     </div>
