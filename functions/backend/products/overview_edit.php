@@ -37,6 +37,7 @@ while ($zeile = $query->fetchObject()) {
         echo "<input type='hidden' name='oldbild' value='$zeile->bild' />";
         echo "<input type='hidden' name='ean' value='$zeile->ean' />";
         echo "<input class=\"form-control button_red\" type='submit' value='Produkt löschen' />";
+        echo "</form>";
         echo "</div></div>";
         echo "</main>";
 }
