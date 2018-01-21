@@ -104,9 +104,10 @@ if(isset($search)) {
 }
 ?>
 </div>
+</div>
 
-<div class="container-fluid"> <!-- Footer -->
-    <div class="row" id="footer_defined">
+<div class="container-fluid footer_defined"> <!-- Footer -->
+    <div class="row">
         <div class="col-sm-4"><b>Rechtliches</b>
             <ul>
                 <li><a href="?page=impressum"style="text-decoration: none">Impressum</a></li>
@@ -120,20 +121,21 @@ if(isset($search)) {
         <div class="col-sm-4">
             <b>Informationen</b>
             <ul>
-                <li><a target="_blank" href="http://www.omm.hdm-stuttgart.de"style="text-decoration: none"> Über Uns </a></li>
-                <li><a target="_blank" href="http://www.omm.hdm-stuttgart.de/kontakt"style="text-decoration: none">Kontakt</a></li>
-                <li><a target="_blank" href="http://www.omm.hdm-stuttgart.de/bewerbung"style="text-decoration: none">Karriere</a></li>
+                <li><a target="_blank" href="http://www.omm.hdm-stuttgart.de" style="text-decoration: none"> Über Uns </a></li>
+                <li><a target="_blank" href="http://www.omm.hdm-stuttgart.de/kontakt" style="text-decoration: none">Kontakt</a></li>
+                <li><a target="_blank" href="http://www.omm.hdm-stuttgart.de/bewerbung" style="text-decoration: none">Karriere</a></li>
             </ul>
         </div >
         <div class="col-sm-4">
             <b>Social Media</b>
             <ul>
-                <li> <a target="_blank" href="https://www.facebook.com/omm.hdm"style="text-decoration: none">Facebook</a></li>
-                <li> <a target="_blank" href="https://www.instagram.com/omm.hdm"style="text-decoration: none">Instagram</a></li>
-                <li> <a target="_blank" href="https://twitter.com/DAMPFofficial"style="text-decoration: none">Twitter</a></li>
+                <li> <a target="_blank" href="https://www.facebook.com/omm.hdm" style="text-decoration: none">Facebook</a></li>
+                <li> <a target="_blank" href="https://www.instagram.com/omm.hdm" style="text-decoration: none">Instagram</a></li>
+                <li> <a target="_blank" href="https://twitter.com/DAMPFofficial" style="text-decoration: none">Twitter</a></li>
             </ul>
         </div>
     </div>
+</div>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
