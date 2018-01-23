@@ -41,7 +41,7 @@ if ($zeile = $query->fetchObject()) {
     $genre = $zeile->genre;
     $ean = $zeile->ean;
     echo "</div><div class='col-sm-6'>";
-
+    echo "<div>";
     $bildlg = strlen($zeile->bild);
     if ($bildlg >= 1) {
         echo "<img class='img_product' src='./files/uploads/$zeile->bild'/>";
@@ -51,7 +51,7 @@ if ($zeile = $query->fetchObject()) {
         echo "<div class='rating text-center'>$rating<div class='kategorie'>Betacritic</div></div>";
         echo "</div>";
         echo "<div class='col-sm-6'>";
-        echo "<div class='rating_user text-center'>$userrating ($amount Bewertungen)<div class='kategorie'>Nutzerbewertungen</div></div>";
+        echo "<div class='rating text-center'>$userrating ($amount Bewertungen)<div class='kategorie'>Nutzerbewertungen</div></div>";
         echo "</div>";
         echo "</div><br>";
         echo "<div class='kategorie'>PREIS</div>";
@@ -62,7 +62,7 @@ if ($zeile = $query->fetchObject()) {
         echo "<div class='col-sm-2'>";
         echo "<div><input class='form-control' type='number' min='0' value='1' name='anzahl'></div></div>";
         echo "<div class='col-sm-10'>";
-        echo "<div><input class=\"form-control button_orange\" type='submit' value='In den Warenkorb legen'></form></div></div></div></div>";
+        echo "<div><input class=\"form-control button_orange\" type='submit' value='In den Warenkorb legen'></form></div></div></div></div></div>";
 
 
     }
@@ -89,9 +89,9 @@ echo "<div class='row' style='padding: 10px; margin-bottom: 1em; border-bottom: 
 while ($zeile2 = $query2->fetchObject()) {
     echo "<div class='col-sm-2'>";
     echo "<h5>$zeile2->username</h5>";
-    echo "<div style='padding: 5px; border: 1px solid white;' class='text-center'>$zeile2->rating<br><div class='kategorie'>BEWERTUNG</div></div><br>";
+    echo "<div class='rating text-center'>$zeile2->rating<br><div class='kategorie'>BEWERTUNG</div></div><br>";
     echo "</div>";
-    echo "<div class='col-sm-10'><br>";
+    echo "<div class='col-sm-4'><br>";
     echo "<div><div class='kategorie'>KOMMENTAR</div>$zeile2->comment</div>";
     echo "</div>";
     $amount += count($zeile2->rating);
@@ -129,7 +129,7 @@ if ($check_ifuserexist == false) {
                 <input type = "hidden" name = "username" value = "');
         echo($username);
         echo('" ><br >
-                <textarea class="form-control" name = "comment" rows=\'10\' cols=\'50\' placeholder = "Dein Kommentar"></textarea>
+                <textarea class="form-control" name = "comment" rows=\'4\' cols=\'20\' placeholder = "Dein Kommentar"></textarea>
                 <input class="form-control" type = "number" name = "rate" min="0" max="100" placeholder = "Deine Bewertung (0-100)" >
                 <input type = "hidden" name = "ean" value = "');
         echo($ean);

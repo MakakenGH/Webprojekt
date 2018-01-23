@@ -127,7 +127,8 @@ li.drop_nav {
 .img_product {
     width: 100%;
     height: auto;
-    padding-bottom: 1em;
+    border-radius: 15px;
+    margin-bottom: 1em;
 }
 
 .trenn {
@@ -171,6 +172,12 @@ li.drop_nav {
 
 .button_orange:hover {
     background-color: orange;
+    text-decoration: none;
+    color: white;
+}
+
+button_orange.a {
+    color:white;
 }
 
 .schrift_orange {
@@ -296,11 +303,14 @@ p {
 }
 
 .rating {
-    border: 1px solid white;
     padding: 5px;
+    border-radius: 15px;
+    background-color: #333333;
 }
 
-.rating_user {
-    border: 1px solid white;
+
+.product_defined {
+    background-color: #333;
     padding: 5px;
+    border-radius: 15px;
 }
