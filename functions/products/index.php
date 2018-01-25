@@ -2,7 +2,7 @@
 
 if (isset($_GET["action"]))
 {
-
+    //Routing für die Produkte
     switch ($_GET["action"]) {
         case "view":
             include "product.php";
@@ -12,7 +12,6 @@ if (isset($_GET["action"]))
             die();
             break;
     }
-
 }
 else
 {

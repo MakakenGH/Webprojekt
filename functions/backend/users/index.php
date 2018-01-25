@@ -1,7 +1,7 @@
 <?php
 if (isset($_GET["action"]))
 {
-
+    //Backend User Routing
     switch ($_GET["action"]) {
         case "logout":
             include "logout_do.php";

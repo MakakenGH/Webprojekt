@@ -1,13 +1,19 @@
 <?php
 session_start();
 include_once("./functions/db.php");
+
+//Bearbeitungsmodus aktivieren Button
 echo "<main class=\"col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3\">";
 echo "<button type='button' class='form-control button_orange'><a style='color:white;' href='?page=products&editmode=overview'><i class='fa fa-wrench'></i>  Bearbeitungsmodus aktivieren</a></button><br>";
 echo "</main>";
+
+//DB Verbindung
 $db = new PDO($dsn, $dbuser, $dbpass);
 $sql = "SELECT * FROM sortiment ORDER BY ean ASC";
 $query = $db->prepare($sql);
 $query->execute();
+
+//Produkte aus DB werden ausgegeben
 while ($zeile = $query->fetchObject()) {
     echo "<div class='product_backend'>";
     echo "<main class=\"col-sm-9 offset-sm-3 col-md-10 offset-md-2\" id='store_defined_backend'>";

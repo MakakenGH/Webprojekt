@@ -1,7 +1,7 @@
 <?php
+//Routing für Store
 if (isset($_GET["action"]))
 {
-
     switch ($_GET["action"]) {
         case "store":
             include "./functions/store/store.php";
@@ -10,10 +10,7 @@ if (isset($_GET["action"]))
             echo "Seite nicht gefunden";
             die();
             break;
-
-
     }
-
 }
 else
 {

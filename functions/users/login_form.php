@@ -17,11 +17,13 @@ if (!isset ($_SESSION['failed'])) {
             <br>
             <input type="submit" class="form-control button_orange" value="Abschicken">
         </form>
+
         <?php
         session_start();
         if ($_SESSION['failed'] == 2) {
             echo "<br><span class='col-centered' style='color: red;'><b>Login oder Passwort ist ungültig!</b></span>";
         } else { echo "";}
+
         ?>
     </div>
 </div>

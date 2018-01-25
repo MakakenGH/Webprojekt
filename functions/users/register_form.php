@@ -8,17 +8,11 @@ if (!isset ($_SESSION['failed'])) {
 <div class="col-md-3 col-centered text-center log_window"">
     <h4>REGISTRIERUNG</h4>
     <form action="./functions/users/register_do.php?register=1" method="post">
-
         <input type="text" class="form-control" size="40" maxlength="250" name="name" placeholder="Vor- und Nachname">
-
         <input type="text" class="form-control" size="40" maxlength="250" name="username" placeholder="Benutzername">
-
         <input type="email" class="form-control" size="40" maxlength="250" name="email" placeholder="Deine E-Mail Adresse">
-
         <input type="password" class="form-control" size="40"  maxlength="250" name="password" placeholder="Dein Passwort">
-
         <input type="password" class="form-control" size="40" maxlength="250" name="password2" placeholder="Passwort wiederholen"><br>
-
         <input type="submit" class="form-control button_orange" value="Abschicken">
     </form>
 <br>

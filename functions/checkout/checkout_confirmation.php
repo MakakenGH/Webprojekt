@@ -1,23 +1,28 @@
 <?php
 session_start();
 include_once ('../db.php');
-/*email bestätigung*/
-$username = $_SESSION['userid'];
-$db = new PDO($dsn, $dbuser, $dbpass);
 
+$username = $_SESSION['userid'];
+
+//Verbindung mit Bestellungen/orders DB
+$db = new PDO($dsn, $dbuser, $dbpass);
+//Läd die letzte Bestellung des Nutzers aus der DB
 $statement = $db->prepare("SELECT * FROM orders WHERE username = '".$username."' ORDER BY datetime DESC");
 $statement->execute();
 
+//Läd die Bestellnummer und Email
 if ($zeile = $statement->fetchObject()) {
     $order_number = $zeile->order_number;
     $email = $zeile->email;
 }
 
+//Verbindung mit Orders und Sortiment DB um Produktinformationen zu bestellten Produkten zu erhalten
 $statement2 = $db->prepare("SELECT s.name, o.sum_total, o.anzahl, o.username, o.sale_price FROM orders o, sortiment s WHERE o.ean = s.ean AND o.order_number = '".$order_number."'");
 $statement2->execute();
 
 $recipient = $email;
 
+//Verbindung mit Nutzer DB um echten Namen zu erhalten
 $statement3 = $db->prepare("SELECT name FROM users WHERE username = '".$username."'");
 $statement3->execute();
 
@@ -25,12 +30,13 @@ if ($zeile3 = $statement3->fetchObject()) {
     $name = $zeile3->name;
 }
 
-$time = date("d-m-Y H:i:s");
-echo $time;
+
+$time = date("d-m-Y H:i:s"); //Datum Format
 $totalamount = 0;
 $totalprice = 0;
 $amount = 0;
 
+//E-Mail wird aufgebaut
 $mailtext = "<html><body>";
 $mailtext .= "<img src='https://raw.githubusercontent.com/MakakenGH/Webprojekt/master/files/uploads/logo_small.png'/>";
 $mailtext .= "<h2>Vielen Dank für deinen Einkauf bei Dampf!</h2>";
@@ -41,6 +47,7 @@ $mailtext .= "<thead><tr><th>Anzahl</th><th>Artikelname</th><th>Einzelpreis</th>
 
 $mailtext .= "<tbody>";
 
+//Ausgabe der bestellten Artikel
 while ($zeile2 = $statement2->fetchObject()) {
 
     $amount = $zeile2->anzahl;
@@ -58,6 +65,7 @@ while ($zeile2 = $statement2->fetchObject()) {
     $mailtext .= $zeile2->sum_total ."€";
     $mailtext .= "</td>";
     $mailtext .= "<td>";
+    //Generierung der Keys
     for ($i = 0; $i < $amount; $i++) {
         $min = 1000;
         $max = 9999;
@@ -99,12 +107,13 @@ Umsatzsteuer-ID:123456789 <br>
 Wirtschafts-ID: 987654321<br>
 </p>";
 
+
 $subject = "Dein Einkauf bei Dampf!";
 $from = "From: Dampf! <dampf@hdm-stuttgart.de>\n";
 $from .= "Reply-To: noreply@hdm-stuttgart.de\n";
 $from .= "Content-Type: text/html\n";
 
-
+//E-Mail wird abgeschickt
 mail($recipient, $subject, $mailtext, $from);
 
 header("Location: ../../index.php");

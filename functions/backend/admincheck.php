@@ -6,6 +6,7 @@ $login_error = $_SESSION['loginerror'];
 
 $db = new PDO($dsn, $dbuser, $dbpass);
 
+//DB Verbindung, Läd Spalte der Admintabelle wo username = eingeloggter Nutzer
 $query = $db->prepare("SELECT username FROM admins WHERE username = '".$sessionid."'");
 $query->execute();
 $zeile = $query->fetchObject();
@@ -17,6 +18,7 @@ if((!isset($zeile->username)) or ($_SESSION['userid'] != $zeile->username)) {
 	?>
 <div class="col-md-3 col-centered text-center">
     <?php
+    //gibt bei Fehler, Login Fehlermeldung aus
 	if (isset($login_error)){
 	echo "$login_error<br>";
 	die("");

@@ -1,8 +1,11 @@
 <?php
 session_start();
 include_once("../../db.php");
+
+//DB Verbindung
 $db = new PDO($dsn, $dbuser, $dbpass);
 
+//Überprüft ob Nutzer schon eingeloggt ist
 if(isset($_GET['login'])) {
     $username = htmlspecialchars($_POST['username']);
     $password = htmlspecialchars($_POST['password']);
