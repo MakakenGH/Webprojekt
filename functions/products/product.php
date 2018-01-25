@@ -65,8 +65,15 @@ if ($zeile = $query->fetchObject()) {
     echo "</div>";
     echo "</div><br>";
     //Preis wird ausgegeben
+    echo "<div class='row'>";
+    echo "<div class='col-sm-6'>";
     echo "<div class='kategorie'>PREIS</div>";
     echo $preis."€";
+    echo "</div>";
+    echo "<div class='col-sm-6'>";
+    echo "<span class='kategorie'>EAN</span><br>";
+    echo $ean;
+    echo "</div></div>";
     //Warenkorb Feld wird ausgegeben
     echo "<form action='./functions/cart/cartupdate_do.php' method='get'>
           <input type='hidden' value='$zeile->ean' name='ean'>";
