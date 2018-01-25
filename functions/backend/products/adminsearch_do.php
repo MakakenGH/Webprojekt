@@ -11,6 +11,7 @@ $sql = "SELECT * FROM sortiment WHERE genre  LIKE  '%".$search."%' OR name LIKE 
 $query = $db->prepare($sql);
 $query->execute();
 
+
 //Bearbeitungsmodus aktivieren Button
 echo "<main class=\"col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3\">";
 echo "<button type='button' class=\"form-control button_orange\" ><a href='?page=products&editmode=search'><i class='fa fa-wrench'></i>  Bearbeitungsmodus aktivieren</a></button><br>";

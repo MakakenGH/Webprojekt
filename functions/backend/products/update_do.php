@@ -27,8 +27,7 @@ if (!empty($ean) && !empty($name) && !empty($beschreibung) && !empty($preis) && 
         //DB Verbindung
         include_once("../../db.php");
         $db = new PDO($dsn, $dbuser, $dbpass);
-        $query = $db->prepare(
-            "UPDATE sortiment SET name= :name, beschreibung= :beschreibung, genre= :genre, preis= :preis, rating= :rating, bild= :bild WHERE ean= :ean");
+        $query = $db->prepare("UPDATE sortiment SET name= :name, beschreibung= :beschreibung, genre= :genre, preis= :preis, rating= :rating, bild= :bild WHERE ean= :ean");
         $query->execute(array("name" => $name, "beschreibung" => $beschreibung, "genre" => $genre, "preis" => $preis, "rating" => $rating, "bild" => $produktbild, "ean" => $ean));
         $db = null;
 		header("Location: ../../../admin.php");
