@@ -6,7 +6,7 @@ $_SESSION['prevprevurl'] =  $_SERVER['HTTP_REFERER'];
 <div class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-5">
 <h3 class="text-center">PRODUKT HINZUFÜGEN</h3>
 
-//Formular zum Produkt hinzufügen
+<!-- Formular zum Produkt hinzufügen -->
 <form action="./functions/backend/products/create_do.php" method="post" enctype="multipart/form-data">
     <input class="form-control" type="text" name="name" placeholder="Artikelname" />
     <input class="form-control" type="number" min="0" name="preis" placeholder="Preis" />

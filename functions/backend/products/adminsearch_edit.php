@@ -30,17 +30,22 @@ while ($zeile = $query->fetchObject()) {
     else {
         echo "";
     }
-
     echo "<div class='desc_backend'>";
-    echo "<input type='file' name='bild'/><br>";
+    echo "<span class='kategorie'>BILD</span><br>";
+    echo "<input type='file' name='bild'/>";
     echo "<input type='hidden' name='ean' value='$zeile->ean' />";
     echo "<input type='hidden' name='oldbild' value='$zeile->bild' />";
+    echo "<br><span class='kategorie'>PRODUKTNAME</span><br>";
     echo "<input class=\"form-control\" type='text' name='name' value='$zeile->name' />";
+    echo "<span class='kategorie'>BESCHREIBUNG</span><br>";
     echo "<textarea class=\"form-control\" name='beschreibung' rows='10' cols='100'>$zeile->beschreibung</textarea>";
+    echo "<span class='kategorie'>BEWERTUNG (0-100)</span><br>";
     echo "<input class=\"form-control\" type='number' min='0' max='100' name='rating' value='$zeile->rating' />";
+    echo "<span class='kategorie'>PREIS (€)</span><br>";
     echo "<input class=\"form-control\" type='text' name='preis' value='$zeile->preis' />";
+    echo "<span class='kategorie'>GENRE</span><br>";
     echo "<input class=\"form-control\" type='text' name='genre' value='$zeile->genre' />";
-    echo "<input class=\"form-control button_orange\" type='submit' value='bearbeiten' /><br>";
+    echo "<input class=\"form-control button_orange\" type='submit' value='Bearbeiten' /><br>";
     echo "</form>";
     //Produkt löschen Button/Formular
     echo "<form action='./functions/backend/products/delete.php' method='post'>";

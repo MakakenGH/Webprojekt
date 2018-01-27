@@ -14,7 +14,7 @@ $query->execute();
 
 //Bearbeitungsmodus aktivieren Button
 echo "<main class=\"col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3\">";
-echo "<span><a href='?page=products&editmode=search'>Bearbeitungsmodus aktivieren</a></span><br>";
+echo "<button type='button' class=\"form-control button_orange\" ><a href='?page=products&editmode=search'><i class='fa fa-wrench'></i>  Bearbeitungsmodus aktivieren</a></button><br>";
 echo "</main>";
 
 //Suchergebnisse werden angezeigt
@@ -23,14 +23,21 @@ while ($zeile = $query->fetchObject()) {
     echo "<main class=\"col-sm-9 offset-sm-3 col-md-10 offset-md-2\" id='store_defined_backend'>";
     echo "<img class='img_store' src='./files/uploads/$zeile->bild'/><br>";
     echo "<div class='desc_backend'>";
+    echo "<span class='kategorie'>PRODUKTNAME</span><br>";
     echo "<h2><b>$zeile->name</b></h2><br>";
-    echo "<span>$zeile->beschreibung</span><br>";
-    echo "<span>$zeile->rating</span><br>";
-    echo "<span>$zeile->preis</span> €<br>";
-	echo "<span>$zeile->genre</span><br>";
-	echo "<span>$zeile->ean</span><br>";
-    echo "</div></div>";
-    echo "<main>";
+    echo "<span class='kategorie'>BESCHREIBUNG</span><br>";
+    echo "<div class='justify'>$zeile->beschreibung</div><br>";
+    echo "<span class='kategorie'>BEWERTUNG</span><br>";
+    echo "<div>$zeile->rating</div><br>";
+    echo "<span class='kategorie'>PREIS</span><br>";
+    echo "<div>$zeile->preis €</div><br>";
+    echo "<span class='kategorie'>GENRE</span><br>";
+    echo "<div>$zeile->genre</div><br>";
+    echo "<span class='kategorie'>EAN</span><br>";
+    echo "<span>$zeile->ean</span><br>";
+    echo "</div>";
+    echo "</div>";
+    echo "</main>";
 }
 
 ?>

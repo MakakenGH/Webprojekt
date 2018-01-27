@@ -280,7 +280,7 @@ h3 {
 .button_red {
     background: darkred;
     text-decoration: none;
-    border-color: darkorange;
+    border-color: darkred;
     color: white;
 }
 
@@ -337,4 +337,8 @@ p {
 .carousel {
     max-width: 1300px;
     height: auto;
+}
+
+.justify {
+    text-align: justify;
 }
