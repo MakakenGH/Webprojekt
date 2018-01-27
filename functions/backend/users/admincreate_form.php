@@ -4,7 +4,7 @@
 
 <form action="./functions/backend/users/admincreate_do.php" method="post">
     <input class="form-control" type="text" name="name" placeholder="Username" /><br>
-    <input class="form-control button_orange" type="submit" value="Submit"/>
+    <input class="form-control button_orange" type="submit" value="Admin hinzufügen"/>
 </form>
 
 </div>
