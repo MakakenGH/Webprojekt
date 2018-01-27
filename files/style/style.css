@@ -54,7 +54,7 @@ body { padding-top: 55px; }
     display: inline-block;
     color: white;
     text-align: center;
-    padding: 14px 16px;
+    padding: 16px;
     text-decoration: none;
 }
 
@@ -172,11 +172,13 @@ li.drop_nav {
 
 .button_orange:hover {
     background-color: orange;
+    border-color: transparent;
     text-decoration: none;
     color: white;
 }
 
-button_orange.a {
+.button_orange .a {
+    text-decoration: none;
     color:white;
 }
 
@@ -199,9 +201,6 @@ button_orange.a {
 #beschreibung_store {
 }
 
-.carttable {
-    cellpadding: 20px;
-}
 
 .sidebar {
     position: fixed;
@@ -313,4 +312,29 @@ p {
     background-color: #333;
     padding: 5px;
     border-radius: 15px;
+}
+
+.footer_links {
+    text-decoration: none;
+    color: white;
+    font-size: small;
+
+}
+
+.footer_links:hover {
+    text-decoration: none;
+    color: darkorange;
+
+}
+
+.footer_ul {
+    width: 218px;
+    margin: 0 auto;
+    padding: 0;
+    list-style-type: none;
+}
+
+.carousel {
+    max-width: 1300px;
+    height: auto;
 }

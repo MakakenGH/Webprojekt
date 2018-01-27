@@ -29,8 +29,8 @@ $_SESSION['prevurl'] = $_SERVER['HTTP_REFERER'];
     <div class="navbarcss">
         <div><a href="index.php"><img style="float: left; height: 50px; width: auto;" src="files/uploads/logo_small.png" alt="HOME"></a>
             <ul class="ul_nav">
-                <li class="li_nav" style="border-right: 1px solid darkorange;"><a href="?page=store&action=store"><i class="fa fa-gamepad" aria-hidden="true"></i>&nbsp;&nbsp;Store</a></li>
-                <li class="li_nav" style="border-right: 1px solid darkorange;"><a href="?page=news&action=news"><i class="fa fa-twitter" aria-hidden="true"></i>&nbsp;&nbsp;News</a></li>
+                <li class="li_nav"><a href="?page=store&action=store"><i class="fa fa-gamepad" aria-hidden="true"></i>&nbsp;&nbsp;Store</a></li>
+                <li class="li_nav"><a href="?page=news&action=news"><i class="fa fa-twitter" aria-hidden="true"></i>&nbsp;&nbsp;News</a></li>
                 <li class="li_nav" style="float: right;"><a href="?page=warenkorb"><i class="fa fa-shopping-basket" aria-hidden="true"></i>&nbsp;&nbsp;Warenkorb</a></li>
                 <li class="drop_nav" style="float: right;">
                     <a href="javascript:void(0)" class="drop_nav_button"><i class="fa fa-user-o" aria-hidden="true"></i>&nbsp;&nbsp;Nutzer</a>
@@ -110,30 +110,31 @@ if(isset($search)) {
 
 <div class="container-fluid footer_defined"> <!-- Footer -->
     <div class="row">
-        <div class="col-sm-4"><b>Rechtliches</b>
-            <ul>
-                <li><a href="?page=impressum"style="text-decoration: none">Impressum</a></li>
-                <li><a href="?page=safedata" style="text-decoration: none">Datenschutz</a></li>
-                <li><a href="?page=AGB"style="text-decoration: none">AGB</a></li>
-                <li><a href="?page=FAQ"style="text-decoration: none">FAQ</a></li>
-                <li><a href="?page=widerruf"style="text-decoration: none">Widerrufsrecht</a></li>
-                <li><a href="?page=zahlungsarten"style="text-decoration: none">Versand- und Zahlungsarten</a></li>
+        <div class="col-sm-4 text-center">
+            <b style="font-size: large;">Rechtliches</b>
+            <ul class="footer_ul">
+                <li><a class="footer_links" href="?page=impressum">Impressum</a></li>
+                <li><a href="?page=safedata" class="footer_links">Datenschutz</a></li>
+                <li><a href="?page=AGB" class="footer_links">AGB</a></li>
+                <li><a href="?page=FAQ" class="footer_links">FAQ</a></li>
+                <li><a href="?page=widerruf" class="footer_links">Widerrufsrecht</a></li>
+                <li><a href="?page=zahlungsarten" class="footer_links">Versand- und Zahlungsarten</a></li>
             </ul>
         </div>
-        <div class="col-sm-4">
-            <b>Informationen</b>
-            <ul>
-                <li><a target="_blank" href="http://www.omm.hdm-stuttgart.de" style="text-decoration: none"> Über Uns </a></li>
-                <li><a target="_blank" href="http://www.omm.hdm-stuttgart.de/kontakt" style="text-decoration: none">Kontakt</a></li>
-                <li><a target="_blank" href="http://www.omm.hdm-stuttgart.de/bewerbung" style="text-decoration: none">Karriere</a></li>
+        <div class="col-sm-4 text-center">
+            <b style="font-size: large;">Informationen</b>
+            <ul class="footer_ul">
+                <li><a target="_blank" href="http://www.omm.hdm-stuttgart.de" class="footer_links"> Über Uns </a></li>
+                <li><a target="_blank" href="http://www.omm.hdm-stuttgart.de/kontakt" class="footer_links">Kontakt</a></li>
+                <li><a target="_blank" href="http://www.omm.hdm-stuttgart.de/bewerbung" class="footer_links">Karriere</a></li>
             </ul>
         </div >
-        <div class="col-sm-4">
-            <b>Social Media</b>
-            <ul>
-                <li> <a target="_blank" href="https://www.facebook.com/omm.hdm" style="text-decoration: none">Facebook</a></li>
-                <li> <a target="_blank" href="https://www.instagram.com/omm.hdm" style="text-decoration: none">Instagram</a></li>
-                <li> <a target="_blank" href="https://twitter.com/DAMPFofficial" style="text-decoration: none">Twitter</a></li>
+        <div class="col-sm-4 text-center">
+            <b style="font-size: large;"">Social Media</b>
+            <ul class="footer_ul">
+                <li> <a target="_blank" href="https://www.facebook.com/omm.hdm" class="footer_links">Facebook</a></li>
+                <li> <a target="_blank" href="https://www.instagram.com/omm.hdm" class="footer_links">Instagram</a></li>
+                <li> <a target="_blank" href="https://twitter.com/DAMPFofficial" class="footer_links">Twitter</a></li>
             </ul>
         </div>
     </div>
