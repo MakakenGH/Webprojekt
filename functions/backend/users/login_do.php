@@ -20,7 +20,7 @@ if(isset($_GET['login'])) {
         $_SESSION['userid'] = $user['username']; //Setzt die userid = username (Datenbank: User)
         header("Location: ../../../admin.php");
     } else {
-		$_SESSION['loginerror']="Login oder Password ungültig";
+		$_SESSION['loginerror']="Login oder Passwort falsch!";
 		header("Location: ../../../admin.php");
 
     }

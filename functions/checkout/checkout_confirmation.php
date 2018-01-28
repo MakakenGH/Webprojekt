@@ -37,7 +37,11 @@ $totalprice = 0;
 $amount = 0;
 
 //E-Mail wird aufgebaut
-$mailtext = "<html><body>";
+$mailtext = "<html>";
+$mailtext .= "<head>";
+$mailtext .= "<meta charset=\"UTF-8\">";
+$mailtext .= "</head>";
+$mailtext .= "<body>";
 $mailtext .= "<img src='https://raw.githubusercontent.com/MakakenGH/Webprojekt/master/files/uploads/logo_small.png'/>";
 $mailtext .= "<h2>Vielen Dank für deinen Einkauf bei Dampf!</h2>";
 $mailtext .= "<p>Hallo ".$name.",</p>";

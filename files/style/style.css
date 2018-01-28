@@ -342,3 +342,34 @@ p {
 .justify {
     text-align: justify;
 }
+
+.button_gray {
+    background:darkgray;
+    border-color: transparent;
+    color: white;
+}
+
+.button_gray:hover {
+    background-color: darkgray;
+    border-color: transparent;
+    color: white;
+}
+
+.button_gray a {
+    color:white;
+    text-decoration: underline;
+}
+.button_gray:hover a {
+    color: lightgray;
+}
+
+.login_link {
+    color: darkorange;
+}
+
+.login_link:hover {
+    color: #ed8100;
+}
+.error {
+    color: red;
+}

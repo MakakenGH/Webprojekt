@@ -16,7 +16,7 @@ if((!isset($zeile->username)) or ($_SESSION['userid'] != $zeile->username)) {
 
 	include_once ("./functions/backend/users/login_form.php");
 	?>
-<div class="col-md-3 col-centered text-center">
+<div class="col-md-3 col-centered text-center error">
     <?php
     //gibt bei Fehler, Login Fehlermeldung aus
 	if (isset($login_error)){
@@ -24,7 +24,7 @@ if((!isset($zeile->username)) or ($_SESSION['userid'] != $zeile->username)) {
 	die("");
 	}
 	else {
-    die("Bitte zuerst einloggen!");
+    die("Logge dich als Admin ein!");
 	}
 }
 ?>

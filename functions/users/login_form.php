@@ -8,14 +8,15 @@ if (!isset ($_SESSION['failed'])) {
 ?>
 
     <div class="row" style="margin-top: 5%;">
-    <div class="col-md-3 col-centered text-center log_window">
+    <div class="col-md-3 col-centered log_window">
 
-        <h4>LOGIN</h4>
+        <h4 class="text-center">LOGIN</h4>
         <form action="./functions/users/login_do.php?login=1" method="post">
-            <input type="text" size="40" class="form-control" maxlength="250" name="username" placeholder="Login"><br>
+            <span class='kategorie text-left'>USERNAME</span><br>
+            <input type="text" size="40" class="form-control" maxlength="250" name="username" placeholder="Username">
+            <span class='kategorie text-left'>PASSWORT</span><br>
             <input type="password" size="40"  class="form-control" maxlength="250" name="password" placeholder="Dein Passwort"><br>
-            <br>
-            <input type="submit" class="form-control button_orange" value="Abschicken">
+            <input type="submit" class="form-control button_orange" value="Einloggen">
         </form>
 
         <?php

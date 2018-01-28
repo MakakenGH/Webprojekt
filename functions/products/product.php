@@ -50,8 +50,7 @@ if ($zeile = $query->fetchObject()) {
     $bildlg = strlen($zeile->bild);
     if ($bildlg >= 1) {
         echo "<img class='img_product' src='./files/uploads/$zeile->bild'/>";
-    }
-    else {
+    } else {
         echo "";
     }
     //Bewertungen werden ausgegeben
@@ -68,7 +67,7 @@ if ($zeile = $query->fetchObject()) {
     echo "<div class='row'>";
     echo "<div class='col-sm-6'>";
     echo "<div class='kategorie'>PREIS</div>";
-    echo $preis."€";
+    echo $preis . "€";
     echo "</div>";
     echo "<div class='col-sm-6'>";
     echo "<span class='kategorie'>EAN</span><br>";
@@ -81,7 +80,11 @@ if ($zeile = $query->fetchObject()) {
     echo "<div class='col-sm-2'>";
     echo "<div><input class='form-control' type='number' min='0' value='1' name='anzahl'></div></div>";
     echo "<div class='col-sm-10'>";
+    if (isset ($username)) {
     echo "<div><input class=\"form-control button_orange\" type='submit' value='In den Warenkorb legen'></form></div></div></div></div></div>";
+}else {
+    echo "<div class='form-control text-center button_gray'>In den Warenkorb legen (<a href='?page=users&action=login'>Bitte zuerst einloggen!</a>)</div><div></form></div></div></div></div></div>";
+    }
     echo "</div></div>";
 } else {
     //Fehlermeldung wenn Produkt nicht gefunden wird
@@ -157,7 +160,7 @@ if ($check_ifuserexist == false) {
             <input class="form-control button_orange" type = "submit" value = "Abschicken" >
             </form >
             ');
-    } else echo('Um Produkt zu bewerten bitte logge dich zuerst ein!');
+    } else echo("Um Produkt zu bewerten bitte <a class='login_link' href='?page=users&action=login'>logge dich zuerst ein</a>!");
 } else include_once('./functions/products/rateupdate_form.php'); //Wenn Nutzer schon bewertet hat wird ein Bearbeitungsformular ausgegeben
 
 echo "</div>";
