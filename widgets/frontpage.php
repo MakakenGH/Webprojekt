@@ -32,7 +32,7 @@
 <br>
 <div class="row">
     <div class="col text-center">
-        <span style="font-size: xx-large;"><i>"DAMPF!DAMPF!DAMPF!DAMPF!DAMPF!DAMPF!SloganDAMPF!DAMPF!DAMPF!DAMPF!"</i></span>
+        <span style="font-size: xx-large;"><i><b style="color: darkorange;">"</b>Shoppen. Zahlen. DAMPF!EN.<b style="color: darkorange;">"</b></i></span>
     </div>
 </div>
 <br>
