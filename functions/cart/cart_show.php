@@ -57,6 +57,6 @@ foreach ($table as $tablerow) {
     echo "</div>";
 } else {
 
-    echo "<div class='col-md-3 col-centered log_window'>Um diese Funktion nutzen zu können loggen Sie sich bitte ein.<br> <a href='?page=users&action=login'><button class='button_orange'>zum Login</button></a></div>";
+    echo "<div class='col-md-3 col-centered text-center log_window'>Um diese Funktion nutzen zu können loggen Sie sich bitte ein.<br><br> <a href='?page=users&action=login'><button class='button_orange'>zum Login</button></a></div>";
 
     }
