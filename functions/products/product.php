@@ -128,7 +128,7 @@ echo "</div>";
 $db2 = null;
 
 echo "<div class='col-sm-12 trenn'>";
-echo "<h2>PRODUKT BEWERTEN:<br></h2>";
+echo "<h2>PRODUKT BEWERTEN:</h2>";
 
 //DB Verbindung zu Nutzerbewertungen Tabelle
 $db3 = new PDO($dsn, $dbuser, $dbpass);
@@ -151,13 +151,15 @@ if ($check_ifuserexist == false) {
             <form action = "./functions/products/rate_do.php" method = "post" >
             <input type = "hidden" name = "username" value = "');
         echo($username);
-        echo('" ><br >
+        echo('" >
+            <span class=\'kategorie\'>KOMMENTAR</span><br>
             <textarea class="form-control" name = "comment" rows=\'4\' cols=\'20\' placeholder = "Dein Kommentar"></textarea>
+            <span class=\'kategorie\'>BEWERTUNG (0-100)</span><br>
             <input class="form-control" type = "number" name = "rate" min="0" max="100" placeholder = "Deine Bewertung (0-100)" >
             <input type = "hidden" name = "ean" value = "');
         echo($ean);
         echo('"><br>
-            <input class="form-control button_orange" type = "submit" value = "Abschicken" >
+            <input class="form-control button_orange" type = "submit" value = "Bewerten" >
             </form >
             ');
     } else echo("Um Produkt zu bewerten bitte <a class='login_link' href='?page=users&action=login'>logge dich zuerst ein</a>!");
