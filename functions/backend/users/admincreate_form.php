@@ -3,6 +3,7 @@
 <h3 class="text-center">ADMIN HINZUFÜGEN</h3>
 
 <form action="./functions/backend/users/admincreate_do.php" method="post">
+    <span class='kategorie'>USERNAME</span><br>
     <input class="form-control" type="text" name="name" placeholder="Username" /><br>
     <input class="form-control button_orange" type="submit" value="Admin hinzufügen"/>
 </form>
