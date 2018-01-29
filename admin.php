@@ -27,7 +27,7 @@ $_SESSION['prevurl'] = $_SERVER['REQUEST_URI'];
     <div class="row">
         <nav class="col-sm-3 col-md-2 sidebar">
             <!-- Sidebar -->
-            <ul class="nav nav-pills flex-column">
+            <ul class="nav flex-column">
 
                 <li class="nav-item"><a class="nav-link" href="index.php"><i class="fa fa-laptop"></i>   Frontend Ansicht</a></li>
                 <li class="nav-item"><a class="nav-link" href="?page=products&action=overview">Produktübersicht</a></li>
@@ -39,7 +39,8 @@ $_SESSION['prevurl'] = $_SERVER['REQUEST_URI'];
 
             </ul>
         </nav>
-
+    </div>
+    <div class="backend_include">
         <?php
         //Sucheingabe wird einer variable zugeordnet
         $search=$_POST["search"];
@@ -66,6 +67,7 @@ $_SESSION['prevurl'] = $_SERVER['REQUEST_URI'];
         }}
 
         ?>
+    </div>
     </div>
 </div>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
