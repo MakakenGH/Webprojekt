@@ -4,7 +4,7 @@ include_once("./functions/db.php");
 
 //Bearbeitungsmodus aktivieren Button
 echo "<main class=\"col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3\">";
-echo "<button type='button' class='form-control button_orange'><a style='color:white;' href='?page=products&editmode=overview'><i class='fa fa-wrench'></i>  Bearbeitungsmodus aktivieren</a></button><br>";
+echo "<a style='text-decoration: none;' href='?page=products&editmode=overview'><button type='button' class='form-control button_orange'><i class='fa fa-wrench'></i>  Bearbeitungsmodus aktivieren</button></a><br>";
 echo "</main>";
 
 //DB Verbindung

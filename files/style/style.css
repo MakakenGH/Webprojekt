@@ -336,8 +336,11 @@ p {
 }
 
 .carousel {
-    max-width: 1300px;
-    height: auto;
+    width: 100%;
+    height: 35em;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
 }
 
 .justify {

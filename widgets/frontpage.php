@@ -1,6 +1,6 @@
 <div class="row" style="text-align: center;">
-    <div class="col" style="margin-left: 50px; margin-right: 50px;">
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <div class="col text-center col-center">
+    <div id="myCarousel" class="carousel slide " data-ride="carousel">
         <!-- Wrapper for slides -->
         <div class="carousel-inner">
             <div class="carousel-item active">
