@@ -23,6 +23,7 @@
 session_start();
 include ("./functions/db.php");
 $_SESSION['prevurl'] = $_SERVER['HTTP_REFERER'];
+$_SESSION['cururl'] = $_SERVER['REQUEST_URI'];
 ?>
 
 <div class="container-fluid"><!-- Header -->

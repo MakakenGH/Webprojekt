@@ -55,20 +55,6 @@ echo "</div>";
 echo "Alle Preise enthalten die gesetzliche Mehrwertsteuer.<br><br>";
 echo "</div>";
 echo "<div class='col' id='checkout'>";
-echo "<form>
-        <p><b>Wie möchtest du bezahlen?<b></b></p>
-  <fieldset>
-    <input type=\"radio\" id=\"mc\" name=\"Zahlmethode\" value=\"Mastercard\">
-    <label for=\"mc\"><img src=\"./files/uploads/mastercard-alternate.png\" alt=\"MasterCard\" width=\"85\"></label> 
-    <input type=\"radio\" id=\"pp\" name=\"Zahlmethode\" value=\"Paypal\">
-    <label for=\"pp\"> <img src=\"./files/uploads/paypal.png\" alt=\"PayPal\" width=\"85\"></label>
-    <input type=\"radio\" id=\"vi\" name=\"Zahlmethode\" value=\"Visa\">
-    <label for=\"vi\"><img src=\"./files/uploads/visa.png\" alt=\"Visa\" width=\"85\"></label>
-    <input type=\"radio\" id=\"gp\" name=\"Zahlmethode\" value=\"Giropay\">
-    <label for=\"gp\"><img src=\"./files/uploads/giropay.png\" alt=\"Giropay\" width=\"85\"></label>  
-  </fieldset>
-</form><br><br>";
-echo "<b>Wie ist deine E-Mail Adresse?</b><br>(Deine Keys werden dir per E-Mail zugeschickt)<br><br>";
 
 //E-Mail Feld wird eingefügt
 require_once ('./functions/checkout/mail_form.php');

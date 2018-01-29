@@ -17,7 +17,7 @@ if ($zeile = $statement->fetchObject()) {
 }
 
 //Verbindung mit Orders und Sortiment DB um Produktinformationen zu bestellten Produkten zu erhalten
-$statement2 = $db->prepare("SELECT s.name, o.sum_total, o.anzahl, o.username, o.sale_price FROM orders o, sortiment s WHERE o.ean = s.ean AND o.order_number = '".$order_number."'");
+$statement2 = $db->prepare("SELECT s.name, o.sum_total, o.anzahl, o.username, o.sale_price, o.payment FROM orders o, sortiment s WHERE o.ean = s.ean AND o.order_number = '".$order_number."'");
 $statement2->execute();
 
 $recipient = $email;
@@ -84,6 +84,7 @@ while ($zeile2 = $statement2->fetchObject()) {
     $mailtext .= "</td>";
     $mailtext .= "</tr>";
     $totalprice += $zeile2->sum_total;
+    $zahlungsmethode = $zeile2->payment;
 }
 
 
@@ -96,6 +97,7 @@ $mailtext .= "</tr>";
 $mailtext .= "</tfoot>";
 $mailtext .= "</table><br>";
 $mailtext .= "<p>Im Rechnungsbetrag sind 19 % MwSt enthalten.<br><br></p>";
+$mailtext .= "<p><b>Zahlungsmethode: </b>".$zahlungsmethode."</p>";
 $mailtext .= "<p><b>Bestellnummer: </b>".$order_number."</p>";
 $mailtext .= "<p><b>Auftragsdatum: </b>".$time."</p>";
 $mailtext .= "<br><h3>Bis zum nächsten Mal! -Team Dampf</h3>";

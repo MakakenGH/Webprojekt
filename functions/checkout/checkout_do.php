@@ -11,6 +11,8 @@ if (isset($_SESSION['userid'])) {
     $new_email = $_POST["new_email"];
     $user_email = $_POST["user_email"];
 
+    $zahlungsmethode = $_POST['Zahlmethode'];
+
     //Wenn Nutzer eingeloggt ist wird die gespeicherte E-Mail genutzt wenn nicht dann die neue E-Mail
     if(isset($user_email)) {
         $email = $user_email;
@@ -42,8 +44,8 @@ if (isset($_SESSION['userid'])) {
         $ean = $tablerow['ean'];
 
         //Speichert Produkte aus dem Warenkorb in die Bestellungen Tabelle der DB
-        $statement = $db->prepare("INSERT INTO orders (order_number, ean, anzahl, username, email, sale_price, sum_total) VALUES (:order_number, :ean, :anzahl, :username, :email, :sale_price, :sum_total)");
-        $statement->execute(array('order_number' => $order_number, 'ean' => $ean, 'anzahl'=> $anzahl, 'username' => $username, 'email' => $email, 'sale_price' => $artikelpreis, 'sum_total' => $gesamtpreis));
+        $statement = $db->prepare("INSERT INTO orders (order_number, ean, anzahl, username, email, sale_price, sum_total, payment) VALUES (:order_number, :ean, :anzahl, :username, :email, :sale_price, :sum_total, :payment)");
+        $statement->execute(array('order_number' => $order_number, 'ean' => $ean, 'anzahl'=> $anzahl, 'username' => $username, 'email' => $email, 'sale_price' => $artikelpreis, 'sum_total' => $gesamtpreis, 'payment' => $zahlungsmethode));
 
         //Löscht Inhalte der Warenkorb Tabelle
         $statement2 = $db->prepare("DELETE FROM cart WHERE username = '".$username."'");
