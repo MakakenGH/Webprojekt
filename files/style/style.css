@@ -10,7 +10,7 @@
 }
 
 @media screen and (min-width: 768px) {
-body { padding-top: 55px; }
+    body { padding-top: 55px; }
 }
 
 #include_area {
@@ -145,6 +145,8 @@ li.drop_nav {
     border-radius: 15px;
 }
 
+
+
 .footer_defined {
     background-color: #333;
     bottom: 0;
@@ -170,10 +172,9 @@ li.drop_nav {
 }
 
 .button_orange:hover {
-    background-color: orange;
-    border-color: transparent;
     text-decoration: none;
-    color: white;
+    border-color: transparent;
+    background-color: orange;
 }
 
 .button_orange a {
@@ -310,6 +311,10 @@ p {
     color: #b9bdb6;
     font-size: 12px;
 }
+.search_ausgabe {
+ font-size: xx-large;
+
+}
 
 .rating {
     padding: 5px;
@@ -359,9 +364,9 @@ p {
 
 .button_store {
     background:darkorange;
+    color: white;
     border-color: transparent;
     text-decoration: none;
-    color: white;
     margin-top: 1em;
     margin-bottom: 1em;
 }
@@ -369,6 +374,8 @@ p {
 .button_store:hover
 {
     text-decoration: none;
+    color: black;
+    border-color: transparent;
 }
 .store_preis {
     font-size: 36px;
@@ -441,4 +448,12 @@ p {
 }
 .error {
     color: red;
+}
+.store_link {
+    text-decoration: none;
+    color: white;
+}
+.store_link:hover {
+    text-decoration: none;
+    color: darkorange;
 }

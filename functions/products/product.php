@@ -83,7 +83,7 @@ if ($zeile = $query->fetchObject()) {
     if (isset ($username)) {
     echo "<div><input class=\"form-control button_orange\" type='submit' value='In den Warenkorb legen'></form></div></div></div></div></div>";
 }else {
-    echo "<div class='form-control text-center button_gray'>In den Warenkorb legen (<a href='?page=users&action=login'>Bitte zuerst einloggen!</a>)</div><div></form></div></div></div></div></div>";
+    echo "<div class='form-control text-center button_gray'><i class=\"fa fa-shopping-basket\" aria-hidden=\"true\"></i> In den Warenkorb legen (<a href='?page=users&action=login'>Bitte zuerst einloggen!</a>)</div><div></form></div></div></div></div></div>";
     }
     echo "</div></div>";
 } else {

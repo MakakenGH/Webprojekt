@@ -1,17 +1,21 @@
+<span style="font-size: xx-large "> Wähle deine Lieblingskategorie!</span>
 <?php
-
 session_start();
 include_once("./functions/db.php");
 $genre = "";
-echo " <div class = 'row'>";
+
+echo "<div id ='store_defined_genre'>";
+echo "<div class = 'row'>";
 echo "<div class = 'col-sm-2 text-center '><a class='form-control button_store' href='?page=store&action=store&genre=all'>All Games </a></div>";
 echo "<div class = 'col-sm-2 text-center '><a class='form-control button_store' href='?page=store&action=store&genre=action'>Action </a></div>";
 echo "<div class = 'col-sm-2 text-center '><a class='form-control button_store' href='?page=store&action=store&genre=rts'>Real Time Strategy </a></div>";
 echo "<div class = 'col-sm-2 text-center '><a class='form-control button_store' href='?page=store&action=store&genre=sport'>Sport </a></div>";
 echo "<div class = 'col-sm-2 text-center '><a class='form-control button_store' href='?page=store&action=store&genre=puzzle'>Puzzle </a></div>";
 echo "<div class = 'col-sm-2 text-center '><a class='form-control button_store' href='?page=store&action=store&genre=fps'>FPS </a></div>";
-echo "</div>";
-
+echo "</div></div>";
+echo "<br><br>";
+echo "<span style=\"font-size: xx-large\"> DAMPF! durchsuchen:</span>";
+echo "<br><br>";
 
 switch ($_GET["genre"]) {
     case "all":
@@ -55,14 +59,21 @@ while ($zeile = $query->fetchObject()) {
     echo "<img class='img_store' src='./files/uploads/$zeile->bild'/><br>";
     echo "</a>";
     echo "<div class='store_text'>";
-    echo "<span style='font-size:45px'><b>$zeile->name</b></span><br>";
-    echo "<span class='fa fa-thumbs-o-up' style='font-size: 36px'>$zeile->rating</span><br><br>";
-    echo "<span class='fa fa-eur' style='font-size:36px'>$zeile->preis</span><br><br>";
+    echo "<a class='store_link' href='?ean=$zeile->ean'>";
+    echo "<span style='font-size:xx-large'><b>$zeile->name</b></span><br><br>";
+    echo "</a>";
+    echo "<div class= 'row trenn'>";
+    echo "<div class='col-sm-4 '>";
+    echo "<span class='kategorie'>GENRE<br> </span><span class='search_ausgabe'>$zeile->genre</span> <br></div>";
+    echo "<div class='col-sm-4'>";
+    echo "<span class='kategorie'> BEWERTUNG <br></span> <span class='search_ausgabe'> $zeile->rating</span> <br><br></div>";
+    echo "<div class='col-sm-4'>";
+    echo "<span class='kategorie'> PREIS<br> </span><span class='search_ausgabe'> $zeile->preis €</span><br><br></div></div>";
     if (isset($_SESSION['userid'])) {
         echo "<form action='./functions/cart/cartupdate_do.php' method='get'><input type='hidden' value='$zeile->ean' name='ean'><input type='number' min='0' value='1' style='max-width: 50px' name='anzahl'>&nbsp;<input type='submit' class='button_orange' value='In den Warenkorb legen'></form>";
     }
     else {
-        echo "<a href='?page=users&action=login'><button class='button_grey'>(Bitte einloggen)</button></a>";
+        echo "<div class='form-control text-center button_gray'><i class=\"fa fa-shopping-basket\" aria-hidden=\"true\"> </i> In den Warenkorb legen (<a href='?page=users&action=login'>Bitte zuerst einloggen!)</a></div>";
     }
     echo "</div></div><br><br><br>";}
 echo "</div>";
