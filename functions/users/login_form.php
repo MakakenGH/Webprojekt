@@ -17,7 +17,8 @@ if (!isset ($_SESSION['failed'])) {
             <span class='kategorie text-left'>PASSWORT</span><br>
             <input type="password" size="40"  class="form-control" maxlength="250" name="password" placeholder="Dein Passwort"><br>
             <input type="submit" class="form-control button_orange" value="Einloggen">
-        </form>
+        </form><br>
+        <span>Noch keinen Account? <a href="?page=users&action=register" style="color: darkorange;">Hier</a> gehts zur Registrierung</span><br>
 
         <?php
         session_start();

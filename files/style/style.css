@@ -5,12 +5,13 @@
     bottom: 0;
 }
 
+/*Anpassung an mobile*/
 @media screen and (max-width: 480px) {
     body { padding-top: 150px; }
 }
 
 @media screen and (min-width: 768px) {
-    body { padding-top: 55px; }
+body { padding-top: 55px; }
 }
 
 #include_area {
@@ -133,8 +134,8 @@ li.drop_nav {
 
 .trenn {
     border-bottom: 1px solid #333;
-    margin-bottom: 1em;
     padding-bottom: 1em;
+    padding-top: 1em;
 }
 
 #store_defined {
@@ -144,8 +145,6 @@ li.drop_nav {
     flex: 30%;
     border-radius: 15px;
 }
-
-
 
 .footer_defined {
     background-color: #333;
@@ -172,9 +171,10 @@ li.drop_nav {
 }
 
 .button_orange:hover {
-    text-decoration: none;
-    border-color: transparent;
     background-color: orange;
+    border-color: transparent;
+    text-decoration: none;
+    color: white;
 }
 
 .button_orange a {
@@ -221,7 +221,7 @@ li.drop_nav {
 }
 
 @media screen and (max-width: 575px) {
-    .backend_include { margin-top: 90%; }
+    .backend_include { margin-top: 95%; }
 }
 
 /* Sidebar navigation */
@@ -364,9 +364,9 @@ p {
 
 .button_store {
     background:darkorange;
-    color: white;
     border-color: transparent;
     text-decoration: none;
+    color: white;
     margin-top: 1em;
     margin-bottom: 1em;
 }
@@ -374,7 +374,7 @@ p {
 .button_store:hover
 {
     text-decoration: none;
-    color: black;
+    color: white;
     border-color: transparent;
 }
 .store_preis {
@@ -405,14 +405,6 @@ p {
     margin: 0 auto;
     padding: 0;
     list-style-type: none;
-}
-
-.carousel {
-    width: 100%;
-    height: 35em;
-    overflow: hidden;
-    background-size: cover;
-    background-position: center;
 }
 
 .justify {
@@ -449,11 +441,12 @@ p {
 .error {
     color: red;
 }
+
+.product_boxes {
+    padding-top: 10px;
+    background-color: rgb(30,30,30);
+}
 .store_link {
     text-decoration: none;
     color: white;
-}
-.store_link:hover {
-    text-decoration: none;
-    color: darkorange;
 }
