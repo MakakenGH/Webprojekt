@@ -4,7 +4,7 @@ if (!isset ($_SESSION['failed'])) {
     $_SESSION['failed'] = 0;
 }
 ?>
-<div class="row" style="margin-top: 5%;">
+<div class="row" style="margin-top: 1%;">
 <div class="col-md-3 col-centered log_window"">
     <h4 class="text-center">REGISTRIERUNG</h4>
     <form action="./functions/users/register_do.php?register=1" method="post">

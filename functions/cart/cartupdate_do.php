@@ -2,6 +2,8 @@
 session_start();
 include_once("../db.php");
 
+
+
 if (isset($_SESSION['userid'])) {
 
     $ean = $_GET["ean"];
@@ -9,11 +11,21 @@ if (isset($_SESSION['userid'])) {
     $anzahl = $_GET["anzahl"];
 
     $db = new PDO($dsn, $dbuser, $dbpass);
-    $sql = "INSERT INTO cart (ean, anzahl, username) VALUES (:ean, :anzahl, :username) ON DUPLICATE KEY UPDATE anzahl=anzahl + :anzahl WHERE username=:username";
-    //Falls das schreiben in die DB einen doppelten wert für ein UNIQUE oder PRiMARY KEY wert verursachen würde,
-    // wird anstelle von INSERT der UPDATE befehl ausgeführt
-    $query = $db->prepare($sql);
-    $query->execute(array('ean' => $ean, 'anzahl' => $anzahl, 'username' => $username));
+
+    $sql_check = "SELECT * FROM cart WHERE username='".$username."' AND ean='".$ean."'";
+    $query = $db->prepare($sql_check);
+    $query->execute();
+
+    if ($query->fetchAll()) {
+        $sql2 = "UPDATE cart SET anzahl=anzahl+:anzahl WHERE username=:username AND ean=:ean";
+
+    }else {
+        $sql2 = "INSERT INTO cart (ean, anzahl, username) VALUES (:ean, :anzahl, :username)";
+    }
+
+    $query2 = $db->prepare($sql2);
+    $query2->execute(array('ean' => $ean, 'anzahl' => $anzahl, 'username' => $username));
+
 
     header("Location: ../../index.php?page=warenkorb");
 
