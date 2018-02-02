@@ -127,8 +127,7 @@ li.drop_nav {
 .img_product {
     width: 100%;
     height: auto;
-    border-radius: 15px;
-    margin-bottom: 1em;
+    padding-bottom: 1em;
 }
 
 .trenn {
@@ -153,6 +152,7 @@ li.drop_nav {
     margin: 0;
     width: 100%;
     padding: 10px;
+
 }
 
 #header_defined {
@@ -172,12 +172,6 @@ li.drop_nav {
 
 .button_orange:hover {
     background-color: orange;
-    text-decoration: none;
-    color: white;
-}
-
-button_orange.a {
-    color:white;
 }
 
 .schrift_orange {
@@ -197,7 +191,10 @@ button_orange.a {
 }
 
 #beschreibung_store {
+
+
 }
+
 
 .carttable {
     cellpadding: 20px;
@@ -303,14 +300,68 @@ p {
 }
 
 .rating {
+    border: 1px solid white;
     padding: 5px;
-    border-radius: 15px;
-    background-color: #333333;
+}
+
+.rating_user {
+    border: 1px solid white;
+    padding: 5px;
+}
+.footer_color {
+    text-decoration: none;
+    color: white;
 }
 
 
-.product_defined {
-    background-color: #333;
-    padding: 5px;
-    border-radius: 15px;
+
+
+
+
+
+
+/* Style für Tabelle_Order */
+#customers {
+    width: 100%;
+    color: orange;
+}
+
+#customers td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: gray;}
+
+#customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: orange;
+    color: white;
+}
+
+.button_store {
+    background:darkorange;
+    border-color: transparent;
+    text-decoration: none;
+    color: white;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.button_store:hover
+{
+    text-decoration: none;
+}
+.store_preis {
+    font-size: 36px;
+}
+.button_grey {
+    background:darkgray;
+    border-color: transparent;
+    text-decoration: none;
+    color: white;
 }

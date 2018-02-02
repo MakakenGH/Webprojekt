@@ -1,17 +1,17 @@
 <?php
-include_once ("./widgets/slide.php");
 
 session_start();
 include_once("./functions/db.php");
-
 $genre = "";
+echo " <div class = 'row'>";
+echo "<div class = 'col-sm-2 text-center '><a class='form-control button_store' href='?page=store&action=store&genre=all'>All Games </a></div>";
+echo "<div class = 'col-sm-2 text-center '><a class='form-control button_store' href='?page=store&action=store&genre=action'>Action </a></div>";
+echo "<div class = 'col-sm-2 text-center '><a class='form-control button_store' href='?page=store&action=store&genre=rts'>Real Time Strategy </a></div>";
+echo "<div class = 'col-sm-2 text-center '><a class='form-control button_store' href='?page=store&action=store&genre=sport'>Sport </a></div>";
+echo "<div class = 'col-sm-2 text-center '><a class='form-control button_store' href='?page=store&action=store&genre=puzzle'>Puzzle </a></div>";
+echo "<div class = 'col-sm-2 text-center '><a class='form-control button_store' href='?page=store&action=store&genre=fps'>FPS </a></div>";
+echo "</div>";
 
-echo "<br><a href='?page=store&action=store&genre=all'>ALL </a>";
-echo "<a href='?page=store&action=store&genre=action'>ACTION </a>";
-echo "<a href='?page=store&action=store&genre=rts'>RTS </a>";
-echo "<a href='?page=store&action=store&genre=sport'>SPORT </a>";
-echo "<a href='?page=store&action=store&genre=puzzle'>PUZZLE </a>";
-echo "<a href='?page=store&action=store&genre=fps'>FPS </a><br><br>";
 
 switch ($_GET["genre"]) {
     case "all":
@@ -55,12 +55,17 @@ while ($zeile = $query->fetchObject()) {
     echo "<img class='img_store' src='./files/uploads/$zeile->bild'/><br>";
     echo "</a>";
     echo "<div class='store_text'>";
-    echo "<span><b>$zeile->name</b></span><br>";
-    echo "<button id='beschreibung_button_store''>Beschreibung einblenden</button>";
-    echo "<span id='beschreibung_store'>$zeile->beschreibung</span><br>";
-    echo "<span>$zeile->rating</span><br>";
-    echo "<span>$zeile->preis</span><br>";
-    echo "<span><a href='?ean=$zeile->ean'>Zur Produktseite</a></span><br>";
-    echo "<form action='./functions/cart/cartupdate_do.php' method='get'><input type='hidden' value='$zeile->ean' name='ean'><input type='number' min='0' value='1' style='max-width: 50px' name='anzahl'>&nbsp;<input type='submit' class='button_orange' value='In den Warenkorb legen'></form>";
-    echo "</div></div><br><br>";}
+    echo "<span style='font-size:45px'><b>$zeile->name</b></span><br>";
+    echo "<span class='fa fa-thumbs-o-up' style='font-size: 36px'>$zeile->rating</span><br><br>";
+    echo "<span class='fa fa-eur' style='font-size:36px'>$zeile->preis</span><br><br>";
+    echo" <button type=\"button\" class=\"btn btn-info\" data-toggle=\"collapse\" data-target=\"#demo\">Beschreibung</button><br>";
+    echo "<div id='demo' class='collapse'>";
+    echo "<span id='beschreibung_store'>$zeile->beschreibung</span><br></div><br><br>";
+    if (isset($_SESSION['userid'])) {
+        echo "<form action='./functions/cart/cartupdate_do.php' method='get'><input type='hidden' value='$zeile->ean' name='ean'><input type='number' min='0' value='1' style='max-width: 50px' name='anzahl'>&nbsp;<input type='submit' class='button_orange' value='In den Warenkorb legen'></form>";
+    }
+    else {
+        echo "<a href='?page=users&action=login'><button class='button_grey'>(Bitte einloggen)</button></a>";
+    }
+    echo "</div></div><br><br><br>";}
 echo "</div>";

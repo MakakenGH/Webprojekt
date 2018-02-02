@@ -49,10 +49,15 @@ $_SESSION['prevurl'] = $_SERVER['HTTP_REFERER'];
 
 <div class="container-fluid" id="include_area"> <!-- Include Bereich (Content) -->
     <?php
+    $search=$_GET["search"];
+
     $ean = $_GET["ean"];
     if (isset($ean)) {
         include ("./functions/products/product.php");
-    }else {
+    }elseif (isset($search)){
+        include ("./functions/search/search_do.php");
+    } else
+    {
     switch ($_GET["page"]) {
         case "":
             include "./widgets/frontpage.php";
@@ -93,47 +98,35 @@ $_SESSION['prevurl'] = $_SERVER['HTTP_REFERER'];
         case "zahlungsarten":
             include "./files/Footer/zahlungsarten.html";
             break;
-        case "searchdo":
-            include "./functions/search/search_do.php";
-            break;
     }}
     ?>
-<?php
-$search=$_POST["search"];
 
-if(isset($search)) {
-    include("./functions/search/search_do.php");
-}
-?>
-</div>
-</div>
-
-<div class="container-fluid footer_defined"> <!-- Footer -->
+<div class="footer_defined"> <!-- Footer -->
     <div class="row">
         <div class="col-sm-4"><b>Rechtliches</b>
-            <ul>
-                <li><a href="?page=impressum"style="text-decoration: none">Impressum</a></li>
-                <li><a href="?page=safedata" style="text-decoration: none">Datenschutz</a></li>
-                <li><a href="?page=AGB"style="text-decoration: none">AGB</a></li>
-                <li><a href="?page=FAQ"style="text-decoration: none">FAQ</a></li>
-                <li><a href="?page=widerruf"style="text-decoration: none">Widerrufsrecht</a></li>
-                <li><a href="?page=zahlungsarten"style="text-decoration: none">Versand- und Zahlungsarten</a></li>
+            <ul style="list-style-type: none">
+                <li><a href="?page=impressum"style="text-decoration: none; color:orange  ">Impressum</a></li>
+                <li><a href="?page=safedata" style="text-decoration: none;color: orange" >Datenschutz</a></li>
+                <li><a href="?page=AGB"style="text-decoration: none;color: orange">AGB</a></li>
+                <li><a href="?page=FAQ"style="text-decoration: none;color: orange">FAQ</a></li>
+                <li><a href="?page=widerruf"style="text-decoration: none;color: orange">Widerrufsrecht</a></li>
+                <li><a href="?page=zahlungsarten"style="text-decoration: none;color: orange">Versand- und Zahlungsarten</a></li>
             </ul>
         </div>
         <div class="col-sm-4">
             <b>Informationen</b>
-            <ul>
-                <li><a target="_blank" href="http://www.omm.hdm-stuttgart.de" style="text-decoration: none"> Über Uns </a></li>
-                <li><a target="_blank" href="http://www.omm.hdm-stuttgart.de/kontakt" style="text-decoration: none">Kontakt</a></li>
-                <li><a target="_blank" href="http://www.omm.hdm-stuttgart.de/bewerbung" style="text-decoration: none">Karriere</a></li>
+            <ul style="list-style-type: none">
+                <li><a target="_blank" href="http://www.omm.hdm-stuttgart.de" style="text-decoration: none;color: orange"> Über Uns </a></li>
+                <li><a target="_blank" href="http://www.omm.hdm-stuttgart.de/kontakt" style="text-decoration: none;color: orange">Kontakt</a></li>
+                <li><a target="_blank" href="http://www.omm.hdm-stuttgart.de/bewerbung" style="text-decoration: none;color: orange">Karriere</a></li>
             </ul>
         </div >
         <div class="col-sm-4">
             <b>Social Media</b>
-            <ul>
-                <li> <a target="_blank" href="https://www.facebook.com/omm.hdm" style="text-decoration: none">Facebook</a></li>
-                <li> <a target="_blank" href="https://www.instagram.com/omm.hdm" style="text-decoration: none">Instagram</a></li>
-                <li> <a target="_blank" href="https://twitter.com/DAMPFofficial" style="text-decoration: none">Twitter</a></li>
+            <ul style="list-style-type: none">
+                <li> <a target="_blank" href="https://www.facebook.com/omm.hdm" style="text-decoration: none; color: orange;">Facebook</a></li>
+                <li> <a target="_blank" href="https://www.instagram.com/omm.hdm" style="text-decoration: none; color: orange;:">Instagram</a></li>
+                <li> <a target="_blank" href="https://twitter.com/DAMPFofficial" style="text-decoration: none; color: orange;:">Twitter</a></li>
             </ul>
         </div>
     </div>
@@ -143,7 +136,6 @@ if(isset($search)) {
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
 
 </body>
 </html>
