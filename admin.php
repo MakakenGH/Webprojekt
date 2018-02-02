@@ -13,18 +13,21 @@
         @import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
     </style>
 </head>
+
 <body class="b_bg">
 
 <?php
 session_start();
 include ("./functions/db.php");
-require_once ("./functions/backend/admincheck.php");
+require_once ("./functions/backend/admincheck.php"); //Überprüft ob Nutzer ein Admin ist
 $_SESSION['prevurl'] = $_SERVER['REQUEST_URI'];
 ?>
+
 <div class="container-fluid">
     <div class="row">
         <nav class="col-sm-3 col-md-2 sidebar">
-            <ul class="nav nav-pills flex-column">
+            <!-- Sidebar -->
+            <ul class="nav flex-column">
 
                 <li class="nav-item"><a class="nav-link" href="index.php"><i class="fa fa-laptop"></i>   Frontend Ansicht</a></li>
                 <li class="nav-item"><a class="nav-link" href="?page=products&action=overview">Produktübersicht</a></li>
@@ -36,10 +39,12 @@ $_SESSION['prevurl'] = $_SERVER['REQUEST_URI'];
 
             </ul>
         </nav>
-
+    </div>
+    <div class="backend_include">
         <?php
+        //Sucheingabe wird einer variable zugeordnet
         $search=$_POST["search"];
-
+        //if-Loop verhindert dass die default Inhalte nach den Suchergebnisse angezeigt werden
         if(isset($search)) {
             include ("./functions/backend/products/adminsearch_do.php");
         }else {
@@ -62,6 +67,7 @@ $_SESSION['prevurl'] = $_SERVER['REQUEST_URI'];
         }}
 
         ?>
+    </div>
     </div>
 </div>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

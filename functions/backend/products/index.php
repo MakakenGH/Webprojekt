@@ -1,27 +1,20 @@
 <?php
 session_start();
+
+//Routing für Sidebar
 if (isset($_GET["action"]))
 {
-
     switch ($_GET["action"]) {
         case "overview":
             include "./functions/backend/products/overview.php";
-            break;
-        case "edit":
-            include "update_form.php";
-            break;
-        case "delete":
-            include "delete1.php";
             break;
         case "create":
             include "./functions/backend/products/create_form.php";
             break;
     }
-
 }
-else
-{
-
+else {
+//Routing für Bearbeitungsmodus
 if (isset($_GET["editmode"]))
 {
 

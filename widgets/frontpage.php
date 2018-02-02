@@ -1,18 +1,20 @@
-<div class="row">
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+<div class="row" style="text-align: center;">
+    <div class="col text-center col-center">
+    <div id="myCarousel" class="carousel slide " data-ride="carousel">
         <!-- Wrapper for slides -->
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img class="d-block w-100" src="files/uploads/gsf.png" alt="Global Strike Future">
+                <a href="?ean=1234567917"><img class="d-block w-100" src="files/uploads/gsf.png" alt="Global Strike Future"></a>
             </div>
 
             <div class="carousel-item">
-                <img class="d-block w-100" src="files/uploads/fafi17.png" alt="FAFI 17" style="width:100%;">
+                <a href="?ean=1234567923"><img class="d-block w-100" src="files/uploads/titris2.png" alt="TITRIS 2"></a>
             </div>
 
             <div class="carousel-item">
-                <img class="d-block w-100" src="files/uploads/titris3.png" alt="TITRIS 3" style="width:100%;">
+                <a href="?ean=1234567925"><img class="d-block w-100" src="files/uploads/fafi17.png" alt="FAFI 17"></a>
             </div>
+
         </div>
 
         <!-- Left and right controls -->
@@ -26,80 +28,26 @@
         </a>
     </div>
 </div>
+</div>
+<br>
 <div class="row">
-    <div class="col" style="padding: 20px;">
-        <?php
-        $_SESSION['prevprevurl'] =  $_SERVER['HTTP_REFERER'];
+    <div class="col text-center">
+        <span style="font-size: xx-large;"><i><b style="color: darkorange;">"</b>Shoppen. Zahlen. DAMPF!EN.<b style="color: darkorange;">"</b></i></span>
+    </div>
+</div>
+<br>
 
-        if (!isset ($_SESSION['failed'])) {
-            $_SESSION['failed'] = 0;
-        }
 
-        ?>
-        <div class="text-center log_window">
+<div class="row">
+    <div class="col text-center" id="store_defined" style="padding: 20px;">
+        <span style="font-size: x-large; ">Jetzt einloggen und abdampfen!</span><br><br>
+        <a href="?page=users&action=login"><button class="form-control button_orange">Zum Login</button></a>
 
-                <h4>LOGIN</h4>
-                <form action="./functions/users/login_do.php?login=1" method="post">
-                    <input type="text" size="40" class="form-control" maxlength="250" name="username" placeholder="Login"><br>
-                    <input type="password" size="40"  class="form-control" maxlength="250" name="password" placeholder="Dein Passwort"><br>
-                    <br>
-                    <input type="submit" class="form-control button_orange" value="Abschicken">
-                </form>
-                <?php
-                session_start();
-                if ($_SESSION['failed'] == 2) {
-                    echo "<br><span class='col-centered' style='color: red;'><b>Login oder Passwort ist ungültig!</b></span>";
-                } else { echo "";}
-                ?>
-            </div>
-        </div>
+    </div>
 
-        <div class="col" style="padding: 20px;">
-            <?php
+    <div class="col text-center" id="store_defined" style="padding: 20px;">
+        <span style="font-size: x-large; ">Noch kein Account? Dann registriere dich jetzt und dampf los!</span><br><br>
+        <a href="?page=users&action=register"><button class="form-control button_orange">Zur Registrierung</button></a>
 
-            if (!isset ($_SESSION['failed'])) {
-                $_SESSION['failed'] = 0;
-            }
-            ?>
-
-                <div class="text-center log_window"">
-                <h4>REGISTRIERUNG</h4>
-                <form action="./functions/users/register_do.php?register=1" method="post">
-
-                    <input type="text" class="form-control" size="40" maxlength="250" name="name" placeholder="Vor- und Nachname">
-
-                    <input type="text" class="form-control" size="40" maxlength="250" name="username" placeholder="Benutzername">
-
-                    <input type="email" class="form-control" size="40" maxlength="250" name="email" placeholder="Deine E-Mail Adresse">
-
-                    <input type="password" class="form-control" size="40"  maxlength="250" name="password" placeholder="Dein Passwort">
-
-                    <input type="password" class="form-control" size="40" maxlength="250" name="password2" placeholder="Passwort wiederholen"><br>
-
-                    <input type="submit" class="form-control button_orange" value="Abschicken">
-                </form>
-                <br>
-                <?php
-                switch ($_SESSION["regfailed"]) {
-                    case 1:
-                        echo "<span style='color: red'><b>Bitte gib ein Passwort ein!</b></span>";
-                        break;
-                    case 2:
-                        echo "<span style='color: red'><b>Die Passwörter stimmen nicht überein!</b></span>";
-                        break;
-                    case 3:
-                        echo "<span style='color: red'><b>Dieser Benutzername ist leider schon vergeben!</b></span>";
-                        break;
-                    case 4:
-                        echo "<span style='color: red'><b>Ein unbekannter Fehler ist aufgetreten! Bitte kontaktiere uns.</b></span>";
-                        break;
-                    case 5:
-                        echo "<span style='color: red'><b>Registrierung erfolgreich!</b></span>";
-                        break;
-                }
-
-                ?>
-
-        </div>
-
+    </div>
 </div>

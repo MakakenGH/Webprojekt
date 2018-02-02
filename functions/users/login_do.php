@@ -1,6 +1,7 @@
 <?php
 session_start();
 $prevprev_url  = $_SESSION["prevprevurl"];
+
 include_once("../db.php");
 $db = new PDO($dsn, $dbuser, $dbpass);
 

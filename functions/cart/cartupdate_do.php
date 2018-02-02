@@ -15,7 +15,11 @@ if (isset($_SESSION['userid'])) {
     $query = $db->prepare($sql);
     $query->execute(array('ean' => $ean, 'anzahl' => $anzahl, "username" => $username));
 
-    header("Location: ../../index.php?page=store&action=store");
-}
+    header("Location: ../../index.php?page=warenkorb");
 
+} else {
+
+    echo "<div>Um diese Funktion nutzen zu können loggen Sie sich bitte ein.<br> <a href='?page=users&action=login'><button class='button_orange'>zum Login</button></a></div>";
+
+}
 

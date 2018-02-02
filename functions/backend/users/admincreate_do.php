@@ -1,10 +1,11 @@
 <?php
 include_once("../../db.php");
-$db = new PDO($dsn, $dbuser, $dbpass);
 
 $username = $_POST['name'];
 
-//Läd Adminusername in die Datenbank hoch
+$db = new PDO($dsn, $dbuser, $dbpass);
+
+//Läd Adminusername in die Admin-Datenbank hoch
 if (!empty($username)) {
     try {
         $statement = $db->prepare("INSERT INTO admins (username) VALUES (:username)");

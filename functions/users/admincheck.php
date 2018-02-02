@@ -3,8 +3,8 @@ include_once ("./functions/db.php");
 
 $sessionid = $_SESSION['userid'];
 
+//DB Verbindung zu Admin Tabele
 $db = new PDO($dsn, $dbuser, $dbpass);
-
 $query = $db->prepare("SELECT username FROM admins WHERE username = '".$sessionid."'");
 $query->execute();
 $zeile = $query->fetchObject();
