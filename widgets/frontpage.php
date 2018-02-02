@@ -1,9 +1,8 @@
-<div class="row">
+<div class="row" >
     <div class="col text-center">
-        <span style="font-size: xx-large;"><b style="color: darkorange;">"</b>Shoppen. Zahlen.<img style="height: 55%; width: auto; margin-bottom: 13px;" src="files/uploads/logo_small.png" alt="DAMPF!">EN.<b style="color: darkorange;">"</b></span>
+        <span style="font-size: xx-large;"><b style="color: darkorange;">"</b>Shoppen. Zahlen.<img style="height: 55%; width: auto; margin-bottom: 10px;" src="files/uploads/logo_small.png" alt="DAMPF!">EN.<b style="color: darkorange;">"</b></span>
     </div>
 </div>
-<br>
 
 
 <div class="row">
