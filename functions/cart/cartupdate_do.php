@@ -9,11 +9,11 @@ if (isset($_SESSION['userid'])) {
     $anzahl = $_GET["anzahl"];
 
     $db = new PDO($dsn, $dbuser, $dbpass);
-    $sql = "INSERT INTO cart (ean, anzahl, username) VALUES (:ean, :anzahl, :username) ON DUPLICATE KEY UPDATE anzahl = anzahl + :anzahl";
+    $sql = "INSERT INTO cart (ean, anzahl, username) VALUES (:ean, :anzahl, :username) ON DUPLICATE KEY UPDATE anzahl=anzahl + :anzahl WHERE username=:username";
     //Falls das schreiben in die DB einen doppelten wert für ein UNIQUE oder PRiMARY KEY wert verursachen würde,
     // wird anstelle von INSERT der UPDATE befehl ausgeführt
     $query = $db->prepare($sql);
-    $query->execute(array('ean' => $ean, 'anzahl' => $anzahl, "username" => $username));
+    $query->execute(array('ean' => $ean, 'anzahl' => $anzahl, 'username' => $username));
 
     header("Location: ../../index.php?page=warenkorb");
 

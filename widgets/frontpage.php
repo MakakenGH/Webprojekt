@@ -41,13 +41,13 @@
 <div class="row">
     <div class="col text-center" id="store_defined" style="padding: 20px;">
         <span style="font-size: x-large; ">Jetzt einloggen und abdampfen!</span><br><br>
-        <a href="?page=users&action=login"><button class="form-control button_orange">Zum Login</button></a>
+        <a href="?page=users&action=login" style="text-decoration: none;"><button class="form-control button_orange">Zum Login</button></a>
 
     </div>
 
     <div class="col text-center" id="store_defined" style="padding: 20px;">
         <span style="font-size: x-large; ">Noch kein Account? Dann registriere dich jetzt und dampf los!</span><br><br>
-        <a href="?page=users&action=register"><button class="form-control button_orange">Zur Registrierung</button></a>
+        <a href="?page=users&action=register" style="text-decoration: none;"><button class="form-control button_orange">Zur Registrierung</button></a>
 
     </div>
 </div>
