@@ -2,6 +2,7 @@
     background-image: url("../uploads/background_stars.jpg");
     font-family: 'Roboto Condensed', sans-serif;
     color: white;
+    bottom: 0;
 }
 
 @media screen and (max-width: 480px) {
@@ -112,7 +113,7 @@ li.drop_nav {
 
 #head_logo {
     height: 40px;
-    widht: auto;
+    width: auto;
 }
 
 .img_store {
@@ -150,7 +151,6 @@ li.drop_nav {
     left: 0;
     right: 0;
     margin: 0;
-    width: 100%;
     padding: 10px;
 }
 

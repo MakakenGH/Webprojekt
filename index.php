@@ -104,8 +104,8 @@ $_SESSION['cururl'] = $_SERVER['REQUEST_URI'];
             break;
     }}
     ?>
-
-<div class="footer_defined"> <!-- Footer -->
+</div>
+<div class="container-fluid footer_defined"> <!-- Footer -->
     <div class="row">
         <div class="col-sm-4 text-center">
             <b style="font-size: large;">Rechtliches</b>
