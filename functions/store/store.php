@@ -58,9 +58,6 @@ while ($zeile = $query->fetchObject()) {
     echo "<span style='font-size:45px'><b>$zeile->name</b></span><br>";
     echo "<span class='fa fa-thumbs-o-up' style='font-size: 36px'>$zeile->rating</span><br><br>";
     echo "<span class='fa fa-eur' style='font-size:36px'>$zeile->preis</span><br><br>";
-    echo" <button type=\"button\" class=\"btn btn-info\" data-toggle=\"collapse\" data-target=\"#demo\">Beschreibung</button><br>";
-    echo "<div id='demo' class='collapse'>";
-    echo "<span id='beschreibung_store'>$zeile->beschreibung</span><br></div><br><br>";
     if (isset($_SESSION['userid'])) {
         echo "<form action='./functions/cart/cartupdate_do.php' method='get'><input type='hidden' value='$zeile->ean' name='ean'><input type='number' min='0' value='1' style='max-width: 50px' name='anzahl'>&nbsp;<input type='submit' class='button_orange' value='In den Warenkorb legen'></form>";
     }
