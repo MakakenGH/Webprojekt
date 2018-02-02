@@ -134,8 +134,8 @@ li.drop_nav {
 
 .trenn {
     border-bottom: 1px solid #333;
-    margin-bottom: 1em;
     padding-bottom: 1em;
+    padding-top: 1em;
 }
 
 #store_defined {
@@ -221,7 +221,7 @@ li.drop_nav {
 }
 
 @media screen and (max-width: 575px) {
-    .backend_include { margin-top: 90%; }
+    .backend_include { margin-top: 95%; }
 }
 
 /* Sidebar navigation */
@@ -434,4 +434,9 @@ p {
 }
 .error {
     color: red;
+}
+
+.product_boxes {
+    padding-top: 10px;
+    background-color: rgb(30,30,30);
 }
