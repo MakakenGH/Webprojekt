@@ -1,12 +1,14 @@
 <?php
 session_start();
 
-echo "<br><span style='font-size: x-large;'><b>Bitte überpüfe deine Bestellung:</b></span><br><br>";
+$username = $_SESSION['userid'];
+setlocale(LC_MONETARY, 'de_DE');
+
+echo "<br><span style='font-size: x-large;'><b>Bitte überpüfe deine Bestellung <span style='color: darkorange'> $username</span></b></span><br><br>";
 echo "<div class='row'>";
 echo "<div class='col' id='checkout'>";
 
-$username = $_SESSION['userid'];
-setlocale(LC_MONETARY, 'de_DE');
+
 
 echo "<div class='table-responsive'>";
 echo "<table class='table'>";
