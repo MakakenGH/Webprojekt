@@ -34,7 +34,7 @@ echo "<div class='col-sm-12' >";
 if ($zeile = $query->fetchObject()) {
     echo "<h1>$zeile->name</h1>";
     echo "</div></div>";
-    echo "<div class='row trenn'>";
+    echo "<div class='row trenn' style='margin-bottom: 0'>";
     echo "<div class='col-sm-6'>";
     echo "<span class='kategorie'>GENRE</span><br>";
     echo "$zeile->genre<br><br>";
@@ -81,9 +81,9 @@ if ($zeile = $query->fetchObject()) {
     echo "<div><input class='form-control' type='number' min='0' value='1' name='anzahl'></div></div>";
     echo "<div class='col-sm-10'>";
     if (isset ($username)) {
-    echo "<div><input class=\"form-control button_orange\" type='submit' value='In den Warenkorb legen'></form></div></div></div></div></div>";
+    echo "<div><input class=\"form-control button_orange\" type='submit' value='In den Warenkorb legen'></form></div></div></div></div>";
 }else {
-    echo "<div class='form-control text-center button_gray'>In den Warenkorb legen (<a href='?page=users&action=login'>Bitte zuerst einloggen!</a>)</div><div></form></div></div></div></div></div>";
+    echo "<div class='form-control text-center button_gray'>In den Warenkorb legen (<a href='?page=users&action=login'>Bitte zuerst einloggen!</a>)</div><div></form></div></div></div></div>";
     }
     echo "</div></div>";
 } else {
@@ -98,11 +98,11 @@ $sql2 = "SELECT * FROM userrating WHERE ean=$ean";
 $query2 = $db2->prepare($sql2);
 $query2->execute();
 
-echo "<div class='row' style='padding: 10px;'>";
+echo "<div class='row product_boxes'>";
 echo "<div class='col-sm-12'>";
-echo "<h2>NUTZERBEWERTUNGEN</h2>";
+echo "<h2 style='padding-top: 0.5em;'>NUTZERBEWERTUNGEN</h2>";
 echo "</div></div>";
-echo "<div class='row' style='padding: 10px; margin-bottom: 1em; border-bottom: 1px solid #333';>";
+echo "<div class='row product_boxes trenn'>";
 
 //Nutzerbewertungen werden ausgegeben
 while ($zeile2 = $query2->fetchObject()) {
@@ -127,6 +127,7 @@ echo "</div>";
 
 $db2 = null;
 
+echo "<div class='row'>";
 echo "<div class='col-sm-12 trenn'>";
 echo "<h2>PRODUKT BEWERTEN:</h2>";
 
@@ -167,8 +168,8 @@ if ($check_ifuserexist == false) {
 
 echo "</div>";
 
-echo "<div class='col-sm-12'><h2>SPIELE DIE DIR AUCH GEFALLEN KÖNNTEN:</h2></div>";
-echo "<div class='row'>";
+echo "<div class='col-sm-12 product_boxes'><h2 style='padding-top: 0.5em;'>SPIELE DIE DIR AUCH GEFALLEN KÖNNTEN:</h2></div>";
+echo "<div class='row product_boxes trenn'>";
 
 //DB Verbindung, Gibt alle Produkte aus die die gleiche Genre haben wie der angezeigte Artikel außer der angezeigte Artikel
 $db4 = new PDO($dsn, $dbuser, $dbpass);
@@ -185,7 +186,7 @@ while ($zeile4 = $query4->fetchObject()) {
     echo "<div class='text-center'>$zeile4->name</div><br>";
     echo "</div>";
 }
-echo "</div>";
+echo "</div></div>";
 
 
 

@@ -133,8 +133,8 @@ li.drop_nav {
 
 .trenn {
     border-bottom: 1px solid #333;
-    margin-bottom: 1em;
     padding-bottom: 1em;
+    padding-top: 1em;
 }
 
 #store_defined {
@@ -441,4 +441,9 @@ p {
 }
 .error {
     color: red;
+}
+
+.product_boxes {
+    padding-top: 10px;
+    background-color: rgb(30,30,30);
 }
