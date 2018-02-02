@@ -4,9 +4,9 @@ session_start();
 include_once("./functions/db.php");
 $genre = "";
 
-echo "<div id ='store_defined_genre'>";
+echo "<div id='store_defined_genre'>";
 echo "<div class = 'row'>";
-echo "<div class = 'col-sm-2 text-center '><a class='form-control button_store' href='?page=store&action=store&genre=all'>All Games </a></div>";
+echo "<div class = 'col-sm-2 text-center '><a href='?page=store&action=store&genre=all' style='text-decoration: none;'><button class='form-control button_orange'>All Games</button></a></div>";
 echo "<div class = 'col-sm-2 text-center '><a class='form-control button_store' href='?page=store&action=store&genre=action'>Action </a></div>";
 echo "<div class = 'col-sm-2 text-center '><a class='form-control button_store' href='?page=store&action=store&genre=rts'>Real Time Strategy </a></div>";
 echo "<div class = 'col-sm-2 text-center '><a class='form-control button_store' href='?page=store&action=store&genre=sport'>Sport </a></div>";
