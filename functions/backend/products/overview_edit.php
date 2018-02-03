@@ -13,7 +13,6 @@ $sql = "SELECT * FROM sortiment ORDER BY ean ASC";
 $query = $db->prepare($sql);
 $query->execute();
 
-//
 while ($zeile = $query->fetchObject()) {
     //DB Ergebnisse werden in Formulare geladen um sie zu bearbeiten
     echo "<div class='product_backend'>";
