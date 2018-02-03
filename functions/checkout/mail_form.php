@@ -21,7 +21,7 @@ if(isset($_SESSION['userid'])) {
 <form action="./functions/checkout/checkout_do.php" method="post">
     <div><b>Bitte wähle eine Zahlungsmethode aus:</b></div>
     <fieldset>
-        <input type="radio" id="mc" name="Zahlmethode" value="Mastercard">
+        <input type="radio" id="mc" name="Zahlmethode" value="Mastercard" checked="checked">
         <label for="mc"><img src="./files/uploads/mastercard-alternate.png" alt="MasterCard" width="85"></label>
         <input type="radio" id="pp" name="Zahlmethode" value="Paypal">
         <label for="pp"> <img src="./files/uploads/paypal.png" alt="PayPal" width="85"></label>

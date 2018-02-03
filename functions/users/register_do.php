@@ -22,7 +22,7 @@ if(isset($_GET['register'])) {
     $password = htmlspecialchars($_POST['password']);
     $password2 = htmlspecialchars($_POST['password2']);
 
-    //Überprüft ob beide eingebenen Passwörter übereinstimmen
+    //Überprüft ob beide eingebenen Passwörter übereinstimmen und setzt 'failded' auf wert 1 bzw 2
     if(strlen($password) == 0) {
         $error = true;
         $_SESSION['regfailed'] = 1;
@@ -34,7 +34,7 @@ if(isset($_GET['register'])) {
         header("Location: ../../index.php?page=users&action=register");
     }
 
-    //Überprüft ob Username schon vergeben ist
+    //Überprüft ob Username schon vergeben ist und setzt 'failded' auf wert 3 falls nicht
     if(!$error) {
         $statement = $db->prepare("SELECT * FROM users WHERE username = :username");
         $result = $statement->execute(array('username' => $username));
@@ -47,7 +47,7 @@ if(isset($_GET['register'])) {
         }
     }
 
-    //neuer Nutzer wird in Datenbank gespeichert
+    //neuer Nutzer wird in Datenbank gespeichert wenn erfolgreich wird der Key 'failed' auf 5 gesetzt, falls nicht auf 4
     if(!$error) {
         $password_hash = password_hash($password, PASSWORD_DEFAULT); //passwort wird verschlüsselt
 

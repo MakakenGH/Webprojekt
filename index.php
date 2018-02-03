@@ -3,8 +3,10 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Metainfos zum Inahlt der Seite -->
+    <meta name="DAMPF!" content="DAMPF! ist ein auf die Bedürfnisse der Nutzer zugeschnittener Online-Shop für Computerspiele und PC-Games der Arten FPS, ATS, Puzzle, Strategie, Sport und Action.">
     <title>DAMPF!</title>
+    <!-- Einheitliche Schrift eingebunden über google fonts-->
     <style>
         @import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
     </style>
