@@ -11,8 +11,8 @@ try {
         echo "<input type='hidden' name='username' value='$zeile4->username'/>";
         echo "<span class='kategorie'>KOMMENTAR</span><br>";
         echo "<textarea class=\"form-control\" name='comment' rows='4' cols='20'>$zeile4->comment</textarea>";
-        echo "<span class='kategorie'>BEWERTUNG (0-100)</span><br>";
-        echo "<input class=\"form-control\" type='number' name='rating' min=\"0\" max=\"100\" value='$zeile4->rating' /><br>";
+        echo "<span class='kategorie'>BEWERTUNG (1-100)</span><br>";
+        echo "<input class=\"form-control\" type='number' name='rating' min=\"1\" max=\"100\" value='$zeile4->rating' /><br>";
         echo "<input class=\"form-control button_orange\" type='submit' value='Bearbeiten' />";
         echo "</form>";
     } else {

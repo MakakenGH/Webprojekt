@@ -78,7 +78,7 @@ if ($zeile = $query->fetchObject()) {
           <input type='hidden' value='$zeile->ean' name='ean'>";
     echo "<br><div class='row'>";
     echo "<div class='col-sm-2'>";
-    echo "<div><input class='form-control' type='number' min='0' value='1' name='anzahl'></div></div>";
+    echo "<div><input class='form-control' type='number' min='0' max='100' value='1' name='anzahl'></div></div>";
     echo "<div class='col-sm-10'>";
     if (isset ($username)) {
     echo "<div><input class=\"form-control button_orange\" type='submit' value='In den Warenkorb legen'></form></div></div></div></div>";
