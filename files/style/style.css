@@ -170,6 +170,20 @@ li.drop_nav {
     color: white;
 }
 
+.button_shoppen {
+    background-color: #090a0f;
+    border: 2px solid darkorange;
+    text-decoration: none;
+    color: white;
+}
+
+.button_shoppen:hover {
+    background-color: orange;
+    border-color: transparent;
+    text-decoration: none;
+    color: white;
+}
+
 .button_orange:hover {
     background-color: orange;
     border-color: transparent;

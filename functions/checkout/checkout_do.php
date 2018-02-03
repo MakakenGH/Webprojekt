@@ -20,6 +20,7 @@ if (isset($_SESSION['userid'])) {
     else {
         $email = $new_email;
     }
+    //Setzt deutsche Währung und Schreibweise als Standard
     setlocale(LC_MONETARY, 'de_DE');
 
     $db = new PDO($dsn, $dbuser, $dbpass);

@@ -3,8 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <!-- Metainfos zum Inahlt der Seite -->
-    <meta name="DAMPF!" content="DAMPF! ist ein auf die Bedürfnisse der Nutzer zugeschnittener Online-Shop für Computerspiele und PC-Games der Arten FPS, ATS, Puzzle, Strategie, Sport und Action.">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>DAMPF!</title>
     <!-- Einheitliche Schrift eingebunden über google fonts-->
     <style>
@@ -102,6 +101,9 @@ $search=$_GET["search"];
             break;
         case "searchdo":
             include "./functions/search/search_do.php";
+            break;
+        case "thankyou":
+            include "./functions/checkout/checkout_thanks.php";
             break;
     }}
     ?>

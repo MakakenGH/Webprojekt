@@ -15,6 +15,8 @@ if (isset($_SESSION['userid'])) {
 
     if ($query->fetchAll()) {
 
+        echo "<span style='font-size: xx-large'>Hier ist dein Warenkorb <b style='color: darkorange;'>$username</b>:</span><br><br>";
+
         echo "<div class='table-responsive'>";
         echo "<table class='table'>";
         echo "<thead><tr><th>Bild</th><th>Name</th><th>EAN</th></th><th>Anzahl</th><th>Einzelpreis</th><th>Gesamtpreis</th><th>Löschen</th></tr></thead>";
@@ -59,7 +61,8 @@ if (isset($_SESSION['userid'])) {
         echo "<tr>";
         echo "<td><b>BESTELLSUMME</b></td><td> </td><td> </td><td> </td><td> </td>";
         echo "<td><b>" . money_format('%.2n', $totalsumnumber) . " €" . "</b></td>";
-        echo "<td><a href='?page=checkout'><button class='button_orange'><i class=\"fa fa-shopping-cart\" aria-hidden=\"true\"></i>&nbsp;&nbsp;Zur Kasse</button></a></td>";
+        echo "<td><a href='?page=checkout'><button class='button_orange'><i class=\"fa fa-shopping-cart\" aria-hidden=\"true\"></i>&nbsp;&nbsp;Zur Kasse</button></a><br>
+                <br><a href='?page=store&action=store'><button class='button_shoppen'><i class=\"fa fa-gamepad\" aria-hidden=\"true\"></i>&nbsp;&nbsp;Weiter Shoppen</button></a></td>";
         echo "</tr>";
         echo "</tfoot>";
         echo "</table>";
@@ -70,5 +73,5 @@ if (isset($_SESSION['userid'])) {
     }
 } else {
 
-    echo "<div class='col-md-3 col-centered text-center log_window'>Um diese Funktion nutzen zu können loggen Sie sich bitte ein.<br><br> <a href='?page=users&action=login'><button class='button_orange'>zum Login</button></a></div>";
+    echo "<div class='col-md-3 col-centered text-center log_window'>Um diese Funktion nutzen zu können logge dich bitte ein.<br><br> <a href='?page=users&action=login'><button class='button_orange'>zum Login</button></a></div>";
 }

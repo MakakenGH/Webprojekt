@@ -122,7 +122,8 @@ $from .= "Content-Type: text/html\n";
 //E-Mail wird abgeschickt
 mail($recipient, $subject, $mailtext, $from);
 
-header("Location: ../../index.php");
+
+header("Location: ../../index.php?page=thankyou");
 
 
 
