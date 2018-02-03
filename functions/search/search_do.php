@@ -14,11 +14,9 @@ echo "<div class='col-sm-12'>";
 echo "<h2>Suchergebnisse für: <span style='color: darkorange'>$search</span></h2>";
 echo "</div>";
 echo "<div class='row'>";
-if ($query->fetchObject())
+if ($query->rowCount() > 0)
 {
-
 while ($zeile = $query->fetchObject()) {
-
     echo "<div class='col-sm-4' id='store_defined'>";
     echo "<a href='?ean=$zeile->ean'>";
     echo "<img class='img_store' src='./files/uploads/$zeile->bild'/><br>";
@@ -49,7 +47,8 @@ while ($zeile = $query->fetchObject()) {
         echo "<div class='form-control text-center button_gray'><i class=\"fa fa-shopping-basket\" aria-hidden=\"true\"></i> In den Warenkorb legen (<a href='?page=users&action=login'>Bitte zuerst einloggen!)</a></div>";
     }
     echo "</div></div><br><br><br>";}
-echo "</div>";}
+echo "</div>";
+}
 else {
     echo "<div class='col-centered log_window' > Suche erfolglos</div>";
 }

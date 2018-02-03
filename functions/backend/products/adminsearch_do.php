@@ -12,7 +12,7 @@ $query = $db->prepare($sql);
 $query->execute();
 
 //Suchergebnisse werden ausgegeben
-if($query->fetchObject()) {
+if($query->rowCount() > 0) {
     //Bearbeitungsmodus aktivieren Button
     echo "<main class=\"col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3\">";
     echo "<a style='text-decoration: none' href='?page=products&editmode=search'><button type='button' class=\"form-control button_orange\" ><i class='fa fa-wrench'></i>  Bearbeitungsmodus aktivieren</button></a><br>";
