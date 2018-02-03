@@ -43,7 +43,7 @@ while ($zeile = $query->fetchObject()) {
     echo "</div></div><br><br><br>";}
 echo "</div>";}
 else {
-    echo "Suche erfolglos";
+    echo "<div class='col-centered log_window' > Suche erfolglos</div>";
 }
 echo "</div>";
 ?>
