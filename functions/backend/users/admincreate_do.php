@@ -5,7 +5,7 @@ $username = $_POST['name'];
 
 $db = new PDO($dsn, $dbuser, $dbpass);
 
-//Läd Adminusername in die Admin-Datenbank hoch
+//Lädt Adminusername in die Admin-Datenbank hoch
 if (!empty($username)) {
     try {
         $statement = $db->prepare("INSERT INTO admins (username) VALUES (:username)");

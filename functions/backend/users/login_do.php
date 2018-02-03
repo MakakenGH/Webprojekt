@@ -25,19 +25,9 @@ if(isset($_GET['login'])) {
 
     }
 }
-?>
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Login</title>
-</head>
-<body>
 
-<?php
 if(isset($errorMessage)) {
     echo $errorMessage;
 }
 ?>
 
-</body>
-</html>
