@@ -10,9 +10,10 @@ $sql = "SELECT * FROM sortiment WHERE genre  LIKE  '%".$search."%' OR name LIKE 
 
 $query = $db->prepare($sql);
 $query->execute();
-
+echo "<div class='col-sm-12'>";
+echo "<h2>Suchergebnisse für: <span style='color: darkorange'>$search</span></h2>";
+echo "</div>";
 echo "<div class='row'>";
-
 if ($query->fetchObject())
 {
 
@@ -35,7 +36,14 @@ while ($zeile = $query->fetchObject()) {
     echo "<span class='kategorie'> PREIS<br> </span><span class='search_ausgabe'> $zeile->preis €</span><br><br></div></div>";
 
     if (isset($_SESSION['userid'])) {
-        echo "<form action='./functions/cart/cartupdate_do.php' method='get'><input type='hidden' value='$zeile->ean' name='ean'><input type='number' min='0' value='1' style='max-width: 50px' name='anzahl'>&nbsp;<input  type='submit' class='button_orange' value='In den Warenkorb legen'></form>";
+        echo "<form action='./functions/cart/cartupdate_do.php' method='get'>";
+        echo "<input type='hidden' value='$zeile->ean' name='ean'>";
+        echo "<div class='row'>";
+        echo "<div class='col-sm-3'>";
+        echo "<input class='form-control' type='number' min='0' value='1' name='anzahl'>";
+        echo "</div>";
+        echo "<div class='col-sm-9'>";
+        echo "<input type='submit' class='form-control button_orange' value='In den Warenkorb legen'></div></div></form>";
     }
     else {
         echo "<div class='form-control text-center button_gray'><i class=\"fa fa-shopping-basket\" aria-hidden=\"true\"></i> In den Warenkorb legen (<a href='?page=users&action=login'>Bitte zuerst einloggen!)</a></div>";
@@ -43,7 +51,7 @@ while ($zeile = $query->fetchObject()) {
     echo "</div></div><br><br><br>";}
 echo "</div>";}
 else {
-    echo "Suche erfolglos";
+    echo "<div class='col-centered log_window' > Suche erfolglos</div>";
 }
 echo "</div>";
 ?>

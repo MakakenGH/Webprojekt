@@ -26,6 +26,7 @@ session_start();
 include ("./functions/db.php");
 $_SESSION['prevurl'] = $_SERVER['HTTP_REFERER'];
 $_SESSION['cururl'] = $_SERVER['REQUEST_URI'];
+$search=$_GET["search"];
 ?>
 
 <div class="container-fluid"><!-- Header -->
@@ -52,8 +53,6 @@ $_SESSION['cururl'] = $_SERVER['REQUEST_URI'];
 
 <div class="container-fluid" id="include_area"> <!-- Include Bereich (Content) -->
     <?php
-    $search=$_GET["search"];
-
     $ean = $_GET["ean"];
     if (isset($ean)) {
         include ("./functions/products/product.php");

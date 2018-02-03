@@ -7,11 +7,11 @@ $genre = "";
 echo "<div id='store_defined_genre'>";
 echo "<div class = 'row'>";
 echo "<div class = 'col-sm-2 text-center '><a href='?page=store&action=store&genre=all' style='text-decoration: none;'><button class='form-control button_orange'>All Games</button></a></div>";
-echo "<div class = 'col-sm-2 text-center '><a class='form-control button_store' href='?page=store&action=store&genre=action'>Action </a></div>";
-echo "<div class = 'col-sm-2 text-center '><a class='form-control button_store' href='?page=store&action=store&genre=rts'>Real Time Strategy </a></div>";
-echo "<div class = 'col-sm-2 text-center '><a class='form-control button_store' href='?page=store&action=store&genre=sport'>Sport </a></div>";
-echo "<div class = 'col-sm-2 text-center '><a class='form-control button_store' href='?page=store&action=store&genre=puzzle'>Puzzle </a></div>";
-echo "<div class = 'col-sm-2 text-center '><a class='form-control button_store' href='?page=store&action=store&genre=fps'>FPS </a></div>";
+echo "<div class = 'col-sm-2 text-center '><a href='?page=store&action=store&genre=action' style='text-decoration: none;'><button class='form-control button_orange'>Action</button></a></div>";
+echo "<div class = 'col-sm-2 text-center '><a href='?page=store&action=store&genre=rts'style='text-decoration: none;'><button class='form-control button_orange'>Real Time Strategy</button></a></div>";
+echo "<div class = 'col-sm-2 text-center '><a href='?page=store&action=store&genre=sport'style='text-decoration: none;'><button class='form-control button_orange'> Sport </button></a></div>";
+echo "<div class = 'col-sm-2 text-center '><a href='?page=store&action=store&genre=puzzle'style='text-decoration: none'><button class='form-control button_orange'> Puzzle </button></a></div>";
+echo "<div class = 'col-sm-2 text-center '><a href='?page=store&action=store&genre=fps'style='text-decoration: none'><button class='form-control button_orange'> FPS</button></a></div>";
 echo "</div></div>";
 echo "<br><br>";
 echo "<span style=\"font-size: xx-large\"> DAMPF! durchsuchen:</span>";
@@ -70,7 +70,14 @@ while ($zeile = $query->fetchObject()) {
     echo "<div class='col-sm-4'>";
     echo "<span class='kategorie'> PREIS<br> </span><span class='search_ausgabe'> $zeile->preis €</span><br><br></div></div>";
     if (isset($_SESSION['userid'])) {
-        echo "<form action='./functions/cart/cartupdate_do.php' method='get'><input type='hidden' value='$zeile->ean' name='ean'><input type='number' min='0' value='1' style='max-width: 50px' name='anzahl'>&nbsp;<input type='submit' class='button_orange' value='In den Warenkorb legen'></form>";
+        echo "<form action='./functions/cart/cartupdate_do.php' method='get'>";
+        echo "<input type='hidden' value='$zeile->ean' name='ean'>";
+        echo "<div class='row'>";
+        echo "<div class='col-sm-3'>";
+        echo "<input class='form-control' type='number' min='0' value='1' name='anzahl'>";
+        echo "</div>";
+        echo "<div class='col-sm-9'>";
+        echo "<input type='submit' class='form-control button_orange' value='In den Warenkorb legen'></div></div></form>";
     }
     else {
         echo "<div class='form-control text-center button_gray'><i class=\"fa fa-shopping-basket\" aria-hidden=\"true\"> </i> In den Warenkorb legen (<a href='?page=users&action=login'>Bitte zuerst einloggen!)</a></div>";

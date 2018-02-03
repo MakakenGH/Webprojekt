@@ -450,3 +450,7 @@ p {
     text-decoration: none;
     color: white;
 }
+.store_link:hover {
+    text-decoration: none;
+    color: darkorange;
+}
