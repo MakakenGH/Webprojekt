@@ -9,9 +9,9 @@
 
 <form action="./functions/backend/users/login_do.php?login=1" method="post">
     <span class='kategorie text-left'>USERNAME</span><br>
-    <input class="form-control" type="text" size="40" maxlength="250" name="username" placeholder="Username">
+    <input class="form-control" type="text" maxlength="30" name="username" placeholder="Username">
     <span class='kategorie text-left'>PASSWORT</span><br>
-    <input class="form-control" type="password" size="40"  maxlength="250" name="password" placeholder="Dein Passwort"><br>
+    <input class="form-control" type="password" maxlength="30" name="password" placeholder="Dein Passwort"><br>
     <input class="form-control button_orange" type="submit" value="Einloggen">
 </form>
 

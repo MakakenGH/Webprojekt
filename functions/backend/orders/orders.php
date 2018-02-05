@@ -1,6 +1,4 @@
 <!--Die Auflistung der bestellen Artikel werden im Backend für die Admins angezeigt. -->
-
-
 <?php
 echo "<main class=\"col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3\">";
 
@@ -18,7 +16,7 @@ $orders = $preparedorders->fetchAll();//Alle Daten sind jetzt im $ordersrow gesp
 
 //Die Ausgabe wird in Form einer Tabelle ausgegeben.
 echo "<div class='table-responsive'>";
-echo "<table id='customers'>";
+echo "<table id='table_backend'>";
 echo "<thead><tr><th>Order-ID</th><th>Order-Number</th><th>EAN</th><th>Game</th></th><th>Anzahl</th><th>Username</th><th>Verkaufspreis</th><th>Gesamtpreis</th><th>Bestelldatum</th><th>Bezahlart</th></thead>";
 
 //Ergebnisse der Datenbankabfrage werden im Array gespeichert.
