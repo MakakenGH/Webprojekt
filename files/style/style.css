@@ -13,12 +13,12 @@
 @media screen and (min-width: 768px) {
 body { padding-top: 55px; }
 }
-
+/*Include Area */
 #include_area {
     padding: 10px;
     min-height: 500px;
 }
-
+/*Navigationsbar: Alle Selektoren mit nav gehören zur Navigationsbar */
 .navbarcss {
     width: 100%;
     position: fixed;
@@ -106,17 +106,12 @@ li.drop_nav {
     display: block;
 }
 
-
+/* Suchleiste */
 #searchbar {
     margin-top: 11px;
     padding-right: 10px;
 }
-
-#head_logo {
-    height: 40px;
-    width: auto;
-}
-
+/*Bilder auf Storeseite/Backend */
 .img_store {
     width: 100%;
     height: auto;
@@ -124,20 +119,20 @@ li.drop_nav {
     border-top-right-radius: 15px;
     padding-bottom: 1em;
 }
-
+/*Bilder Produktseite */
 .img_product {
     width: 100%;
     height: auto;
     border-radius: 15px;
     margin-bottom: 1em;
 }
-
+/*Trennlinie Produktseite */
 .trenn {
     border-bottom: 1px solid #333;
     padding-bottom: 1em;
     padding-top: 1em;
 }
-
+/*Hintergrund Store/Produkte */
 #store_defined {
     background-color: #333;
     padding: 0px;
@@ -145,7 +140,7 @@ li.drop_nav {
     flex: 30%;
     border-radius: 15px;
 }
-
+/*Footer */
 .footer_defined {
     background-color: #333;
     bottom: 0;
@@ -155,21 +150,31 @@ li.drop_nav {
     padding: 10px;
 }
 
-#header_defined {
-}
-
+/*Text im Srore */
 .store_text {
     padding: 15px;
     text-align: justify;
 }
-
+/*Organgener Button im kompletten Store/Standard */
 .button_orange {
     background:darkorange;
     border-color: transparent;
     text-decoration: none;
     color: white;
 }
+.button_orange:hover {
+    background-color: orange;
+    border-color: transparent;
+    text-decoration: none;
+    color: white;
+}
 
+.button_orange a {
+    text-decoration: none;
+    color:white;
+}
+
+/*Button im Warenkorb/ Weitershoppen */
 .button_shoppen {
     background-color: #090a0f;
     border: 2px solid darkorange;
@@ -183,28 +188,12 @@ li.drop_nav {
     text-decoration: none;
     color: white;
 }
-
-.button_orange:hover {
-    background-color: orange;
-    border-color: transparent;
-    text-decoration: none;
-    color: white;
-}
-
-.button_orange a {
-    text-decoration: none;
-    color:white;
-}
-
-.schrift_orange {
-    color: darkorange;
-}
-
+/*Vertikale Zentrierung eines divs/Spalte */
 .col-centered{
     float: none;
     margin: 0 auto;
 }
-
+/*"Pop-up"*/
 .log_window {
     border: solid #333;
     border-radius: 15px;
@@ -212,10 +201,7 @@ li.drop_nav {
     background-color: #333;
 }
 
-#beschreibung_store {
-}
-
-
+/*Sidebar im Backend*/
 .sidebar {
     position: fixed;
     top: 0;
@@ -227,22 +213,17 @@ li.drop_nav {
     overflow-x: hidden;
     overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
     border-right: 1px solid #eee;
-    background-color: white;
+    padding-left: 0;
+    padding-right: 0;
+    background-color: #333;
 }
-
+/*Responsive im Backend*/
 @media screen and (max-width: 575px) {
     .sidebar { height: 54%; }
 }
 
 @media screen and (max-width: 575px) {
     .backend_include { margin-top: 95%; }
-}
-
-/* Sidebar navigation */
-.sidebar {
-    padding-left: 0;
-    padding-right: 0;
-    background-color: #333;
 }
 
 .sidebar .nav {
@@ -272,43 +253,43 @@ a.nav-link:focus{
     text-decoration: none;
     color: white;
 }
-
+/*Hintergrund im Backend*/
 .b_bg {
     background-color: #F4F2F3 !important;
     padding-top: 0px !important;
     font-family: 'Roboto Condensed', sans-serif;
     color: white;
 }
-
+/*Überschift h3  */
 h3 {
     color: #333;
 }
-
+/*Tabelle im Backend/Bestellungen  */
 .table_orders {color: #090a0f;
 }
 #store_defined_backend {
     background-color: #f4f2f3;
     color: black;
-    padding: 0px;
+    padding: 0;
     border-radius: 15px;
     border: 2px solid #333;
 }
-
+/*Produktbeschreibung im Backend  */
 .desc_backend {
     padding: 0px 10px 10px 10px;
 }
-
+/*Produktfelder Backend  */
 .product_backend {
     margin-bottom: 1em;
 }
-
+/*Roter Button  */
 .button_red {
     background: darkred;
     text-decoration: none;
     border-color: darkred;
     color: white;
 }
-
+/*Kassenfelder  */
 #checkout {
     background-color: #333;
     padding: 10px;
@@ -316,20 +297,21 @@ h3 {
     flex: 30%;
     border-radius: 15px;
 }
-
+/*Paragraphen im Blocksatz  */
 p {
     text-align: justify;
 }
-
+/*Beschreibende Texthilfen  */
 .kategorie {
     color: #b9bdb6;
     font-size: 12px;
 }
+/*Überrschrift Store/Suchergebnisseite */
 .search_ausgabe {
  font-size: xx-large;
 
 }
-
+/*Bewertungen auf der Produktseite  */
 .rating {
     padding: 5px;
     border-radius: 15px;
@@ -337,71 +319,36 @@ p {
 }
 
 
-.product_defined {
-    background-color: #333;
-    padding: 5px;
-}
-.footer_color {
-    text-decoration: none;
-    color: white;
-}
-
-
 /* Style für Tabelle_Order */
-#customers {
+#table_backend {
     width: 100%;
     color: orange;
 }
 
-#customers td, #customers th {
+#table_backend td, #table_backend th {
     border: 1px solid #ddd;
     padding: 8px;
 }
 
-#customers tr:nth-child(even){background-color: #f2f2f2;}
 
-#customers tr:hover {background-color: gray;}
+#table_backend tr:hover {
+    background-color: gray;
+}
 
-#customers th {
+#table_backend th {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
     background-color: orange;
     color: white;
 }
-
-.button_store {
-    background:darkorange;
-    border-color: transparent;
-    text-decoration: none;
-    color: white;
-    margin-top: 1em;
-    margin-bottom: 1em;
-}
-
-.button_store:hover
-{
-    text-decoration: none;
-    color: white;
-    border-color: transparent;
-}
-.store_preis {
-    font-size: 36px;
-}
-.button_grey {
-    background:darkgray;
-    border-color: transparent;
-    text-decoration: none;
-    color: white;
-}
-
+/*Footer Links  */
 .footer_links {
     text-decoration: none;
     color: white;
     font-size: small;
 
 }
-
 .footer_links:hover {
     text-decoration: none;
     color: darkorange;
@@ -414,11 +361,11 @@ p {
     padding: 0;
     list-style-type: none;
 }
-
+/*Blocksatz*/
 .justify {
     text-align: justify;
 }
-
+/*Grauer Button*/
 .button_gray {
     background:darkgray;
     border-color: transparent;
@@ -438,7 +385,7 @@ p {
 .button_gray:hover a {
     color: lightgray;
 }
-
+/*Der Link der zum Login auffordert*/
 .login_link {
     color: darkorange;
 }
@@ -446,14 +393,18 @@ p {
 .login_link:hover {
     color: #ed8100;
 }
+
+/*Fehlermeldung*/
 .error {
     color: red;
 }
 
+/*Grau hinterlegte Abscnitte aus der Produktseite*/
 .product_boxes {
     padding-top: 10px;
     background-color: rgb(30,30,30);
 }
+/*Links auf der Storeseite*/
 .store_link {
     text-decoration: none;
     color: white;

@@ -154,7 +154,7 @@ if ($check_ifuserexist == false) {
         echo($username);
         echo('" >
             <span class=\'kategorie\'>KOMMENTAR</span><br>
-            <textarea class="form-control" name = "comment" rows=\'4\' cols=\'20\' placeholder = "Dein Kommentar"></textarea>
+            <textarea class="form-control" name = "comment" maxlength="500" rows=\'4\' cols=\'20\' placeholder = "Dein Kommentar"></textarea>
             <span class=\'kategorie\'>BEWERTUNG (0-100)</span><br>
             <input class="form-control" type = "number" name = "rate" min="0" max="100" placeholder = "Deine Bewertung (0-100)" >
             <input type = "hidden" name = "ean" value = "');
