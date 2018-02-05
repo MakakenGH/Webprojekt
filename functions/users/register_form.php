@@ -9,15 +9,15 @@ if (!isset ($_SESSION['failed'])) {
     <h4 class="text-center">REGISTRIERUNG</h4>
     <form action="./functions/users/register_do.php?register=1" method="post">
         <span class='kategorie text-left'>VOR- UND NACHNAME</span><br>
-        <input type="text" class="form-control" maxlength="20" name="name" placeholder="Vor- und Nachname">
+        <input type="text" required class="form-control" maxlength="20" name="name" placeholder="Vor- und Nachname">
         <span class='kategorie text-left'>USERNAME</span><br>
-        <input type="text" class="form-control" maxlength="20" name="username" placeholder="Dein Username">
+        <input type="text" required class="form-control" maxlength="20" name="username" placeholder="Dein Username">
         <span class='kategorie text-left'>E-MAIL ADRESSE</span><br>
-        <input type="email" class="form-control" maxlength="30" name="email" placeholder="Deine E-Mail Adresse">
+        <input type="email" required class="form-control" maxlength="30" name="email" placeholder="Deine E-Mail Adresse">
         <span class='kategorie text-left'>PASSWORT</span><br>
-        <input type="password" class="form-control"  maxlength="20" name="password" placeholder="Dein Passwort">
+        <input type="password" required class="form-control"  maxlength="20" name="password" placeholder="Dein Passwort">
         <span class='kategorie text-left'>PASSWORT WIEDERHOLEN</span><br>
-        <input type="password" class="form-control" maxlength="20" name="password2" placeholder="Passwort wiederholen"><br>
+        <input type="password" required class="form-control" maxlength="20" name="password2" placeholder="Passwort wiederholen"><br>
         <input type="submit" class="form-control button_orange" value="Registrieren">
     </form>
 <br>
