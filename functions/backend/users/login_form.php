@@ -1,6 +1,8 @@
+<!-- Login Formular für das Backend-->
 <div class="row" style="margin-top: 5%;">
 
 <div class="col-md-3 col-centered log_window">
+<!-- Verweist auf das Frontend -->
 <span class="text-right"><a href="index.php" class="login_link"><i class="fa fa-laptop"></i> Frontend</a></span>
 
 <h4 class="text-center">LOGIN</h4>

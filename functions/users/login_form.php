@@ -1,5 +1,6 @@
 <?php
 session_start();
+//Vorherige URL wird abgerufen
 $_SESSION['prevprevurl'] =  $_SERVER['HTTP_REFERER'];
 //Wenn für den Key 'failed' noch kein anderer Wert gesetzt ist, wird der Wert auf 0 gesetzt
 if (!isset ($_SESSION['failed'])) {
