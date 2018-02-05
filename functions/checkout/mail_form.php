@@ -16,7 +16,6 @@ if(isset($_SESSION['userid'])) {
     };
 }
 ?>
-
 <!-- E-Mail Formular-->
 <form action="./functions/checkout/checkout_do.php" method="post">
     <div><b>Bitte wähle eine Zahlungsmethode aus:</b></div>

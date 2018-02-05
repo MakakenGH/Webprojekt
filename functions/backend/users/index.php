@@ -14,7 +14,6 @@ if (isset($_GET["action"]))
             die();
             break;
     }
-
 }
 else
 {

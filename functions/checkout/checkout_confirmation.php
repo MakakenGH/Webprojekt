@@ -113,7 +113,6 @@ Umsatzsteuer-ID:123456789 <br>
 Wirtschafts-ID: 987654321<br>
 </p>";
 
-
 $subject = "Dein Einkauf bei Dampf!";
 $from = "From: Dampf! <dampf@hdm-stuttgart.de>\n";
 $from .= "Reply-To: noreply@hdm-stuttgart.de\n";
@@ -121,7 +120,6 @@ $from .= "Content-Type: text/html\n";
 
 //E-Mail wird abgeschickt
 mail($recipient, $subject, $mailtext, $from);
-
 
 header("Location: ../../index.php?page=thankyou");
 

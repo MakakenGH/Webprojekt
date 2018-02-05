@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 //Routing für Sidebar
 if (isset($_GET["action"]))
 {
@@ -17,7 +16,6 @@ else {
 //Routing für Bearbeitungsmodus
 if (isset($_GET["editmode"]))
 {
-
     switch ($_GET["editmode"]) {
         case "overview":
             include "./functions/backend/products/overview_edit.php";
@@ -32,7 +30,6 @@ if (isset($_GET["editmode"]))
             include "./functions/backend/products/adminsearch_afteredit.php";
             break;
     }
-
 }
 else
 {

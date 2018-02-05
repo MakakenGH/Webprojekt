@@ -12,6 +12,7 @@ if (!empty($ean) && !empty($username) && !empty($rating)) {
         include_once("../db.php");
         //DB Verbindung
         $db = new PDO($dsn, $dbuser, $dbpass);
+        //Bewertung wird des Users wird bearbeitet.
         $query = $db->prepare("UPDATE userrating SET comment= :comment, rating= :rating WHERE ean= :ean AND username= :username");
         $query->execute(array("comment" => $comment, "rating" => $rating, "ean" => $ean, "username" => $username));
         $db = null;

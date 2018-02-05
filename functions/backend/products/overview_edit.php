@@ -27,7 +27,6 @@ while ($zeile = $query->fetchObject()) {
         else {
             echo "";
         }
-
         echo "<div class='desc_backend'>";
         echo "<span class='kategorie'>BILD</span><br>";
         echo "<input type='file' name='bild'/>";

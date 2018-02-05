@@ -1,21 +1,22 @@
 <?php
-
+//Datenbank wird eingebunden
 include_once "./functions/db.php";
 
 $search=htmlspecialchars($_GET["search"]);
-
+// Datenbankverbindung wird aufgebaut
 $db = new PDO($dsn, $dbuser, $dbpass);
-
+//Suchwort wird mit Platzhaltern in die Datenbankabfrage eingegeben
 $sql = "SELECT * FROM sortiment WHERE genre  LIKE  '%".$search."%' OR name LIKE '%".$search."%'";
-
+//
 $query = $db->prepare($sql);
 $query->execute();
 echo "<div class='col-sm-12'>";
 echo "<h2>Suchergebnisse für: <span style='color: darkorange'>$search</span></h2>";
 echo "</div>";
 echo "<div class='row'>";
-if ($query->rowCount() > 0)
+if ($query->rowCount() > 0)//Wenn etwas zurückgegeben wird, dann gibt es das Suchergebnis aus.
 {
+    //Das Suchergebnis wird ausgegeben.
 while ($zeile = $query->fetchObject()) {
     echo "<div class='col-sm-4' id='store_defined'>";
     echo "<a href='?ean=$zeile->ean'>";
@@ -32,7 +33,7 @@ while ($zeile = $query->fetchObject()) {
     echo "<span class='kategorie'> BEWERTUNG <br></span> <span class='search_ausgabe'> $zeile->rating</span> <br><br></div>";
     echo "<div class='col-sm-4'>";
     echo "<span class='kategorie'> PREIS<br> </span><span class='search_ausgabe'> $zeile->preis €</span><br><br></div></div>";
-
+    // Wenn der User eingeloggt ist, wird der Button "In den Warenkorb legen" angezeigt.
     if (isset($_SESSION['userid'])) {
         echo "<form action='./functions/cart/cartupdate_do.php' method='get'>";
         echo "<input type='hidden' value='$zeile->ean' name='ean'>";
@@ -42,6 +43,7 @@ while ($zeile = $query->fetchObject()) {
         echo "</div>";
         echo "<div class='col-sm-9'>";
         echo "<input type='submit' class='form-control button_orange' value='In den Warenkorb legen'></div></div></form>";
+        //Wenn der User nicht eingeloggt ist, erscheint der Button Grau mit der Bitte sich zuerst einzuloggen".
     }
     else {
         echo "<div class='form-control text-center button_gray'><i class=\"fa fa-shopping-basket\" aria-hidden=\"true\"></i> In den Warenkorb legen (<a href='?page=users&action=login'>Bitte zuerst einloggen!)</a></div>";
@@ -49,6 +51,7 @@ while ($zeile = $query->fetchObject()) {
     echo "</div></div><br><br><br>";}
 echo "</div>";
 }
+//Wenn das Produkt nicht in der Datenbank zu finden ist, erhält der Nutzer eine Benachrichtigung.
 else {
     echo "<div class='col-centered log_window' > Suche erfolglos</div>";
 }

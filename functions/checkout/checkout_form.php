@@ -7,9 +7,6 @@ setlocale(LC_MONETARY, 'de_DE');
 echo "<br><span style='font-size: x-large;'><b>Bitte überpüfe deine Bestellung <span style='color: darkorange'> $username</span></b></span><br><br>";
 echo "<div class='row'>";
 echo "<div class='col' id='checkout'>";
-
-
-
 echo "<div class='table-responsive'>";
 echo "<table class='table'>";
 echo "<thead><tr><th>Bild</th><th>Name</th></th><th>Anzahl</th><th>Einzelpreis</th><th>Gesamtpreis</th></tr></thead>";

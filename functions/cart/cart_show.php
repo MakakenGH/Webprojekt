@@ -1,14 +1,13 @@
 <?php
 session_start();
 
-
 if (isset($_SESSION['userid'])) {
 
     $username = $_SESSION['userid'];
     setlocale(LC_MONETARY, 'de_DE');
 
     $db = new PDO($dsn, $dbuser, $dbpass);
-
+//Prüft ob der angemeldete Nutzer etwas in der Warenkorb DB hat.
     $sql_check = "SELECT * FROM cart WHERE username='".$username."'";
     $query = $db->prepare($sql_check);
     $query->execute();
@@ -22,12 +21,14 @@ if (isset($_SESSION['userid'])) {
         echo "<thead><tr><th>Bild</th><th>Name</th><th>EAN</th></th><th>Anzahl</th><th>Einzelpreis</th><th>Gesamtpreis</th><th>Löschen</th></tr></thead>";
 
 
-
+// Zieht Anzahl und Username aus aus warenkorb db, preis, bild usw aus sortiments DB wo ean der ean im Warenkorb entspricht
+        // berechnet die Summe für jedes Produkt anzahl * Preis
+        //gibt alles als Tabelle aus
         $sqltable = "SELECT s.name, s.ean, s.bild, s.preis, c.anzahl, s.preis * c.anzahl as total FROM sortiment s, cart c WHERE s.ean = c.ean AND c.username ='" . $username . "'";
         $preparedtable = $db->prepare($sqltable);
         $preparedtable->execute();
         $table = $preparedtable->fetchAll(PDO::FETCH_ASSOC);
-
+//assoziatives Array wird ausgelesen
         foreach ($table as $tablerow) {
 
             $artikelname = $tablerow['name'];
@@ -49,7 +50,7 @@ if (isset($_SESSION['userid'])) {
                 <input style='max-width: 50px;' type='number' value='1' name='anzahl' min='0'><input type='submit' class='button_orange' value='Löschen'></form></td>";
             echo "</tr>";
             echo "</tbody>";
-
+//gesammtstumme wird berechnet
         }
         $sqltotal = "SELECT SUM(s.preis * c.anzahl) as totalSum FROM sortiment s, cart c WHERE c.ean = s.ean AND c.username = '" . $username . "'";
         $preparedsum = $db->prepare($sqltotal);
